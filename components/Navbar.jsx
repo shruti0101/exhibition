@@ -113,7 +113,7 @@ useEffect(() => {
               className="relative group flex items-center gap-1 text-black hover:text-[#039C98]"
             >
               {cat.name}
-              <ChevronDown size={13} />
+              <ChevronDown size={10} />
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#039C98] transition-all duration-300 group-hover:w-full" />
             </button>
           ))}

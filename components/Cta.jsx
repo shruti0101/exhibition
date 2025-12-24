@@ -22,7 +22,7 @@ export default function CTASection() {
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900">
             Get a Free Quote for Your Next Exhibition Stall
           </h2>
-          <p className="mt-2 max-w-xl text-sm md:text-base text-gray-600">
+          <p className="mt-2 max-w-xl text-sm md:text-lg text-black">
             Custom-designed exhibition stalls that elevate your brand presence
             and attract the right audience.
           </p>

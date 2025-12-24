@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -25,16 +26,48 @@ const testimonials = [
     quote:
       "From design to fabrication, everything was handled in-house with precision. We received incredible feedback from visitors and partners.",
   },
+  {
+    name: "Neha Kapoor",
+    role: "Events Lead",
+    company: "Retail Trade Expo",
+    quote:
+      "One of the best exhibition stall agencies we’ve worked with. The detailing and lighting truly stood out.",
+  },
+  {
+    name: "Amit Khanna",
+    role: "Director",
+    company: "Auto Expo",
+    quote:
+      "Highly professional team. Their stall design helped us attract serious buyers and partners.",
+  },
 ];
 
+const VISIBLE_COUNT = 3;
+
 export default function Testimonials() {
+  const [startIndex, setStartIndex] = useState(0);
+
+  // Auto slide every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Get visible testimonials
+  const visibleTestimonials = Array.from({ length: VISIBLE_COUNT }).map(
+    (_, i) => testimonials[(startIndex + i) % testimonials.length]
+  );
+
   return (
-    <section className="relative bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 py-20 overflow-hidden">
-      {/* Soft background glow */}
+    <section className="relative overflow-hidden bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 py-20">
+      {/* Soft glow */}
       <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-red-400/10 blur-3xl" />
       <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-indigo-400/10 blur-3xl" />
 
-      <div className="relative mx-auto w-11/12 max-w-[1200px]">
+      <div className="relative mx-auto w-full px-8 md:px-16 ">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,7 +76,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <p className="mb-3 text-xs tracking-[0.35em] uppercase text-red-500">
+          <p className="mb-3 text-sm tracking-[0.35em] uppercase text-red-500">
             Testimonials
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-black">
@@ -52,38 +85,39 @@ export default function Testimonials() {
           <div className="mx-auto mt-5 h-[3px] w-12 rounded-full bg-red-500" />
         </motion.div>
 
-        {/* Cards */}
+        {/* Animated Cards */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-              className="group relative rounded-2xl bg-white/70 backdrop-blur-xl p-8 shadow-xl transition"
-            >
-              <Quote className="mb-5 h-8 w-8 text-red-500 opacity-80" />
+          <AnimatePresence mode="popLayout">
+            {visibleTestimonials.map((item, index) => (
+              <motion.div
+                key={`${item.name}-${startIndex}-${index}`}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative rounded-2xl bg-white/70 backdrop-blur-xl p-8 shadow-xl"
+              >
+                <Quote className="mb-5 h-8 w-8 text-red-500 opacity-80" />
 
-              <p className="text-base leading-relaxed text-gray-700">
-                “{item.quote}”
-              </p>
-
-              <div className="mt-6">
-                <h4 className="text-sm font-semibold text-black">
-                  {item.name}
-                </h4>
-                <p className="text-xs text-red-600">
-                  {item.role} ·{" "}
-                  <span className="text-red-400">{item.company}</span>
+                <p className="text-base leading-relaxed text-gray-700">
+                  “{item.quote}”
                 </p>
-              </div>
 
-              {/* Hover accent */}
-              <span className="absolute inset-x-0 bottom-0 h-[3px] scale-x-0 bg-gradient-to-r from-red-500 to-red-700 transition-transform duration-300 group-hover:scale-x-100" />
-            </motion.div>
-          ))}
+                <div className="mt-6">
+                  <h4 className="text-sm font-semibold text-black">
+                    {item.name}
+                  </h4>
+                  <p className="text-xs text-red-600">
+                    {item.role} ·{" "}
+                    <span className="text-red-400">{item.company}</span>
+                  </p>
+                </div>
+
+                {/* Accent */}
+                <span className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-red-500 to-red-700" />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>

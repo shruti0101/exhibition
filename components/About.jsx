@@ -11,7 +11,7 @@ import "swiper/css";
 
 const About = () => {
   const locations = [
-    { name: "India", image: "/location/india.png" },
+    { name: "India", image: "/location/india.jpg" },
     { name: "France", image: "/location/france.avif" },
     { name: "Netherlands", image: "/location/netherlands.jpg" },
     { name: "Switzerland", image: "/location/switzerland.webp" },
@@ -104,8 +104,8 @@ const About = () => {
     
 <>
 {/* about us */}
-    <section className="relative bg-white py-15">
-      <div className="mx-auto max-w-7xl px-3">
+    <section className="relative w-full bg-white py-15 ">
+      <div className="mx-auto px-8 md:px-16 ">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
@@ -188,7 +188,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
   {/* count up */}
 
     <section className="bg-gray-100 py-10">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-full px-8 md:px-16">
 
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -285,7 +285,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
  <section  className="relative bg-black/80 bg-center bg-cover  py-13">
 
 
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto px-8 md:px-16">
 
         {/* Heading */}
         <div className="mb-10 text-center">
@@ -338,7 +338,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
 
 
 <section className="my-20 bg-white">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto w-full px-8 md:px-16">
 
         {/* Heading */}
         <div className="mb-14 flex items-center justify-center gap-6">
@@ -421,7 +421,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
         </motion.div>
   
         {/* Cards Grid */}
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto  w-full grid px-8 md:px-16 grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {port.map((item, index) => (
             <motion.div
               key={item.id}
@@ -436,7 +436,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
               <img
                 src={item.image}
                 alt={item.title}
-                className="h-[260px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="h-[290px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
   
               {/* TOP → BOTTOM SLIDING OVERLAY */}
@@ -488,7 +488,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
 
 
     <section className="relative w-full overflow-hidden bg-[#f5f8fe] py-14">
-      <div className="mx-auto flex w-11/12 max-w-[1080px] items-center gap-14">
+      <div className="mx-auto flex px-8 md:px-16 items-center gap-14">
 
         {/* LEFT CONTENT */}
         <motion.div
@@ -518,7 +518,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
 
           <motion.h2
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-3xl font-extrabold leading-snug text-[#0b1b3a]"
+            className="text-2xl md:text-4xl font-bold  text-black"
           >
             Trusted by Leading Brands Across Exhibitions & Trade Shows
           </motion.h2>
@@ -530,7 +530,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
 
           <motion.p
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-            className="text-base leading-relaxed text-gray-700"
+            className="text-lg leading-relaxed text-black"
           >
             From global corporates to fast-growing brands, we partner with
             businesses that want to make a bold impact on the exhibition floor.
@@ -540,7 +540,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
 
           <motion.p
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-            className="mt-6 text-base leading-relaxed text-gray-700"
+            className="mt-3 text-lg  text-black"
           >
             With in-house design, fabrication, and execution, we deliver
             seamless exhibition experiences that reflect your brand’s vision
@@ -549,7 +549,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
 
           <motion.p
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-            className="mt-6 text-sm font-medium text-[#0b1b3a]"
+            className="mt-6 text-md  text-red-600 animate-pulse"
           >
             500+ Exhibitions Delivered • Pan-India & International Experience
           </motion.p>
@@ -561,7 +561,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="relative h-[500px] w-[500px] overflow-hidden rounded-xl bg-white "
+          className="relative h-[500px] w-[700px] overflow-hidden rounded-xl  "
         >
           {/* TOP FADE */}
           <div className="pointer-events-none absolute top-0 z-20 h-28 w-full bg-gradient-to-b from-[#f5f8fe] to-transparent" />
@@ -570,9 +570,9 @@ If you are looking forward to collaborating with the best exhibition stall desig
           <div className="absolute left-0 top-0 flex w-full flex-col animate-scrollUp">
            
             <Image
-              src="/comanies.png"
+              src="/clients.png"
               alt="Our Esteemed Clients"
-              width={500}
+              width={1000}
               height={1000}
               className="w-full companies-wrapper"
             />
