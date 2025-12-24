@@ -1,0 +1,470 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import { MapPin } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
+import Cta from '@/components/Cta'
+import "swiper/css";
+
+const About = () => {
+  const locations = [
+    { name: "India", image: "/location/india.jpg" },
+    { name: "France", image: "/location/france.avif" },
+    { name: "Netherlands", image: "/location/netherlands.jpg" },
+    { name: "Switzerland", image: "/location/switzerland.webp" },
+    { name: "Italy", image: "/location/italy.webp" },
+    { name: "Spain", image: "/location/spain.avif" },
+    { name: "USA", image: "/location/usa.png" },
+    { name: "UAE", image: "/location/uae.webp" },
+    { name: "UK", image: "/location/uk.jpg" },
+    { name: "China", image: "/location/china.webp" },
+    { name: "Thailand", image: "/location/thailand.jpg" },
+    { name: "Germany", image: "/location/germany.avif" },
+  ];
+
+
+  // reasons
+
+  const reasons = [
+    {
+      title: "Creative Design Excellence",
+      desc: "Innovative exhibition stall designs that attract, engage, and elevate brand presence on the show floor.",
+      image: "/whychoose1.png",
+    },
+    {
+      title: "In-House Fabrication",
+      desc: "Complete fabrication handled in-house ensuring quality control, faster execution, and flawless finishes.",
+      image: "/whychoose2.jpg",
+    },
+    {
+      title: "Premium Build Quality",
+      desc: "We use high-grade materials, advanced techniques, and precision engineering for durable structures.",
+      image: "/whychoose3.png",
+    },
+    {
+      title: "Global Exhibition Experience",
+      desc: "Proven experience across India and international exhibitions, delivering consistent excellence worldwide.",
+      image: "/whychoose4.jpg",
+    },
+   
+  ];
+  return (
+
+    
+<>
+{/* about us */}
+    <section className="relative bg-white py-15">
+      <div className="mx-auto max-w-7xl px-6">
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+          {/* 🔹 LEFT : IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative h-[520px] overflow-hidden bg-gray-100"
+          >
+            <Image
+              src="/about.jpg"
+              alt="Exhibition Stall Design"
+              fill
+              className="object-cover scale-105"
+            />
+          </motion.div>
+
+          {/* 🔹 RIGHT : CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <p className="mb-4 text-xs tracking-[0.45em] uppercase text-red-600">
+              About Us
+            </p>
+
+            <h2 className="text-4xl  font-light tracking-tight text-black">
+              Specialists in Exhibition <br /> Stand Design & Construction
+            </h2>
+
+            <p className="mt-5 text-base text-black leading-relaxed">
+              We are a leading Exhibition Stall Design, Stand Construction, and
+              Raw Space Design company based in Delhi, India. With over
+              <strong> 25 years of industry experience</strong>, we have been
+              part of some of the most prominent exhibitions across India and
+              around the world.
+            </p>    
+
+            <p className="mt-3 text-base text-black leading-relaxed">
+              Backed by a highly skilled team of designers, engineers, and
+              fabricators, we deliver innovative and impactful exhibition
+              environments that strengthen brand presence and leave a lasting
+              impression.
+            </p>
+            <p className="text-base text-black leading-relaxed">Our track record proves our expertise and dedication in the industry. We have broadened our client base while emphasizing the unique requirements of business firms, resulting in tailor-made solutions.
+
+If you are looking forward to collaborating with the best exhibition stall designer in India, please don't hesitate to reach out to us.</p>
+
+        
+
+            {/* 🔹 CTA */}
+         
+            <div className="mt-12 flex item-center gap-3 ">
+        <button className="group cursor-pointer relative inline-flex items-center gap-2 rounded-full border-2 border-red-600 px-8 py-2.5 text-sm font-medium uppercase tracking-wide text-red-600 transition-all duration-300 hover:bg-red-600 hover:text-white">
+        Call Us
+          <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
+        </button>
+
+
+
+      <button className="group relative cursor-pointer inline-flex items-center gap-2 rounded-full border-2 border-red-600 px-8 py-2.5 text-sm font-medium uppercase tracking-wide text-red-600 transition-all duration-300 hover:bg-red-600 hover:text-white">
+       Email Us
+          <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
+        </button>
+      </div>
+
+             
+          
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+
+
+  {/* count up */}
+
+    <section className="bg-gray-100 py-10">
+      <div className="mx-auto max-w-7xl px-3">
+
+        {/* TOP CONTENT */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+          {/* LEFT CONTENT */}
+          <motion.div
+          
+              initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          
+          >
+          
+
+            <h2 className="text-3xl  font-bold text-black leading-tight">
+             What makes Strides Design Studio the best exhibition stall design company in India?
+            </h2>
+
+            <p className="mt-3 text-gray-600 leading-relaxed">
+             What sets us apart is our unwavering dedication to customer satisfaction. We prioritize our clients' needs and work closely with them throughout the entire stall design process, ensuring that their vision is brought to life. From conceptualization to execution, we maintain open lines of communication, providing regular updates and seeking feedback to ensure that the final product exceeds expectations.
+            </p>
+
+            <p className="mt-4 text-gray-600 leading-relaxed">
+             Furthermore, our extensive experience and industry knowledge enable us to stay ahead of the curve when it comes to emerging trends and technologies. We continuously invest in our team's professional development and stay updated with the latest tools and techniques to deliver cutting-edge designs.
+            </p>
+
+            <p className="mt-4 text-gray-600 leading-relaxed">
+           When you choose us as your exhibition stall design partner, you can expect nothing but the best. Our passion for design, combined with our expertise and commitment to excellence, makes us the preferred choice for businesses looking to make a strong impact at trade shows, exhibitions, and events.
+            </p>
+          </motion.div>
+
+          {/* RIGHT IMAGE */}
+          <motion.div   initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}>
+
+          <div className="relative h-[420px] w-full rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/count.jpg"   // replace with your image
+              alt="Exhibition Stall"
+              fill
+              className="object-cover"
+            />
+          </div>
+          </motion.div>
+        </div>
+
+        {/* STATS STRIP */}
+       <motion.div
+  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+  transition={{
+    duration: 0.6,
+    ease: "easeOut",
+  }}
+  viewport={{ once: true, amount: 0.3 }}
+>
+  <div className="mt-10 rounded-2xl bg-[#039c98] px-6 py-10">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white">
+
+      <div>
+        <h3 className="text-4xl font-bold">14+</h3>
+        <p className="mt-2 text-sm tracking-wide">Years Experience</p>
+      </div>
+
+      <div>
+        <h3 className="text-4xl font-bold">650+</h3>
+        <p className="mt-2 text-sm tracking-wide">Satisfied Clients</p>
+      </div>
+
+      <div>
+        <h3 className="text-4xl font-bold">2100+</h3>
+        <p className="mt-2 text-sm tracking-wide">
+          Exhibition Stalls Delivered
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-4xl font-bold">70+</h3>
+        <p className="mt-2 text-sm tracking-wide">Specialized Team</p>
+      </div>
+
+    </div>
+  </div>
+</motion.div>
+
+
+      </div>
+    </section>
+
+    {/* why choose */}
+ <section  className="relative bg-black/80 bg-center bg-cover  py-13">
+
+
+      <div className="mx-auto max-w-7xl px-6">
+
+        {/* Heading */}
+        <div className="mb-10 text-center">
+          <p className="mb-4 text-xs tracking-[0.4em] uppercase text-red-600">
+            Why Choose Us
+          </p>
+          <h2 className="text-4xl lg:text-5xl font-light text-white">
+            What Sets Us Apart
+          </h2>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2  gap-14">
+          {reasons.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.08 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden  rounded-xl border-2 border-[#039c98]"
+            >
+              {/* Image */}
+              <div className="relative h-[330px]">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-[#039c98]/50 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <div className="px-6 text-center">
+                  <h3 className="text-2xl font-medium text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-lg text-white leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+<section className="my-20 bg-white">
+      <div className="mx-auto max-w-7xl px-6">
+
+        {/* Heading */}
+        <div className="mb-14 flex items-center justify-center gap-6">
+          <span className="h-[2px] w-20 bg-red-600" />
+          <h2 className="text-3xl lg:text-4xl font-semibold text-black text-center">
+            Our Stand Services Around The World
+          </h2>
+          <span className="h-[2px] w-20 bg-red-600" />
+        </div>
+
+        {/* Slider */}
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop
+          spaceBetween={24}
+          breakpoints={{
+            0: { slidesPerView: 1.2 },
+            480: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+            1280: { slidesPerView: 6 },
+          }}
+        >
+          {locations.map((item, i) => (
+            <SwiperSlide key={i}>
+              <div className="overflow-hidden border border-gray-200 shadow-sm">
+
+                {/* Image */}
+                <div className="relative h-[130px] w-full">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                  />
+
+                  {/* Pin */}
+                  <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-white/90 rounded-full p-2 shadow">
+                    <MapPin size={18} className="text-black" />
+                  </div>
+                </div>
+
+                {/* Country Name */}
+                <div className="bg-red-600 py-2 text-center">
+                  <span className="text-sm font-semibold uppercase text-white">
+                    {item.name}
+                  </span>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+      </div>
+    </section>
+
+  <Cta></Cta>
+
+  
+
+
+{/* clientele */}
+
+
+
+
+
+    <section className="relative w-full overflow-hidden bg-[#f5f8fe] py-14">
+      <div className="mx-auto flex w-11/12 max-w-[1080px] items-center gap-14">
+
+        {/* LEFT CONTENT */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeOut",
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+          className="flex w-[calc(100%-520px)] flex-col"
+        >
+          <motion.span
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+            className="mb-3 text-xs font-semibold tracking-[0.35em] uppercase text-red-500"
+          >
+            Our Clients
+          </motion.span>
+
+          <motion.h2
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            className="text-3xl font-extrabold leading-snug text-[#0b1b3a]"
+          >
+            Trusted by Leading Brands Across Exhibitions & Trade Shows
+          </motion.h2>
+
+          <motion.div
+            variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
+            className="mt-5 mb-8 h-[3px] w-10 origin-left rounded-full bg-red-500"
+          />
+
+          <motion.p
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+            className="text-base leading-relaxed text-gray-700"
+          >
+            From global corporates to fast-growing brands, we partner with
+            businesses that want to make a bold impact on the exhibition floor.
+            Our custom-designed exhibition stalls are crafted to attract,
+            engage, and convert visitors into lasting connections.
+          </motion.p>
+
+          <motion.p
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+            className="mt-6 text-base leading-relaxed text-gray-700"
+          >
+            With in-house design, fabrication, and execution, we deliver
+            seamless exhibition experiences that reflect your brand’s vision
+            and elevate your presence across trade shows, expos, and events.
+          </motion.p>
+
+          <motion.p
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+            className="mt-6 text-sm font-medium text-[#0b1b3a]"
+          >
+            500+ Exhibitions Delivered • Pan-India & International Experience
+          </motion.p>
+        </motion.div>
+
+        {/* RIGHT LOGO SCROLLER */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="relative h-[500px] w-[500px] overflow-hidden rounded-xl bg-white "
+        >
+          {/* TOP FADE */}
+          <div className="pointer-events-none absolute top-0 z-20 h-28 w-full bg-gradient-to-b from-[#f5f8fe] to-transparent" />
+
+          {/* MOVING LOGOS (CSS animation stays) */}
+          <div className="absolute left-0 top-0 flex w-full flex-col animate-scrollUp">
+           
+            <Image
+              src="/comanies.png"
+              alt="Our Esteemed Clients"
+              width={500}
+              height={1000}
+              className="w-full companies-wrapper"
+            />
+          </div>
+
+          {/* BOTTOM FADE */}
+          <div className="pointer-events-none absolute bottom-0 z-20 h-28 w-full bg-gradient-to-t from-[#f5f8fe] to-transparent" />
+        </motion.div>
+      </div>
+    </section>
+
+
+
+
+
+
+</>
+
+    
+  );
+};
+
+export default About;
