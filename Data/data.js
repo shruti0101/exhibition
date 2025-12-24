@@ -159,8 +159,18 @@ export const portfolioItems = [
 
 export const categories = [
   {
-    id: "exhibition-stall-designing-services",
-    name: "Exhibition Stall Designing Services",
+    id: "domestic-exhibition-stall-designing-services",
+    name: "Domestic Exhibition Stall Designing Services",
+    desc:"Service Provider of a wide range of services which include Exhibition Stall Designing Services, Stall Designing Services, Exhibition Designing Services, Exhibition Pavilion Designing Services and ITB,Berlin 2013 Exhibition Stall Designing.",
+     image: "/service1.webp",
+
+   
+  },
+
+
+   {
+    id: "international-exhibition-stall-designing-services",
+    name: "international Exhibition Stall Designing Services",
     desc:"Service Provider of a wide range of services which include Exhibition Stall Designing Services, Stall Designing Services, Exhibition Designing Services, Exhibition Pavilion Designing Services and ITB,Berlin 2013 Exhibition Stall Designing.",
      image: "/service1.webp",
 
@@ -177,13 +187,7 @@ export const categories = [
     
   },
 
-  {
-    id: "interior-designing-services",
-    name: "Interior Designing Services",
-    image: "/service3.jpg",
-    desc:"Offering you a complete choice of services which include Showroom Interior Designing Services, FM Studio Designing Services, Discussion Room Designing Services and Conference Room Designing Services."
-    
-  },
+
 
   {
     id: "corporate-event-management",
@@ -192,17 +196,6 @@ export const categories = [
    image:"/service4.jpg",
   },
 
-   {
-    id: "corporate-interior-designing-services",
-    name: "Corporate Interior Designing Services",
-   desc:"We are one of the trustworthy companies works as a Corporate Retail. Our team is capable of offering flexible services regrading the interior designing of various corporate offices.",
-   image:"/service5.jpg",
-  },
-
-   {
-    id: "stores-fabrication-service",
-    name: "Stores Fabrication Service",
-   desc:"Working with a prime aim of achieving utmost customer satisfaction, we are highly reckoned for offering Stores Fabrication Service in New Delhi. Our interior designing services are backed with our years of experience and intensive knowledge in this domain.",
-   image:"/service6.jpg",
-  },
+ 
+ 
 ];

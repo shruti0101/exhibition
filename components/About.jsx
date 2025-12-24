@@ -238,44 +238,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
           </motion.div>
         </div>
 
-        {/* STATS STRIP */}
-       <motion.div
-  initial={{ opacity: 0, scale: 0.9, y: 30 }}
-  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-  transition={{
-    duration: 0.6,
-    ease: "easeOut",
-  }}
-  viewport={{ once: true, amount: 0.3 }}
->
-  <div className="mt-10 rounded-2xl bg-[#039c98] px-6 py-10">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white">
-
-      <div>
-        <h3 className="text-4xl font-bold">14+</h3>
-        <p className="mt-2 text-sm tracking-wide">Years Experience</p>
-      </div>
-
-      <div>
-        <h3 className="text-4xl font-bold">650+</h3>
-        <p className="mt-2 text-sm tracking-wide">Satisfied Clients</p>
-      </div>
-
-      <div>
-        <h3 className="text-4xl font-bold">2100+</h3>
-        <p className="mt-2 text-sm tracking-wide">
-          Exhibition Stalls Delivered
-        </p>
-      </div>
-
-      <div>
-        <h3 className="text-4xl font-bold">70+</h3>
-        <p className="mt-2 text-sm tracking-wide">Specialized Team</p>
-      </div>
-
-    </div>
-  </div>
-</motion.div>
+  
 
 
       </div>
@@ -462,6 +425,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
                   <h3 className="text-xl font-semibold text-white tracking-wide">
                     {item.title}
                   </h3>
+                
                   <p className="mt-2 text-sm text-white/90">
                     {item.location}
                   </p>
