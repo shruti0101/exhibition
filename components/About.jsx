@@ -13,8 +13,8 @@ const About = () => {
   const locations = [
     { name: "India", image: "/location/india.jpg" },
     { name: "France", image: "/location/france.avif" },
-    { name: "Netherlands", image: "/location/netherlands.jpg" },
-    { name: "Switzerland", image: "/location/switzerland.webp" },
+    // { name: "Netherlands", image: "/location/netherlands.jpg" },
+    // { name: "Switzerland", image: "/location/switzerland.webp" },
    
     { name: "Spain", image: "/location/spain.avif" },
     { name: "USA", image: "/location/usa.png" },
