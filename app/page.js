@@ -1,6 +1,6 @@
 import About from '@/components/About'
 import Hero from '@/components/Hero'
-import Portfolio3D from '@/components/Portfolio'
+
 import Testimonials from '@/components/Testimonial'
 
 
@@ -11,7 +11,7 @@ const page = () => {
     <div>
       <Hero />
       <About></About>
-    <Portfolio3D></Portfolio3D>
+
 <Testimonials></Testimonials>
     </div>
   )

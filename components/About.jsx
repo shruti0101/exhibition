@@ -11,11 +11,11 @@ import "swiper/css";
 
 const About = () => {
   const locations = [
-    { name: "India", image: "/location/india.jpg" },
+    { name: "India", image: "/location/india.png" },
     { name: "France", image: "/location/france.avif" },
     { name: "Netherlands", image: "/location/netherlands.jpg" },
     { name: "Switzerland", image: "/location/switzerland.webp" },
-    { name: "Italy", image: "/location/italy.webp" },
+   
     { name: "Spain", image: "/location/spain.avif" },
     { name: "USA", image: "/location/usa.png" },
     { name: "UAE", image: "/location/uae.webp" },
@@ -25,7 +25,55 @@ const About = () => {
     { name: "Germany", image: "/location/germany.avif" },
   ];
 
+// portfolio
+ const port=[
+{
+    id: 1,
+    image: "/portfolio/test.jpg",
+    title: "Auto Ignition Ltd",
+    location: "Delhi Expo",
+  },
+  {
+    id: 2,
+    image: "/portfolio/test2.jpg",
+    title: "Flexi Brand Pavilion",
+    location: "Pragati Maidan",
+  },
+  {
+    id: 3,
+    image: "/portfolio/test3.jpg",
+    title: "Pharma Exhibition Stall",
+    location: "Mumbai Expo",
+  },
 
+    {
+    id: 4,
+    image: "/portfolio/test4.jpg",
+    title: "Pharma Exhibition Stall",
+    location: "Mumbai Expo",
+  },
+
+    {
+    id: 5,
+    image: "/portfolio/test5.jpg",
+    title: "Pharma Exhibition Stall",
+    location: "Mumbai Expo",
+  },
+   
+
+    {
+    id: 6,
+    image: "/portfolio/test6.jpg",
+    title: "Pharma Exhibition Stall",
+    location: "Mumbai Expo",
+  },
+
+
+
+
+ ]
+ 
+ 
   // reasons
 
   const reasons = [
@@ -57,7 +105,7 @@ const About = () => {
 <>
 {/* about us */}
     <section className="relative bg-white py-15">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-3">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
@@ -84,15 +132,15 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <p className="mb-4 text-xs tracking-[0.45em] uppercase text-red-600">
+            <p className="mb-4 text-sm tracking-[0.45em] uppercase text-red-600">
               About Us
             </p>
 
-            <h2 className="text-4xl  font-light tracking-tight text-black">
+            <h2 className="text-4xl  font-bold  text-black">
               Specialists in Exhibition <br /> Stand Design & Construction
             </h2>
 
-            <p className="mt-5 text-base text-black leading-relaxed">
+            <p className="mt-5 text-lg text-black leading-relaxed">
               We are a leading Exhibition Stall Design, Stand Construction, and
               Raw Space Design company based in Delhi, India. With over
               <strong> 25 years of industry experience</strong>, we have been
@@ -100,13 +148,13 @@ const About = () => {
               around the world.
             </p>    
 
-            <p className="mt-3 text-base text-black leading-relaxed">
+            <p className="mt-3 text-lg text-black leading-relaxed">
               Backed by a highly skilled team of designers, engineers, and
               fabricators, we deliver innovative and impactful exhibition
               environments that strengthen brand presence and leave a lasting
               impression.
             </p>
-            <p className="text-base text-black leading-relaxed">Our track record proves our expertise and dedication in the industry. We have broadened our client base while emphasizing the unique requirements of business firms, resulting in tailor-made solutions.
+            <p className="text-lg text-black leading-relaxed">Our track record proves our expertise and dedication in the industry. We have broadened our client base while emphasizing the unique requirements of business firms, resulting in tailor-made solutions.
 
 If you are looking forward to collaborating with the best exhibition stall designer in India, please don't hesitate to reach out to us.</p>
 
@@ -140,7 +188,7 @@ If you are looking forward to collaborating with the best exhibition stall desig
   {/* count up */}
 
     <section className="bg-gray-100 py-10">
-      <div className="mx-auto max-w-7xl px-3">
+      <div className="mx-auto max-w-7xl">
 
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -156,19 +204,19 @@ If you are looking forward to collaborating with the best exhibition stall desig
           >
           
 
-            <h2 className="text-3xl  font-bold text-black leading-tight">
+            <h2 className="text-4xl  font-bold text-black leading-tight">
              What makes Strides Design Studio the best exhibition stall design company in India?
             </h2>
 
-            <p className="mt-3 text-gray-600 leading-relaxed">
+            <p className="mt-3 text-black leading-relaxed">
              What sets us apart is our unwavering dedication to customer satisfaction. We prioritize our clients' needs and work closely with them throughout the entire stall design process, ensuring that their vision is brought to life. From conceptualization to execution, we maintain open lines of communication, providing regular updates and seeking feedback to ensure that the final product exceeds expectations.
             </p>
 
-            <p className="mt-4 text-gray-600 leading-relaxed">
+            <p className="mt-4 text-lg leading-relaxed">
              Furthermore, our extensive experience and industry knowledge enable us to stay ahead of the curve when it comes to emerging trends and technologies. We continuously invest in our team's professional development and stay updated with the latest tools and techniques to deliver cutting-edge designs.
             </p>
 
-            <p className="mt-4 text-gray-600 leading-relaxed">
+            <p className="mt-4 text-lg leading-relaxed">
            When you choose us as your exhibition stall design partner, you can expect nothing but the best. Our passion for design, combined with our expertise and commitment to excellence, makes us the preferred choice for businesses looking to make a strong impact at trade shows, exhibitions, and events.
             </p>
           </motion.div>
@@ -241,10 +289,10 @@ If you are looking forward to collaborating with the best exhibition stall desig
 
         {/* Heading */}
         <div className="mb-10 text-center">
-          <p className="mb-4 text-xs tracking-[0.4em] uppercase text-red-600">
+          <p className="mb-4 text-sm tracking-[0.4em] uppercase text-red-600">
             Why Choose Us
           </p>
-          <h2 className="text-4xl lg:text-5xl font-light text-white">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white">
             What Sets Us Apart
           </h2>
         </div>
@@ -351,6 +399,86 @@ If you are looking forward to collaborating with the best exhibition stall desig
   <Cta></Cta>
 
   
+
+
+
+    <section className="relative bg-white py-8">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mb-16 text-center"
+        >
+          <p className="mb-3 text-xs tracking-[0.35em] uppercase text-red-600">
+            Our Work
+          </p>
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+            Recent Portfolio
+          </h2>
+          <div className="mx-auto mt-4 h-[3px] w-20 rounded-full bg-gradient-to-r from-red-500 to-red-700" />
+        </motion.div>
+  
+        {/* Cards Grid */}
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {port.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden  bg-white shadow-xl"
+            >
+              {/* Image */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-[260px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+  
+              {/* TOP → BOTTOM SLIDING OVERLAY */}
+              <div
+                className="
+                  absolute inset-0
+                  -translate-y-full
+                  bg-gradient-to-b from-red-600/45 via-red-600/60 to-red-700/75
+                  transition-transform duration-500 ease-out
+                  group-hover:translate-y-0
+                  flex items-center justify-center
+                "
+              >
+                {/* Overlay Content */}
+                <div
+                  className="
+                    px-6 text-center
+                    opacity-0 translate-y-4
+                    transition-all duration-500 delay-150
+                    group-hover:opacity-100 group-hover:translate-y-0
+                  "
+                >
+                  <h3 className="text-xl font-semibold text-white tracking-wide">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-white/90">
+                    {item.location}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+  
+        {/* CTA */}
+        <div className="mt-14 flex justify-center">
+          <button className="group relative inline-flex items-center gap-3 rounded-full border-2 border-red-600 px-8 py-3 text-sm font-medium uppercase tracking-wide text-red-600 transition-all duration-300 hover:bg-red-600 hover:text-white">
+            View All Projects
+            <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
+          </button>
+        </div>
+      </section>
 
 
 {/* clientele */}

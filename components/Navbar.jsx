@@ -71,7 +71,7 @@ useEffect(() => {
 </div>
            
 
-            <nav className="hidden lg:flex items-center gap-10 text-[13px]  font-semibold tracking-widest text-black uppercase ">
+            <nav className="hidden lg:flex items-center gap-7 text-[15px]  font-semibold tracking-wide text-black uppercase ">
               {["Home", "About", "Services","Portfolio","Clients", "Contact"].map((item) => (
                 <Link
                   key={item}
@@ -105,7 +105,7 @@ useEffect(() => {
   }`}
   onMouseLeave={() => setActiveMenu(null)}
 >
-        <div className=" flex h-14  w-full items-center justify-center gap-2 lg:text-[14px] uppercase ">
+        <div className=" flex h-16   w-full items-center justify-center gap-1 text-[16px] uppercase font-semibold">
           {categories.map((cat) => (
             <button
               key={cat.id}
