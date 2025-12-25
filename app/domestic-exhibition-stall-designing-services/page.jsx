@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import GallerySection from '@/components/Galley'
 import {
   Building2,
   Calendar,
@@ -16,7 +17,7 @@ export default function Page() {
     <main className="bg-white">
 
       {/* ================= HERO WITH PARALLAX ================= */}
-      <section className="relative h-[50vh] md:h-[90vh] overflow-hidden">
+      <section className="relative h-[50vh] md:h-[100vh] overflow-hidden">
         <motion.div
           initial={{ scale: 1.4 }}
           animate={{ scale: 1 }}
@@ -480,6 +481,12 @@ export default function Page() {
 
   </div>
 </section>
+
+
+
+<GallerySection></GallerySection>
+
+{/*  */}
 
 
     </main>

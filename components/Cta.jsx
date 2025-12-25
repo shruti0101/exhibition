@@ -10,7 +10,8 @@ export default function CTASection() {
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="relative   overflow-hidden  bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 px-8 py-14 md:px-16"
+      style={{backgroundImage:"url(/check.jpg)"}}
+      className="relative   overflow-hidden  bg-center bg-cover bg-fixed px-8 py-14 md:px-16"
     >
       {/* subtle background glow */}
       <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-teal-400/10 blur-3xl" />

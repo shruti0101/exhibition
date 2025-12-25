@@ -116,7 +116,7 @@ export default function Navbar() {
         className="fixed top-[64px] z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black"
         onMouseLeave={() => setActiveMenu(null)}
       >
-        <div className="flex h-16 items-center justify-center gap-4 text-[17px] uppercase font-semibold">
+        <div className="flex h-14 items-center justify-center gap-4 text-[17px] uppercase font-semibold">
           {categories.map((cat) => (
             <button
               key={cat.id}

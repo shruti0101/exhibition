@@ -108,15 +108,7 @@ export default function ContactPage() {
 
         {/* Map */}
         <div className="w-full h-[300px] sm:h-[400px] md:h-[550px] overflow-hidden mt-12 sm:mt-16">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.4432326985357!2d77.0358914!3d28.650409499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05002326f073%3A0xcf13e39666787a09!2sDK%20MODULAR%20CONTRACTOR!5e1!3m2!1sen!2sin!4v1766224607220!5m2!1sen!2sin"
-            width="600"
-            height="450"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full border-0"
-          ></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13998.388467209066!2d77.13659!3d28.701696!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03c364cc7eeb%3A0xabe849dd2636c4c!2sStrides%20Design%20Studio%20%7C%20Exhibition%20Stall%20Design%20Agency%20%7C%20Best%20Exhibition%20Booth%20Design%20Agency!5e0!3m2!1sen!2sin!4v1766649050735!5m2!1sen!2sin" width="600" height="450"  allowFullScreen="" loading="lazy" className="w-full h-full" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
     
