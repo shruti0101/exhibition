@@ -32,7 +32,7 @@ export default function Page() {
           />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40" />
 
         <div className="relative z-10 flex h-full items-center justify-center text-center px-6">
           <motion.div
@@ -52,7 +52,7 @@ export default function Page() {
               Domestic Exhibition Stall Designing Services
             </h1>
 
-            <p className="mt-6 text-base md:text-lg text-black max-w-3xl mx-auto">
+            <p className="mt-6 text-base md:text-lg text-white max-w-3xl mx-auto">
               Custom-designed exhibition stalls for trade fairs, expos and
               corporate events across India.
             </p>
