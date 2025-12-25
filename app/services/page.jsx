@@ -5,9 +5,9 @@ const page = () => {
     <div>
             {/* ===== About Us Banner Section ===== */}
 <div
-  className="relative h-[40vh] md:h-[90vh] flex items-center justify-center text-center bg-cover bg-center bg-fixed overflow-hidden"
+  className="relative h-[40vh] md:h-[100vh] flex items-center justify-center text-center bg-cover bg-center bg-fixed overflow-hidden"
   style={{
-    backgroundImage: "url('/aboutimg.webp')",
+    backgroundImage: "url('/aboutbg.jpg')",
   }}
 >
   {/* Overlay */}
@@ -19,7 +19,7 @@ const page = () => {
     <div className="mx-auto mb-4 h-[3px] w-25 bg-red-600 rounded-full" />
 
     <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-      About Us
+     Our Services
     </h2>
 
  

@@ -169,20 +169,20 @@ export default function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                       >
-                        <p className="mb-4 text-xs tracking-[0.4em] uppercase text-gray-400">
+                        <p className="mb-4 text-sm tracking-[0.4em] uppercase text-teal-600">
                           Service
                         </p>
                         <h2 className="text-3xl font-medium text-black">
                           {service.name}
                         </h2>
-                        <p className="mt-6 max-w-xl text-gray-600">
+                        <p className="mt-6 max-w-xl text-black leading-snug">
                           {service.desc}
                         </p>
 
                         <Link
-                          href={`/services/${service.id}`}
+                          href={`/${service.id}`}
                           onClick={closeMenu}
-                          className="mt-10 inline-flex items-center gap-3 uppercase tracking-widest text-[#039C98]"
+                          className="mt-10 inline-flex items-center gap-3 uppercase tracking-widest text-red-600"
                         >
                           View Service →
                         </Link>
