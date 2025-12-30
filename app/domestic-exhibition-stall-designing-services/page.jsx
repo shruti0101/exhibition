@@ -33,7 +33,7 @@ export default function Page() {
           />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/45 to-black/40" />
 
         <div className="relative z-10 flex h-full items-center justify-center text-center px-6">
           <motion.div
@@ -46,7 +46,7 @@ export default function Page() {
               initial={{ width: 0 }}
               animate={{ width: "6rem" }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="mx-auto mb-6 h-[3px] bg-red-600 rounded-full"
+              className="mx-auto mb-6 h-[3px] bg-[#039C98] rounded-full"
             />
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
@@ -105,7 +105,7 @@ export default function Page() {
             />
 
             <div className="max-w-xl">
-              <p className="mb-3 text-sm uppercase tracking-wide text-red-600">
+              <p className="mb-3 text-sm uppercase tracking-wide text-teal-600">
                 What We Do
               </p>
 
@@ -131,7 +131,7 @@ export default function Page() {
             className="grid items-center gap-16 lg:grid-cols-2"
           >
             <div className="order-2 lg:order-1 max-w-xl">
-              <p className="mb-3 text-sm uppercase tracking-wide text-red-600">
+              <p className="mb-3 text-sm uppercase tracking-wide text-teal-600">
                 Our Capabilities
               </p>
 
@@ -174,7 +174,7 @@ export default function Page() {
             />
 
             <div className="max-w-xl">
-              <p className="mb-3 text-sm uppercase tracking-wide text-red-600">
+              <p className="mb-3 text-sm uppercase tracking-wide text-teal-600">
                 Pan-India Execution
               </p>
 
@@ -200,7 +200,7 @@ export default function Page() {
             className="grid items-center gap-16 lg:grid-cols-2"
           >
             <div className="order-2 lg:order-1 max-w-xl">
-              <p className="mb-3 text-sm uppercase tracking-wide text-red-600">
+              <p className="mb-3 text-sm uppercase tracking-wide text-teal-600">
                 Client Commitment
               </p>
 
@@ -278,10 +278,10 @@ export default function Page() {
         </h2>
 
         <p className="mt-6 text-black leading-8">
-          Strides Design is a trusted name in <strong>Domestic Exhibition Stall
+          Strides Design is a trusted name in <strong className="text-[#039C98]">Domestic / International Exhibition Stall
           Designing Services</strong>, offering complete design, fabrication,
           and execution solutions for exhibitions and trade fairs across India.
-          With over <strong>25 years of experience</strong>, we help brands
+          With over <strong className="text-[#039C98]">25 years of experience</strong>, we help brands
           create impactful exhibition spaces that attract, engage, and convert.
         </p>
 
@@ -296,13 +296,13 @@ export default function Page() {
       <div className="grid grid-cols-2 gap-6">
         {[
           ["25+", "Years in Domestic Exhibitions"],
-          ["2004", "Established"],
+          ["2000", "Established"],
           ["Pan-India", "Execution Capability"],
           ["100%", "Client Satisfaction Focus"],
         ].map(([num, label], i) => (
           <div
             key={i}
-            className="border border-red-700 p-6 text-center"
+            className="border border-[#039C98] p-6 text-center"
           >
             <h3 className="text-3xl font-bold text-gray-900">{num}</h3>
             <p className="mt-2 text-sm uppercase tracking-wide text-gray-500">
@@ -372,12 +372,12 @@ export default function Page() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.08 }}
             whileHover={{ y: -6, scale: 1.02 }}
-            className="group border border-red-600 bg-white p-8 transition-shadow duration-300 hover:shadow-xl"
+            className="group border border-[#039C98] bg-white p-8 transition-shadow duration-300 hover:shadow-xl"
           >
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="mb-4 text-red-600"
+              className="mb-4 text-[#039C98]"
             >
               {item.icon}
             </motion.div>
@@ -454,7 +454,7 @@ export default function Page() {
         <motion.div
           variants={{ rest: { x: "-100%" }, hover: { x: 0 } }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="absolute inset-0 bg-red-700 z-0"
+          className="absolute inset-0 bg-[#039C98] z-0"
         />
 
         <div className="relative z-10">

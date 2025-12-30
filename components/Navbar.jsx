@@ -1,215 +1,176 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { categories } from "@/Data/data";
 
 export default function Navbar() {
-  const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [hideCategory, setHideCategory] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
-  /* 🔹 SCROLL DIRECTION LOGIC */
-  useEffect(() => {
-    let lastY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-
-      if (currentY > lastY && currentY > 120) {
-        // scrolling DOWN
-        setHideCategory(true);
-      } else {
-        // scrolling UP
-        setHideCategory(false);
-      }
-
-      lastY = currentY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const closeMenu = () => {
-    setActiveMenu(null);
+  const closeAll = () => {
     setMobileOpen(false);
+    setServicesOpen(false);
   };
 
   return (
-    <header className="relative z-50 w-full">
-      {/* 🔹 TOP NAVBAR (ALWAYS VISIBLE) */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 z-50"
-        transition={{ duration: 0.4, ease: "easeOut" }}
-      >
-        <div className="bg-white backdrop-blur-xl border-b border-black/10">
-          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-            {/* LOGOS */}
-            <div className="flex items-center gap-3">
-              <Link href="/">
-                <Image
-                  src="/logo1.png"
-                  alt="Logo"
-                  width={130}
-                  height={70}
-                  priority
-                />
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* NAVBAR SHELL */}
+      <div className="bg-white/80 backdrop-blur-2xl border-b border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+        <div className="mx-auto flex h-20 w-full px-15 items-center justify-between ">
+
+          {/* LOGOS */}
+          <div className="flex items-center gap-2">
+            <Link href="/">
+              <Image src="/logo1.png" alt="Logo" width={135} height={60} priority />
+            </Link>
+         
+            <Link href="/">
+              <Image src="/logo2.png" alt="Logo" width={110} height={60} priority />
+            </Link>
+          </div>
+
+          {/* DESKTOP NAV */}
+          <nav className="hidden lg:flex items-center gap-6 text-[15px] font-semibold uppercase tracking-wider text-black">
+            {["Home", "About" ].map((item) => (
+              <Link
+                key={item}
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                className="relative group"
+              >
+                {item}
+                <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#039C98] transition-all duration-300 group-hover:w-full" />
               </Link>
-              <Link href="/">
-                <Image
-                  src="/logo2.png"
-                  alt="Logo"
-                  width={110}
-                  height={70}
-                  priority
+            ))}
+
+            {/* SERVICES */}
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button className="flex items-center gap-1 relative group">
+                SERVICES
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-300 ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
                 />
-              </Link>
+                <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#039C98] transition-all duration-300 group-hover:w-full" />
+              </button>
+
+              <AnimatePresence>
+                {servicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 12 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute left-0 top-full mt-6 w-72 rounded-2xl bg-white shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden"
+                  >
+                    <ul className="py-3">
+                      {categories.map((service) => (
+                        <li key={service.id}>
+                          <Link
+                            href={`/${service.id}`}
+                            onClick={closeAll}
+                            className="flex items-center justify-between px-6 py-3 text-xs tracking-wide text-black hover:bg-gray-50 hover:text-[#039C98] transition"
+                          >
+                            {service.name}
+                            <span className="opacity-0 group-hover:opacity-100 transition">
+                              →
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
-            {/* DESKTOP NAV */}
-            <nav className="hidden lg:flex items-center gap-7 text-[15px] font-semibold uppercase text-black">
-              {["Home", "About", "Services", "Portfolio", "Clients", "Contact"].map(
-                (item) => (
-                  <Link
-                    key={item}
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="hover:text-[#039C98] transition"
-                  >
-                    {item}
-                  </Link>
-                )
-              )}
-
-              <a
-                href="https://wa.me/9999402424"
-                target="_blank"
-                className="rounded-full bg-[#039C98] p-2.5 text-white"
+            {["Portfolio", "Contact","Career"].map((item) => (
+              <Link
+                key={item}
+                href={`/${item.toLowerCase()}`}
+                className="relative group"
               >
-                <FaWhatsapp size={18} />
-              </a>
-            </nav>
+                {item}
+                <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#039C98] transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
 
-            {/* MOBILE TOGGLE */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden"
+            {/* WHATSAPP CTA */}
+            <a
+              href="https://wa.me/9999402424"
+              target="_blank"
+              className="ml-2 inline-flex items-center gap-2 rounded-full bg-[#039C98] px-5 py-2 text-white text-xs tracking-widest hover:shadow-lg hover:scale-[1.03] transition"
             >
-              {mobileOpen ? <X size={26} /> : <Menu size={26} />}
-            </button>
-          </div>
+              <FaWhatsapp size={16} />
+              WhatsApp
+            </a>
+          </nav>
+
+          {/* MOBILE TOGGLE */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden text-black"
+          >
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
-      </motion.div>
+      </div>
 
-      {/* 🔹 CATEGORY BAR (HIDE ON SCROLL DOWN) */}
-      <motion.div
-        initial={{ y: 0, opacity: 1 }}
-        animate={{
-          y: hideCategory ? -80 : 0,
-          opacity: hideCategory ? 0 : 1,
-        }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-        className="fixed top-[64px] z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black"
-        onMouseLeave={() => setActiveMenu(null)}
-      >
-        <div className="flex h-14 items-center justify-center gap-4 text-[17px] uppercase font-semibold">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onMouseEnter={() => setActiveMenu(cat.id)}
-              className="group relative flex items-center gap-2 hover:text-[#039C98]"
-            >
-              {cat.name}
-              <ChevronDown size={12} />
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#039C98] transition-all duration-300 group-hover:w-full" />
-            </button>
-          ))}
-        </div>
-
-        {/* 🔹 MEGA MENU */}
-        <AnimatePresence>
-          {activeMenu && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="fixed left-0 right-0 bg-white"
-            >
-              {categories
-                .filter((c) => c.id === activeMenu)
-                .map((service) => (
-                  <div
-                    key={service.id}
-                    className="mx-auto max-w-7xl px-6 py-16"
-                  >
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                      {/* IMAGE */}
-                      <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="relative h-[400px] bg-gray-100"
-                      >
-                        <Image
-                          src={service.image}
-                          alt={service.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </motion.div>
-
-                      {/* CONTENT */}
-                      <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                      >
-                        <p className="mb-4 text-sm tracking-[0.4em] uppercase text-teal-600">
-                          Service
-                        </p>
-                        <h2 className="text-3xl font-medium text-black">
-                          {service.name}
-                        </h2>
-                        <p className="mt-6 max-w-xl text-black leading-snug">
-                          {service.desc}
-                        </p>
-
-                        <Link
-                          href={`/${service.id}`}
-                          onClick={closeMenu}
-                          className="mt-10 inline-flex items-center gap-3 uppercase tracking-widest text-red-600"
-                        >
-                          View Service →
-                        </Link>
-                      </motion.div>
-                    </div>
-                  </div>
-                ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-
-      {/* 🔹 MOBILE MENU */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden fixed top-16 left-0 right-0 bg-white shadow-xl z-40"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-white shadow-xl"
           >
-            <div className="px-6 py-6 space-y-4 text-sm font-semibold uppercase">
-              <Link href="/" onClick={closeMenu}>Home</Link>
-              <Link href="/about-us" onClick={closeMenu}>About</Link>
-              <Link href="/projects" onClick={closeMenu}>Projects</Link>
-              <Link href="/contact-us" onClick={closeMenu}>Contact</Link>
+            <div className="px-6 py-8 space-y-5 text-sm font-semibold uppercase tracking-wider">
+              <Link href="/" onClick={closeAll}>Home</Link>
+              <Link href="/about" onClick={closeAll}>About</Link>
+
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="flex w-full items-center justify-between"
+              >
+                Services
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {servicesOpen && (
+                <div className="ml-4 space-y-3">
+                  {categories.map((service) => (
+                    <Link
+                      key={service.id}
+                      href={`/${service.id}`}
+                      onClick={closeAll}
+                      className="block text-xs text-gray-700"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              <Link href="/portfolio" onClick={closeAll}>Portfolio</Link>
+                <Link href="/about" onClick={closeAll}>Career</Link>
+              <Link href="/contact" onClick={closeAll}>Contact</Link>
             </div>
           </motion.div>
         )}

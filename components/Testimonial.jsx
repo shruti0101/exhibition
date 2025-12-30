@@ -64,7 +64,7 @@ export default function Testimonials() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 py-20">
       {/* Soft glow */}
-      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-red-400/10 blur-3xl" />
+      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-teal-400/10 blur-3xl" />
       <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-indigo-400/10 blur-3xl" />
 
       <div className="relative mx-auto w-full px-8 md:px-16 ">
@@ -76,13 +76,13 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <p className="mb-3 text-sm tracking-[0.35em] uppercase text-red-500">
+          <p className="mb-3 text-sm tracking-[0.35em] uppercase text-[#039C98]">
             Testimonials
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-black">
             What Our Clients Say
           </h2>
-          <div className="mx-auto mt-5 h-[3px] w-12 rounded-full bg-red-500" />
+          <div className="mx-auto mt-5 h-[3px] w-12 rounded-full bg-[#039C98]" />
         </motion.div>
 
         {/* Animated Cards */}
@@ -97,7 +97,7 @@ export default function Testimonials() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative rounded-2xl bg-white/70 backdrop-blur-xl p-8 shadow-xl"
               >
-                <Quote className="mb-5 h-8 w-8 text-red-500 opacity-80" />
+                <Quote className="mb-5 h-8 w-8 text-[#039C98] opacity-80" />
 
                 <p className="text-base leading-relaxed text-gray-700">
                   “{item.quote}”
@@ -107,14 +107,14 @@ export default function Testimonials() {
                   <h4 className="text-sm font-semibold text-black">
                     {item.name}
                   </h4>
-                  <p className="text-xs text-red-600">
+                  <p className="text-xs text-[#039C98]">
                     {item.role} ·{" "}
-                    <span className="text-red-400">{item.company}</span>
+                    <span className="text-[#039C98]">{item.company}</span>
                   </p>
                 </div>
 
                 {/* Accent */}
-                <span className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-red-500 to-red-700" />
+                <span className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-[#039C98] to-[#039C98]" />
               </motion.div>
             ))}
           </AnimatePresence>

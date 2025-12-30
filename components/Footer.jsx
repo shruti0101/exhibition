@@ -1,16 +1,19 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import {
   Phone,
   Mail,
   Facebook,
   Linkedin,
+  MapPin,
+  Star,
 } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="relative mx-auto bg-[#1b1b1b] text-white">
+
       {/* TOP CONTACT BAR */}
       <div className="border-b border-white/10">
         <div className="mx-auto flex w-11/12 max-w-[1400px] flex-wrap items-center justify-between gap-4 py-4 text-sm">
@@ -18,58 +21,135 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center gap-6 text-white">
             <span className="flex items-center gap-2">
-              <Phone size={14} /> +91 96197 35550
+              <Phone size={14} /> (011) 4571-9352
             </span>
             <span className="flex items-center gap-2">
-              <Phone size={14} /> +91 79779 08853
+              <Phone size={14} /> +91 9953686374, 9810119546
             </span>
             <span className="flex items-center gap-2">
-              <Phone size={14} /> +91 22 2529-4907 / 2528-4907
-            </span>
-            <span className="flex items-center gap-2">
-              <Mail size={14} /> sales@accordexhibit.com
+              <Mail size={14} /> info@stridesdezine.com
             </span>
 
             <div className="flex items-center gap-3">
-              <Facebook size={16} />
-              <Linkedin size={16} />
+              <Facebook size={16} className="hover:text-[#039C98]" />
+              <Linkedin size={16} className="hover:text-[#039C98]" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* CITY ADDRESSES */}
+      {/* MAIN FOOTER INFO */}
       <div className="border-b border-white/10">
-        <div className="mx-auto grid w-11/12 max-w-[1400px] grid-cols-1 gap-8 py-10 text-sm sm:grid-cols-2 lg:grid-cols-6">
-          {cities.map((city) => (
-            <div key={city.name}>
-              <h4 className="mb-3 font-semibold text-white">
-                {city.name}
-              </h4>
-              <p className="leading-relaxed  text-white">
-                {city.address}
-              </p>
-            </div>
-          ))}
+        <div className="mx-auto grid w-11/12 max-w-[1400px] grid-cols-1 gap-10 py-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
+
+          {/* USEFUL LINKS */}
+          <div>
+            <h4 className="mb-4 font-semibold uppercase tracking-wider">
+              Useful Links
+            </h4>
+            <ul className="space-y-2 text-white/80">
+              {[
+                "Home",
+                "About us",
+                "Services",
+            "Portfolio",
+           
+                "Careers",
+                "Contact Us",
+              ].map((item) => (
+                <li key={item}>
+                  <Link
+                    href={`/${item.toLowerCase().replace(" ", "-")}`}
+                    className="hover:text-[#039C98]"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+
+            
+          </div>
+
+          {/* CONTACT DETAILS */}
+          <div>
+            <h4 className="mb-4 font-semibold uppercase tracking-wider">
+              Contact Us
+            </h4>
+            <ul className="space-y-3 text-white/80">
+              <li className="flex items-start gap-2">
+                <Phone size={14} className="mt-1" />
+                (011) 4571-9352
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone size={14} className="mt-1" />
+                +91 9953686374, 9810119546
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail size={14} className="mt-1" />
+                info@stridesdezine.com
+              </li>
+            </ul>
+          </div>
+
+          {/* LOCATION */}
+       {/* LOCATIONS */}
+<div>
+  <h4 className="mb-4 font-semibold uppercase tracking-wider">
+    Our Locations
+  </h4>
+
+  <div className="space-y-4 text-white/80 text-sm">
+    {/* DELHI */}
+    <div className="flex items-start gap-2">
+      <MapPin size={14} className="mt-1 text-[#039C98]" />
+      <div>
+        <p className="font-semibold text-white">India (Delhi)</p>
+        <p className="leading-relaxed">
+          49C, JD Block, Rohini, Pitampura, Delhi 110034
+        </p>
+      </div>
+    </div>
+
+    {/* NETHERLANDS */}
+    <div className="flex items-start gap-2">
+      <MapPin size={14} className="mt-1 text-[#039C98]" />
+      <div>
+        <p className="font-semibold text-white">Netherlands</p>
+        <p className="leading-relaxed">
+          {/* Replace with exact address if you want */}
+          Amsterdam, Netherlands
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          {/* GOOGLE REVIEW */}
+          <div>
+            <h4 className="mb-4 font-semibold uppercase tracking-wider">
+              Review Us
+            </h4>
+            <a
+              href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x390d03c364cc7eeb:0xabe849dd2636c4c!12e1?source=g.page.m.ia._&laa=nmx-review-solicitation-ia2"
+              target="_blank"
+              className="inline-flex animate-pulse items-center gap-2 rounded-md border  px-4 py-2 text-sm border-[#039C98] text-[#039C98]"
+            >
+              <Star size={16} />
+              Review us on Google
+            </a>
+          </div>
+
         </div>
       </div>
 
-      {/* SEO KEYWORD BLOCKS */}
-      <div className="border-b border-white/10 cursor-pointer">
-        <div className="mx-auto grid w-11/13 max-w-[1400px] grid-cols-1 gap-6 py-10 text-sm sm:grid-cols-2 lg:grid-cols-5">
-          {seoColumns.map((col, i) => (
-            <ul key={i} className="space-y-1 text-white">
-              {col.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </div>
+
 
       {/* COPYRIGHT */}
       <div className="py-4 text-center text-sm text-white">
-        Copyright © 2025 Design by Accord Exhibit. All rights reserved.
+        © 2025 Strides Dezine. All rights reserved.
       </div>
 
       {/* FLOATING CALLBACK */}
@@ -79,6 +159,7 @@ export default function Footer() {
     </footer>
   );
 }
+
 
 /* DATA */
 
