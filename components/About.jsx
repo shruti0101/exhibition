@@ -29,42 +29,42 @@ const About = () => {
   const port = [
     {
       id: 1,
-      image: "/portfolio/test.jpg",
-      title: "Auto Ignition Ltd",
-      location: "Delhi Expo",
+      image: "/domestic-image/DONGSHENGINTERNATIONAL.jpg",
+      title: "DONGSHENG INTERNATIONAL",
+      location: "STONA 2025 - Bengaluru",
     },
     {
       id: 2,
-      image: "/portfolio/test2.jpg",
-      title: "Flexi Brand Pavilion",
-      location: "Pragati Maidan",
+      image: "/domestic-image/EGARRMARBLE.jpg",
+      title: "EGARR MARBLE",
+      location: "STONA 2025 - Bengaluru",
     },
     {
       id: 3,
-      image: "/portfolio/test3.jpg",
-      title: "Pharma Exhibition Stall",
-      location: "Mumbai Expo",
+      image: "/domestic-image/OERLIKON.jpg",
+      title: "OERLIKON",
+      location: "AERO INDIA 2025 - BENGALURU",
     },
 
     {
       id: 4,
-      image: "/portfolio/test4.jpg",
-      title: "Pharma Exhibition Stall",
-      location: "Mumbai Expo",
+      image: "/internation-image/ACCURUB.jpg",
+      title: "ACCURUB",
+      location: "IAA 2022 - HANNOVER, GERMANY",
     },
 
     {
       id: 5,
-      image: "/portfolio/test5.jpg",
-      title: "Pharma Exhibition Stall",
-      location: "Mumbai Expo",
+      image: "/internation-image/INNOVARUBBERSVIR.jpg",
+      title: "INNOVA RUBBERS , VIR",
+      location: "AUTOMECHANIKA 2024 - FRANKFURT, GERMANY",
     },
 
     {
       id: 6,
-      image: "/portfolio/test6.jpg",
-      title: "Pharma Exhibition Stall",
-      location: "Mumbai Expo",
+      image: "/internation-image/ACCURUB1.jpg",
+      title: "FRESH DESK",
+      location: "CCW - BERLIN, GERMANY",
     },
   ];
 

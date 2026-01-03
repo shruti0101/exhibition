@@ -21,7 +21,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* NAVBAR SHELL */}
       <div className="bg-white/80 backdrop-blur-2xl border-b border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
-        <div className="mx-auto flex h-20 w-full px-15 items-center justify-between ">
+        <div className="mx-auto flex h-20 w-full px-5 items-center justify-between ">
 
           {/* LOGOS */}
           <div className="flex items-center gap-2">
@@ -136,13 +136,13 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="lg:hidden bg-white shadow-xl"
           >
-            <div className="px-6 py-8 space-y-5 text-sm font-semibold uppercase tracking-wider">
+            <div className="px-6 py-8 space-y-5 text-sm font-semibold uppercase tracking-wider flex flex-col">
               <Link href="/" onClick={closeAll}>Home</Link>
               <Link href="/about" onClick={closeAll}>About</Link>
 
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full items-center justify-between"
+                className="flex w-full items-center justify-between text-[17px]"
               >
                 Services
                 <ChevronDown
