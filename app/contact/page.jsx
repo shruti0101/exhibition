@@ -1,4 +1,47 @@
+"use client";
+
+import { createContactForm } from "@/service/axiosInstance";
+import toast from "react-hot-toast";
+import { useState } from "react";
+
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await createContactForm(formData);
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error.message || "something went wrong while send content details"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <>
       {/* ================= HERO ================= */}
@@ -9,7 +52,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-900/60 to-slate-800/60" />
 
         <div className="relative z-10 px-6 max-w-5xl">
-          <div className="mx-auto mb-5 h-[3px] w-24 bg-[#039C98] rounded-full" />
+          <div className="mx-auto mb-5 h-0.75 w-24 bg-[#039C98] rounded-full" />
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
             Contact Us
           </h2>
@@ -20,10 +63,9 @@ export default function ContactPage() {
       </div>
 
       {/* ================= CONTACT SECTION ================= */}
-      <section className="bg-gray-100 py-20 w-full">
+      <section className="bg-gray-100 pt-20 w-full">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 bg-white shadow-2xl">
-
             {/* LEFT INFO PANEL */}
             <div className="bg-[#039C98] px-8 py-16 lg:px-12 text-white">
               <div className="mb-12">
@@ -75,16 +117,24 @@ export default function ContactPage() {
                 Fill out the form and our team will get back to you shortly.
               </p>
 
-              <form className="space-y-8">
+              <form className="space-y-8" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     placeholder="Your Name"
                     className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
                   />
 
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     placeholder="Email Address"
                     className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
                   />
@@ -92,11 +142,19 @@ export default function ContactPage() {
 
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                   placeholder="Phone Number"
                   className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
                 />
 
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   placeholder="Tell us about your project..."
                   rows={6}
                   className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
@@ -104,13 +162,13 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
+                  disabled={loading}
                   className="inline-flex cursor-pointer items-center justify-center bg-[#039C98] px-10 py-4 text-xs tracking-widest uppercase text-white transition hover:bg-[#027a76]"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
-
           </div>
         </div>
 

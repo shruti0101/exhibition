@@ -187,3 +187,16 @@ export const categories = [
     image: "/service4.jpg",
   },
 ];
+
+export const portfolioNavItem = [
+  {
+    id: "domestic-portfolio",
+    name: "Domestic Portfolio",
+    desc: "",
+  },
+  {
+    id: "international-portfolio",
+    name: "International Portfolio",
+    desc: "",
+  },
+];

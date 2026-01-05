@@ -405,8 +405,8 @@ const About = () => {
 
       {/* clientele */}
 
-      <section className="relative w-full overflow-hidden bg-[#f5f8fe] py-14">
-        <div className="mx-auto flex px-8 md:px-16 items-center gap-14">
+      <section className="relative w-full overflow-hidden  py-14">
+        <div className="mx-auto flex flex-col lg:flex-row px-8 md:px-16 items-center gap-14 ">
           {/* LEFT CONTENT */}
           <motion.div
             initial="hidden"
@@ -424,7 +424,7 @@ const About = () => {
                 },
               },
             }}
-            className="flex w-[calc(100%-520px)] flex-col"
+            className="flex w-full lg:w-1/2 flex-col"
           >
             <motion.span
               variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
@@ -445,7 +445,7 @@ const About = () => {
 
             <motion.div
               variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
-              className="mt-5 mb-8 h-[3px] w-10 origin-left rounded-full bg-red-500"
+              className="mt-5 mb-8 h-0.75 w-10 origin-left rounded-full bg-red-500"
             />
 
             <motion.p
@@ -475,30 +475,77 @@ const About = () => {
             </motion.p>
           </motion.div>
 
-          {/* RIGHT LOGO SCROLLER */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative h-[500px] w-[700px] overflow-hidden rounded-xl  "
-          >
-            {/* TOP FADE */}
-            <div className="pointer-events-none absolute top-0 z-20 h-28 w-full bg-gradient-to-b from-[#f5f8fe] to-transparent" />
-
-            {/* MOVING LOGOS (CSS animation stays) */}
-            <div className="absolute left-0 top-0 flex w-full flex-col animate-scrollUp">
+          <div className="w-full lg:w-1/2">
+            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-red-500">Empaneled Design Partner</p>
+            <div className="grid  grid-cols-1 gap-8 items-center md:grid-cols-3">
               <Image
-                src="/clients.png"
-                alt="Our Esteemed Clients"
+                src="/home-client/acma.png"
+                width="400"
+                height="400"
+                alt="logo"
+                className="h-40 w-auto"
+              />
+              <Image
+                src="/home-client/confederation.png"
+                width="400"
+                height="400"
+                alt="logo"
+                className="h-40 w-auto"
+              />
+              <Image
+                src="/home-client/ficci.png"
+                width="400"
+                height="400"
+                alt="logo"
+                className="h-40 w-auto"
+              />
+              <Image
+                src="/home-client/icc.png"
+                width="400"
+                height="400"
+                alt="logo"
+                className="h-40 w-auto"
+              />
+              <Image
+                src="/home-client/ITA_Airways.webp"
+                width="400"
+                height="400"
+                alt="logo"
+                className="h-40 w-auto"
+              />
+              <Image
+                src="/home-client/jiipa.png"
+                width="400"
+                height="400"
+                alt="logo"
+                className="h-40 w-auto"
+              />
+            
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full overflow-hidden">
+          <motion.div
+            className="flex"
+            animate={{ x: "-50%" }}
+            transition={{
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            style={{ width: "fit-content" }}
+          >
+            {[1, 2].map((index) => (
+              <Image
+                key={index}
+                src={"/home-client/stripe.png"}
                 width={1000}
                 height={1000}
-                className="w-full companies-wrapper"
+                alt="Clients Banner"
+                className="h-30 w-[140vw] max-w-none"
               />
-            </div>
-
-            {/* BOTTOM FADE */}
-            <div className="pointer-events-none absolute bottom-0 z-20 h-28 w-full bg-gradient-to-t from-[#f5f8fe] to-transparent" />
+            ))}
           </motion.div>
         </div>
       </section>
