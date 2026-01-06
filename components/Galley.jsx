@@ -75,8 +75,8 @@ export default function GallerySection() {
               <Image
                 src={item.src}
                 alt={item.title}
-                width={600}
-                height={600}
+                width={1000}
+                height={1000}
                 className="h-full w-full object-cover"
               />
 

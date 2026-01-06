@@ -33,6 +33,7 @@ export async function POST(req) {
     // Send the email
     await transporter.sendMail({
       to: process.env.EMAIL_ADDRESS, // Receiver address from .env
+      cc: "info@stridesdezine.com", // Add your CC email address here
       subject: `New Career Application: ${name}`,
       text: `You have received a new application.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`,
       attachments: [

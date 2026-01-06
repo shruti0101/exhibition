@@ -135,8 +135,8 @@ const InternationalExhibition = () => {
             <Image
               src="/internation-image/_ESCORTSKUBOTALIMITED.jpg"
               alt="Domestic Exhibition Stall Design"
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
               className="rounded-sm w-full object-cover h-[300px]"
             />
 
@@ -304,8 +304,8 @@ const InternationalExhibition = () => {
               <Image
                 src="/internation-image/ACCURUB.jpg"
                 alt="Exhibition Fabrication"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="order-1 lg:order-2 w-full object-cover rounded-sm h-[400px]"
               />
             </motion.div>
@@ -331,8 +331,8 @@ const InternationalExhibition = () => {
               <Image
                 src="/internation-image/BEXIMCOPHARMA.jpg"
                 alt="Pan India Exhibition Services"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="rounded-sm w-full object-cover h-125"
               />
 

@@ -133,9 +133,9 @@ const ProductLaunch = () => {
             <Image
               src="/internation-image/SINOGNSS.jpg"
               alt="Product Launch Services"
-              width={400}
-              height={400}
-              className="rounded-sm w-full object-cover h-[300px]"
+              width={1000}
+              height={1000}
+              className="rounded-sm w-full object-cover h-[400px]"
             />
 
             <div className="max-w-xl">
@@ -343,8 +343,8 @@ const ProductLaunch = () => {
               <Image
                 src="/domestic-image/PARACOAT.jpg"
                 alt="Product Launch Services"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="order-1 lg:order-2 w-full object-cover rounded-sm h-[430px]"
               />
             </motion.div>
@@ -369,8 +369,8 @@ const ProductLaunch = () => {
               <Image
                 src="/domestic-image/SASMOS.jpg"
                 alt="Product Launch Services"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="rounded-sm w-full object-cover h-125"
               />
 

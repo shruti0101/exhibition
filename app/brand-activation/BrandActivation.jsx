@@ -125,8 +125,8 @@ const BrandActivation = () => {
             <Image
               src="/internation-image/INNOVARUBBERSVIR.jpg"
               alt="Brand Activation Services"
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
               className="rounded-sm w-full object-cover h-[300px]"
             />
 
@@ -313,8 +313,8 @@ const BrandActivation = () => {
               <Image
                 src="/internation-image/GOA.jpg"
                 alt="Brand Activation Services"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="order-1 lg:order-2 w-full object-cover rounded-sm h-[500px]"
               />
             </motion.div>

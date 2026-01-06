@@ -128,9 +128,9 @@ const ExhibitionFabricationService = () => {
             <Image
               src="/domestic-image/AURBINDO.jpg"
               alt="Exhibition Fabrication"
-              width={400}
-              height={400}
-              className="rounded-sm w-full object-cover h-[300px]"
+              width={1000}
+              height={1000}
+              className="rounded-sm w-full object-cover h-[400px]"
             />
 
             <div className="max-w-xl">
@@ -317,8 +317,8 @@ const ExhibitionFabricationService = () => {
               <Image
                 src="/internation-image/ACCURUB1.jpg"
                 alt="Exhibition Fabrication"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="order-1 lg:order-2 w-full object-cover rounded-sm h-[400px]"
               />
             </motion.div>
@@ -340,8 +340,8 @@ const ExhibitionFabricationService = () => {
               <Image
                 src="/internation-image/FRESHWORKS.jpg"
                 alt="Exhibition Fabrication Services"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="rounded-sm w-full object-cover h-125"
               />
 

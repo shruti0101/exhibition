@@ -133,9 +133,9 @@ const CorporateEventManagement = () => {
             <Image
               src="/domestic-image/ITA.jpg"
               alt="Corporate Event Management"
-              width={400}
-              height={400}
-              className="rounded-sm w-full object-cover h-[300px]"
+              width={1000}
+              height={1000}
+              className="rounded-sm w-full object-cover h-[430px]"
             />
 
             <div className="max-w-xl">
@@ -347,8 +347,8 @@ const CorporateEventManagement = () => {
               <Image
                 src="/internation-image/TUBEINVESTMENTSOFINDIALIMITED.jpg"
                 alt="Corporate Event Management"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="order-1 lg:order-2 w-full object-cover rounded-sm h-[440px]"
               />
             </motion.div>
@@ -373,8 +373,8 @@ const CorporateEventManagement = () => {
               <Image
                 src="/internation-image/STYLAM.jpg"
                 alt="Corporate Event Management"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="rounded-sm w-full object-cover h-125"
               />
 

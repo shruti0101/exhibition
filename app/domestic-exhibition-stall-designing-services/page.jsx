@@ -145,8 +145,8 @@ export default function Page() {
             <Image
               src="/domestic-image/JAYEM.jpg"
               alt="Domestic Exhibition Stall Design"
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
               className="rounded-sm w-full object-cover h-[300px]"
             />
 
@@ -311,9 +311,9 @@ export default function Page() {
               <Image
                 src="/domestic-image/RAMSONS.jpg"
                 alt="Exhibition Fabrication"
-                width={400}
-                height={400}
-                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[300px]"
+                width={1000}
+                height={1000}
+                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[420px]"
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
@@ -335,10 +335,10 @@ export default function Page() {
               className="grid items-center gap-16 lg:grid-cols-2"
             >
               <Image
-                src="/domestic-image/PARACOAT.jpg"
+                src="/domestic-image/CANON.jpg"
                 alt="Pan India Exhibition Services"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 className="rounded-sm w-full object-cover h-125"
               />
 
@@ -421,8 +421,8 @@ export default function Page() {
             <Image
               src="/domestic-image/EGARRMARBLE.jpg"
               alt="Client Commitment"
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
               className="order-1 lg:order-2 w-full object-cover rounded-sm h-[300px]"
             />
           </motion.div>
