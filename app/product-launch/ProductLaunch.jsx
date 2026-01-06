@@ -95,12 +95,12 @@ const ProductLaunch = () => {
         transition={{ duration: 0.9 }}
         className="py-12"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-black">
             Product Launch Services – Strides Design Studio
           </h2>
 
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
             Strides Design Studio offers professional product launch services
             across India, including Delhi, Mumbai, Bangalore, Hyderabad, and
             other major cities. Our experienced team designs each product launch
@@ -108,7 +108,7 @@ const ProductLaunch = () => {
             ensuring a memorable market introduction that engages your target
             audience and generates excitement.
           </p>
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
             Our methodology combines creativity, strategy, and industry
             expertise to deliver impactful product launches. From concept
             development and event planning to on-ground execution, interactive
@@ -345,7 +345,7 @@ const ProductLaunch = () => {
                 alt="Product Launch Services"
                 width={400}
                 height={400}
-                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[300px]"
+                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[430px]"
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
@@ -371,7 +371,7 @@ const ProductLaunch = () => {
                 alt="Product Launch Services"
                 width={400}
                 height={400}
-                className="rounded-sm w-full object-cover h-75"
+                className="rounded-sm w-full object-cover h-125"
               />
 
               <div className="max-w-xl">
@@ -576,7 +576,7 @@ const ProductLaunch = () => {
 
       {/* ================= ADDITIONAL INFO ================= */}
       <section className="py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-6 text-center space-y-16">
+        <div className="mx-auto max-w-7xl px-6 text-center space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -586,7 +586,7 @@ const ProductLaunch = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
               Product Launch Services
             </h2>
-            <p className="text-black leading-relaxed mb-6">
+            <p className="text-black leading-relaxed mb-6 text-justify">
               At Strides Design Studio, we specialize in product launch planning
               and execution, helping businesses across India introduce new
               products with maximum impact. From Delhi and Mumbai to Bangalore,
@@ -594,7 +594,7 @@ const ProductLaunch = () => {
               launch services that reflect your brand identity, engage your
               target audience, and generate measurable results.
             </p>
-            <p className="text-black leading-relaxed">
+            <p className="text-black leading-relaxed text-justify">
               Our approach combines creativity, strategy, and end-to-end
               solutions. From concept development and campaign design to
               on-ground execution, media coordination, and post-launch analysis,

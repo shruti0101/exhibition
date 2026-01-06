@@ -97,13 +97,13 @@ const InternationalExhibition = () => {
         transition={{ duration: 0.9 }}
         className="py-12"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-black">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <h2 className="font-serif text-4xl md:text-5xl text-black ">
             International Exhibition Stall Design Services – Strides Design
             Studio
           </h2>
 
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
             Strides Design Studio offers professional exhibition stall design
             services for international trade shows, expos, and corporate events.
             We serve clients across major global hubs, including Dubai,
@@ -112,7 +112,7 @@ const InternationalExhibition = () => {
             your brand identity, attract the right visitors, and leave a lasting
             impression on a global audience.
           </p>
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-5 text-lg text-black max-w-7xl mx-auto leading-relaxed">
             From concept development and 3D visualization to fabrication,
             installation, and on-site support, our end-to-end exhibition stall
             design solutions ensure your international presence is noticed and
@@ -306,7 +306,7 @@ const InternationalExhibition = () => {
                 alt="Exhibition Fabrication"
                 width={400}
                 height={400}
-                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[300px]"
+                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[400px]"
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
@@ -326,14 +326,14 @@ const InternationalExhibition = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9 }}
-              className="grid items-center gap-16 lg:grid-cols-2"
+              className="grid items-center gap-16 lg:grid-cols-2 "
             >
               <Image
                 src="/internation-image/BEXIMCOPHARMA.jpg"
                 alt="Pan India Exhibition Services"
                 width={400}
                 height={400}
-                className="rounded-sm w-full object-cover h-75"
+                className="rounded-sm w-full object-cover h-125"
               />
 
               <div className="max-w-xl">
@@ -538,7 +538,7 @@ const InternationalExhibition = () => {
 
       {/* ================= ADDITIONAL INFO ================= */}
       <section className="py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-6 text-center space-y-16">
+        <div className="mx-auto max-w-7xl px-6 text-center space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -546,23 +546,13 @@ const InternationalExhibition = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
-              Domestic Exhibition Stall Designing Services
+              International Exhibition Stall Designing Services 
             </h2>
             <p className="text-black leading-relaxed mb-6">
-              At Strides Design Studio, we specialize in domestic exhibition
-              stall design, helping businesses across India create impactful and
-              memorable trade show experiences. From Delhi and Mumbai to
-              Bangalore, Hyderabad, and beyond, our expert team delivers custom
-              exhibition stall designs that reflect your brand identity, engage
-              visitors, and maximize ROI.
+             At Strides Design Studio, we specialize in international exhibition stall design, helping businesses create impactful and memorable trade show experiences across the globe. From Dubai and Singapore to London, New York, Frankfurt, and beyond, our expert team delivers custom exhibition stall designs that reflect your brand identity, engage visitors, and maximize ROI.
             </p>
             <p className="text-black leading-relaxed">
-              Our approach combines creativity, functionality, and end-to-end
-              solutions. From concept development and 3D visualization to
-              fabrication, installation, and on-site support, our domestic
-              exhibition stall designs are tailored to meet your objectives,
-              budget, and multi-city exhibition needs, ensuring your brand makes
-              a lasting impression.
+              Our approach combines creativity, functionality, and end-to-end solutions. From concept development and 3D visualization to fabrication, installation, and on-site support, our international exhibition stall designs are tailored to meet your objectives, budget, and multi-city global exhibition needs, ensuring your brand leaves a lasting impression worldwide.
             </p>
           </motion.div>
 
@@ -574,14 +564,10 @@ const InternationalExhibition = () => {
             className="bg-[#039C98]/5 p-10 rounded-lg border border-[#039C98]/20"
           >
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
-              Transform Your Trade Show Presence with Strides Design Studio
+             Transform Your Global Trade Show Presence with Strides Design Studio
             </h2>
             <p className="text-black leading-relaxed mb-8">
-              Take your brand to the next level with a custom domestic
-              exhibition stall design from Strides Design Studio. Our expert
-              team creates exhibition stall designs that captivate visitors,
-              showcase your products, and leave a lasting impression at trade
-              shows, expos, and corporate events across India.
+             Take your brand to the next level with a custom <strong>exhibition stall design.</strong> Our expert team creates exhibition stall designs that captivate visitors, showcase your products, and leave a lasting impression at international trade shows, expos, and corporate events.
             </p>
 
             <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 text-lg font-medium text-black">

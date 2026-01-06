@@ -308,6 +308,11 @@ const AboutPage = () => {
                 desc: "With over 25 years of experience, we ensure professional execution, timely delivery, and exceptional quality.",
                 icon: <Users className="w-8 h-8 text-white" />,
               },
+              {
+                title: "Quality Assurance",
+                desc: "We maintain strict quality control at every stage, using premium materials to ensure a flawless finish for your stall.",
+                icon: <CheckCircle className="w-8 h-8 text-white" />,
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}

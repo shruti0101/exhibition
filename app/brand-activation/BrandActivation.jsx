@@ -97,15 +97,15 @@ const BrandActivation = () => {
         transition={{ duration: 0.9 }}
         className="py-12"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-black">
             Brand Activation – Strides Design Studio
           </h2>
 
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
             At Strides Design Studio, we specialize in brand activation and brand activation services that help businesses create memorable, engaging experiences for their target audience. From product launches, roadshows, and experiential marketing campaigns to in-store activations and promotional events, we design strategies that amplify your brand visibility and foster meaningful customer engagement.
           </p>
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
             Our expert team works across India and internationally, delivering end-to-end solutions that reflect your brand identity, engage your audience, and drive measurable results.
           </p>
         </div>
@@ -315,7 +315,7 @@ const BrandActivation = () => {
                 alt="Brand Activation Services"
                 width={400}
                 height={400}
-                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[300px]"
+                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[500px]"
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
@@ -464,7 +464,7 @@ const BrandActivation = () => {
 
       {/* ================= ADDITIONAL INFO ================= */}
       <section className="py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-6 text-center space-y-16">
+        <div className="mx-auto max-w-7xl px-6 text-center space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -474,10 +474,10 @@ const BrandActivation = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
               Brand Activation Services
             </h2>
-            <p className="text-black leading-relaxed mb-6">
+            <p className="text-black leading-relaxed mb-6 text-justify">
               At Strides Design Studio, we specialize in brand activation, helping businesses across India and internationally create impactful, engaging, and memorable experiences. From product launches and experiential marketing campaigns to roadshows, retail activations, and promotional events, our expert team delivers tailored brand activation services that reflect your brand identity, captivate your audience, and maximize engagement.
             </p>
-            <p className="text-black leading-relaxed">
+            <p className="text-black leading-relaxed text-justify">
               Our approach combines creativity, strategy, and end-to-end solutions. From concept development and campaign design to on-ground execution, staffing, and post-event analysis, our brand activation services are designed to meet your objectives, budget, and multi-city campaign needs—ensuring your brand leaves a lasting impression.
             </p>
           </motion.div>

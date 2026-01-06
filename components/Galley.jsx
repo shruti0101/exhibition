@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ZoomIn, Link2 } from "lucide-react";
+import Link from "next/link";
 
 const galleryItems = [
   {
@@ -50,7 +51,7 @@ const galleryItems = [
 
 export default function GallerySection() {
   return (
-    <section className="bg-white py-9">
+    <section className="bg-white pt-6">
       <div className="mx-auto w-full">
         <div className="mb-14 flex items-center justify-center gap-6">
           <span className="h-[2px] w-20 bg-[#039C98]" />
@@ -86,9 +87,9 @@ export default function GallerySection() {
                   {/* <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800">
                     <ZoomIn size={18} />
                   </div> */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800">
+                  <Link href="/domestic-portfolio"  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800">
                     <Link2 size={18} />
-                  </div>
+                  </Link>
                 </div>
 
                 {/* TEXT */}

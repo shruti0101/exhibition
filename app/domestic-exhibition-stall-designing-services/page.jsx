@@ -90,7 +90,7 @@ export default function Page() {
               className="mx-auto mb-6 h-[3px] bg-[#039C98] rounded-full"
             />
 
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+            <h1 className="pt-10 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
               Domestic Exhibition Stall Designing Services
             </h1>
           </motion.div>
@@ -105,12 +105,12 @@ export default function Page() {
         transition={{ duration: 0.9 }}
         className="py-12"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-black">
             Domestic Exhibition Stall Designing Services - Strides Design Studio
           </h2>
 
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
             Strides Design Studio presents its domestic exhibition stall design
             services all over India including <strong>Delhi</strong>,{" "}
             <strong>Mumbai</strong>, <strong>Bangalore</strong>,{" "}
@@ -119,7 +119,7 @@ export default function Page() {
             identity, helps attract the right visitors, and gives trade shows,
             expos, and corporate events with a strong impact.
           </p>
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
             Our methodology is based on creativity, usability and industry
             know-how to get the amazing and the attractive, and the exhibition
             stall designs. We are there from the very beginning with concept
@@ -275,7 +275,7 @@ export default function Page() {
                   Our Capabilities
                 </h2>
 
-                <p className="mb-6 font-serif text-3xl md:text-4xl text-black">
+                <p className="mb-2 font-serif text-3xl md:text-4xl text-black">
                   End-to-End Domestic Exhibition Stall Design Solutions
                 </p>
 
@@ -335,11 +335,11 @@ export default function Page() {
               className="grid items-center gap-16 lg:grid-cols-2"
             >
               <Image
-                src="/domestic-image/KLMLABORATORIESPVT.LTD..jpg"
+                src="/domestic-image/PARACOAT.jpg"
                 alt="Pan India Exhibition Services"
                 width={400}
                 height={400}
-                className="rounded-sm w-full object-cover h-[300px]"
+                className="rounded-sm w-full object-cover h-125"
               />
 
               <div className="max-w-xl">
@@ -347,7 +347,7 @@ export default function Page() {
                   Pan-India Execution
                 </p>
 
-                <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
+                <h3 className="mb-2 font-serif text-3xl md:text-4xl text-black">
                   Strides Design Studio for Your Domestic Exhibition Stall
                   Design?
                 </h3>
@@ -360,7 +360,7 @@ export default function Page() {
                   experiences
                 </p>
 
-                <ul className="space-y-3 text-black">
+                <ul className="space-y-2 text-black">
                   <li>
                     <strong>• Custom & Brand-Aligned Designs:</strong> Every
                     exhibition stall design is tailored to reflect your brand
@@ -370,16 +370,6 @@ export default function Page() {
                     <strong>• Creative & Innovative Concepts:</strong> Our team
                     stays ahead of design trends, delivering stalls that
                     captivate visitors and leave a lasting impression.
-                  </li>
-                  <li>
-                    <strong>• End-to-End Solutions:</strong> From concept and 3D
-                    visualization to fabrication, installation, and on-site
-                    support, we handle your exhibition stall design seamlessly.
-                  </li>
-                  <li>
-                    <strong>• Budget-Friendly & Efficient:</strong> We optimize
-                    costs without compromising on quality, ensuring high-impact
-                    exhibition stall designs within your budget.
                   </li>
                   <li>
                     <strong>• Multi-City & Portable Options:</strong> Flexible
@@ -843,8 +833,8 @@ export default function Page() {
       </section>
 
       {/* ================= ADDITIONAL INFO ================= */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-6 text-center space-y-16">
+      <section className="pb-16 bg-white">
+        <div className="mx-auto max-w-7xl px-6 text-center space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -854,7 +844,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
               Domestic Exhibition Stall Designing Services
             </h2>
-            <p className="text-black leading-relaxed mb-6">
+            <p className="text-black leading-relaxed mb-6 text-justify">
               At Strides Design Studio, we specialize in domestic exhibition
               stall design, helping businesses across India create impactful and
               memorable trade show experiences. From Delhi and Mumbai to
@@ -862,7 +852,7 @@ export default function Page() {
               exhibition stall designs that reflect your brand identity, engage
               visitors, and maximize ROI.
             </p>
-            <p className="text-black leading-relaxed">
+            <p className="text-black leading-relaxed text-justify">
               Our approach combines creativity, functionality, and end-to-end
               solutions. From concept development and 3D visualization to
               fabrication, installation, and on-site support, our domestic

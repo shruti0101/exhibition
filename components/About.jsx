@@ -8,6 +8,7 @@ import { Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
 import Cta from "@/components/Cta";
 import "swiper/css";
+import Link from "next/link";
 
 const About = () => {
   const locations = [
@@ -396,10 +397,10 @@ const About = () => {
 
         {/* CTA */}
         <div className="mt-14 flex justify-center">
-          <button className="group relative inline-flex items-center gap-3 rounded-full border-2 border-[#039C98] px-8 py-3 text-sm font-medium uppercase tracking-wide text-[#039C98] transition-all duration-300 hover:bg-[#039C98] hover:text-white">
+          <Link href="/domestic-portfolio" className="group relative inline-flex items-center gap-3 rounded-full border-2 border-[#039C98] px-8 py-3 text-sm font-medium uppercase tracking-wide text-[#039C98] transition-all duration-300 hover:bg-[#039C98] hover:text-white">
             View All Projects
             <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -476,7 +477,7 @@ const About = () => {
           </motion.div>
 
           <div className="w-full lg:w-1/2">
-            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-red-500">Empaneled Design Partner</p>
+            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-red-500">Empaneled Design & Fabrication Partner</p>
             <div className="grid  grid-cols-1 gap-8 items-center md:grid-cols-3">
               <Image
                 src="/home-client/acma.png"
@@ -539,7 +540,7 @@ const About = () => {
             {[1, 2].map((index) => (
               <Image
                 key={index}
-                src={"/home-client/stripe.png"}
+                src={"/Stride.png"}
                 width={1000}
                 height={1000}
                 alt="Clients Banner"

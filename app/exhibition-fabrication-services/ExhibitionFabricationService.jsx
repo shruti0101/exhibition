@@ -97,18 +97,18 @@ const ExhibitionFabricationService = () => {
         transition={{ duration: 0.9 }}
         className="py-12"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-black">
             Exhibition Fabrication Services – Strides Design Studio
           </h2>
 
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed">
             Strides Design Studio offers professional exhibition fabrication services for trade shows, expos, corporate events, and international exhibitions. We specialize in transforming your approved stall designs into high-quality, durable, and visually impactful exhibition stalls that reflect your brand identity and engage visitors.
           </p>
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed">
             Our team works across India and internationally, ensuring flawless execution—from concept approval to installation and post-event support. With our exhibition stall design, your stall will not only stand out visually but also be functional, reusable, and designed to maximize ROI.
           </p>
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed">
             We combine creativity, technical expertise, and premium materials to deliver exhibition structures that leave a lasting impression on your audience.
           </p>
         </div>
@@ -298,17 +298,7 @@ const ExhibitionFabricationService = () => {
                     <strong>• Modular & Portable Fabrication:</strong>{" "}
                     Create reusable stalls suitable for multiple venues and events.
                   </li>
-                  <li>
-                    <strong>• Custom Booths & Counters:</strong> Fabrication of counters, display units, kiosks, and other elements.
-                  </li>
-                  <li>
-                    <strong>• Lighting & Electrical Integration:</strong>
-                    Install exhibition-grade lighting, wiring, and technology seamlessly.
-                  </li>
-                  <li>
-                    <strong>• Two-Storey & Themed Structures:</strong>
-                    Fabrication for multi-level stalls, country pavilions, or thematic setups.
-                  </li>
+                 
                   <li>
                     <strong>• Quality Inspection:</strong>
                     Rigorous checks for design accuracy, structural integrity, and brand alignment.
@@ -329,7 +319,7 @@ const ExhibitionFabricationService = () => {
                 alt="Exhibition Fabrication"
                 width={400}
                 height={400}
-                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[300px]"
+                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[400px]"
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
@@ -352,7 +342,7 @@ const ExhibitionFabricationService = () => {
                 alt="Exhibition Fabrication Services"
                 width={400}
                 height={400}
-                className="rounded-sm w-full object-cover h-75"
+                className="rounded-sm w-full object-cover h-125"
               />
 
               <div className="max-w-xl">
@@ -538,7 +528,7 @@ const ExhibitionFabricationService = () => {
 
       {/* ================= ADDITIONAL INFO ================= */}
       <section className="py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-6 text-center space-y-16">
+        <div className="mx-auto max-w-7xl px-6 text-center space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -548,10 +538,10 @@ const ExhibitionFabricationService = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
               Exhibition Fabrication Services
             </h2>
-            <p className="text-black leading-relaxed mb-6">
+            <p className="text-black leading-relaxed mb-6 text-justify">
               At Strides Design Studio, we specialize in exhibition fabrication services, helping businesses across India and internationally bring their stall designs to life with precision, quality, and impact. From Delhi and Mumbai to Bangalore, Hyderabad, and major global exhibition hubs, our skilled team delivers custom-fabricated stalls that reflect your brand identity, engage visitors, and enhance your trade show presence.
             </p>
-            <p className="text-black leading-relaxed">
+            <p className="text-black leading-relaxed text-justify">
               Our approach combines craftsmanship, functionality, and end-to-end solutions. From material selection and production to installation, branding integration, and on-site support, our exhibition fabrication services are tailored to meet your objectives, budget, and multi-city exhibition needs, ensuring your brand makes a strong and lasting impression.
             </p>
           </motion.div>

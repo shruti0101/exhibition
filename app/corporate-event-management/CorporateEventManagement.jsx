@@ -28,8 +28,7 @@ const CorporateEventManagement = () => {
         "We manage conferences, seminars, product launches, award ceremonies, team-building events, gala dinners, corporate celebrations, and international corporate events—fully customized to your requirements.",
     },
     {
-      question:
-        "Do you provide event concept and theme development?",
+      question: "Do you provide event concept and theme development?",
       answer:
         "Yes. Our corporate event planning services include innovative concept creation, theme design, and layout planning to ensure every event is unique, memorable, and aligned with your brand.",
     },
@@ -97,16 +96,25 @@ const CorporateEventManagement = () => {
         transition={{ duration: 0.9 }}
         className="py-12"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-black">
             Corporate Event Management – Strides Design Studio
           </h2>
 
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
-            At Strides Design Studio, we specialize in corporate event management, helping businesses plan and execute seamless, memorable, and impactful events. From conferences, product launches, and award ceremonies to team-building events, gala dinners, and corporate celebrations, we handle every aspect of event planning and execution with professionalism and creativity.
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
+            At Strides Design Studio, we specialize in corporate event
+            management, helping businesses plan and execute seamless, memorable,
+            and impactful events. From conferences, product launches, and award
+            ceremonies to team-building events, gala dinners, and corporate
+            celebrations, we handle every aspect of event planning and execution
+            with professionalism and creativity.
           </p>
-          <p className="mt-8 text-lg text-black max-w-5xl mx-auto leading-relaxed">
-            Our expert team works across India and internationally, ensuring every corporate event reflects your brand identity, engages your audience, and delivers measurable results. From conceptualization and venue selection to on-site management and post-event analysis, our end-to-end solutions guarantee a flawless experience.
+          <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
+            Our expert team works across India and internationally, ensuring
+            every corporate event reflects your brand identity, engages your
+            audience, and delivers measurable results. From conceptualization
+            and venue selection to on-site management and post-event analysis,
+            our end-to-end solutions guarantee a flawless experience.
           </p>
         </div>
       </motion.section>
@@ -140,10 +148,22 @@ const CorporateEventManagement = () => {
               </h3>
 
               <p className="text-black leading-7 text-justify">
-                At <strong>Strides Design Studio</strong>, we specialize in corporate event management and corporate event planning services, helping businesses plan, organize, and execute events that leave a lasting impression. From conferences and product launches to award ceremonies, team-building programs, and corporate celebrations, our services are designed to reflect your brand identity, engage your audience, and achieve your business objectives.
+                At <strong>Strides Design Studio</strong>, we specialize in
+                corporate event management and corporate event planning
+                services, helping businesses plan, organize, and execute events
+                that leave a lasting impression. From conferences and product
+                launches to award ceremonies, team-building programs, and
+                corporate celebrations, our services are designed to reflect
+                your brand identity, engage your audience, and achieve your
+                business objectives.
               </p>
               <p className="text-black leading-7 text-justify">
-                Every event we manage combines creativity, precision, and seamless execution to ensure a professional, impactful, and memorable experience for all attendees. Our corporate event planning services cover everything from conceptualization and logistics to on-site management and post-event analysis, delivering results that exceed expectations.
+                Every event we manage combines creativity, precision, and
+                seamless execution to ensure a professional, impactful, and
+                memorable experience for all attendees. Our corporate event
+                planning services cover everything from conceptualization and
+                logistics to on-site management and post-event analysis,
+                delivering results that exceed expectations.
               </p>
             </div>
           </motion.div>
@@ -164,10 +184,18 @@ const CorporateEventManagement = () => {
                 Plan Your Next Corporate Event Today!
               </h3>
               <p className="text-black leading-7">
-                Take your business events to the next level with professional corporate event management and corporate event planning services from Strides Design Studio. Whether it’s a conference, product launch, award ceremony, or team-building program, we create events that captivate your audience, strengthen your brand, and leave a lasting impression.
+                Take your business events to the next level with professional
+                corporate event management and corporate event planning services
+                from Strides Design Studio. Whether it’s a conference, product
+                launch, award ceremony, or team-building program, we create
+                events that captivate your audience, strengthen your brand, and
+                leave a lasting impression.
               </p>
               <p className="text-black leading-7 mt-4">
-                Why Choose Us? Our team delivers corporate event management and corporate event planning services that are creative, professional, and tailored to your brand, ensuring every event is seamless, impactful, and memorable.
+                Why Choose Us? Our team delivers corporate event management and
+                corporate event planning services that are creative,
+                professional, and tailored to your brand, ensuring every event
+                is seamless, impactful, and memorable.
               </p>
             </div>
             <div className="bg-white p-6 md:p-8 shadow-sm border border-gray-200 rounded-sm">
@@ -285,26 +313,33 @@ const CorporateEventManagement = () => {
                 <ul className="space-y-3 text-black">
                   <li>
                     <strong>• Event Concept & Theme Development:</strong>{" "}
-                    Crafting creative and innovative event concepts tailored to your brand and objectives.
+                    Crafting creative and innovative event concepts tailored to
+                    your brand and objectives.
                   </li>
                   <li>
                     <strong>• Venue Selection & Logistics Management:</strong>{" "}
-                    Finding the perfect venue and managing all logistics to ensure a seamless event experience.
+                    Finding the perfect venue and managing all logistics to
+                    ensure a seamless event experience.
                   </li>
                   <li>
-                    <strong>• Audio-Visual & Stage Setup:</strong>{" "}
-                    High-quality lighting, sound systems, and stage design to captivate your audience.
+                    <strong>• Audio-Visual & Stage Setup:</strong> High-quality
+                    lighting, sound systems, and stage design to captivate your
+                    audience.
                   </li>
                   <li>
-                    <strong>• Guest Management & Invitations:</strong> Coordinating invites, RSVPs, seating arrangements, and overall guest experience.
+                    <strong>• Guest Management & Invitations:</strong>{" "}
+                    Coordinating invites, RSVPs, seating arrangements, and
+                    overall guest experience.
                   </li>
                   <li>
                     <strong>• Vendor Coordination & On-Site Execution:</strong>
-                    Managing catering, decor, technical support, and third-party vendors for flawless event delivery.
+                    Managing catering, decor, technical support, and third-party
+                    vendors for flawless event delivery.
                   </li>
                   <li>
                     <strong>• Compliance & Safety Management:</strong>
-                    Ensuring all events meet local regulations, safety standards, and corporate guidelines.
+                    Ensuring all events meet local regulations, safety
+                    standards, and corporate guidelines.
                   </li>
                 </ul>
               </div>
@@ -314,11 +349,14 @@ const CorporateEventManagement = () => {
                 alt="Corporate Event Management"
                 width={400}
                 height={400}
-                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[300px]"
+                className="order-1 lg:order-2 w-full object-cover rounded-sm h-[440px]"
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
-              With Strides Design Studio, your corporate event is handled end-to-end—from concept and planning to execution and post-event follow-up—delivering a memorable and impactful experience that engages attendees and strengthens your brand.
+              With Strides Design Studio, your corporate event is handled
+              end-to-end—from concept and planning to execution and post-event
+              follow-up—delivering a memorable and impactful experience that
+              engages attendees and strengthens your brand.
             </p>
           </div>
 
@@ -337,7 +375,7 @@ const CorporateEventManagement = () => {
                 alt="Corporate Event Management"
                 width={400}
                 height={400}
-                className="rounded-sm w-full object-cover h-75"
+                className="rounded-sm w-full object-cover h-125"
               />
 
               <div className="max-w-xl">
@@ -346,39 +384,56 @@ const CorporateEventManagement = () => {
                 </p>
 
                 <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
-                  Why Choose Strides Design Studio for Your Corporate Event Management?
+                  Why Choose Strides Design Studio for Your Corporate Event
+                  Management?
                 </h3>
 
                 <p className="text-black leading-7">
-                  At Strides Design Studio, we specialize in delivering corporate event management and corporate event planning services that combine creativity, precision, and impact. Our clients choose us because we go beyond standard event organization to create memorable, engaging, and professional corporate experiences.
+                  At Strides Design Studio, we specialize in delivering
+                  corporate event management and corporate event planning
+                  services that combine creativity, precision, and impact. Our
+                  clients choose us because we go beyond standard event
+                  organization to create memorable, engaging, and professional
+                  corporate experiences.
                 </p>
 
                 <ul className="space-y-3 text-black">
                   <li>
-                    <strong>• Custom & Brand-Aligned Events:</strong> Every corporate event is tailored to reflect your brand identity and meet your business objectives.
+                    <strong>• Custom & Brand-Aligned Events:</strong> Every
+                    corporate event is tailored to reflect your brand identity
+                    and meet your business objectives.
                   </li>
                   <li>
-                    <strong>• Creative & Innovative Concepts:</strong>{" "}
-                    Our team designs unique event concepts that captivate attendees and leave a lasting impression.
+                    <strong>• Creative & Innovative Concepts:</strong> Our team
+                    designs unique event concepts that captivate attendees and
+                    leave a lasting impression.
                   </li>
                   <li>
-                    <strong>• End-to-End Solutions:</strong> From concept and planning to execution, on-site management, and post-event reporting, we handle every aspect seamlessly.
+                    <strong>• End-to-End Solutions:</strong> From concept and
+                    planning to execution, on-site management, and post-event
+                    reporting, we handle every aspect seamlessly.
+                  </li>
+
+                  <li>
+                    <strong>• Multi-City & International Options:</strong>{" "}
+                    Flexible corporate event solutions suitable for domestic and
+                    international venues, allowing scalability and easy
+                    coordination.
                   </li>
                   <li>
-                    <strong>• Budget-Friendly & Efficient:</strong> We optimize costs without compromising on quality, delivering high-impact events within your budget.
-                  </li>
-                  <li>
-                    <strong>• Multi-City & International Options:</strong> Flexible corporate event solutions suitable for domestic and international venues, allowing scalability and easy coordination.
-                  </li>
-                  <li>
-                    <strong>• Professional Project Management:</strong> Timely delivery, meticulous attention to detail, and flawless execution for every corporate event project.
+                    <strong>• Professional Project Management:</strong> Timely
+                    delivery, meticulous attention to detail, and flawless
+                    execution for every corporate event project.
                   </li>
                 </ul>
               </div>
             </motion.div>
 
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
-              Partner with Strides Design Studio to elevate your corporate events with expert corporate event management and corporate event planning services that engage audiences, strengthen your brand, and create lasting memories.
+              Partner with Strides Design Studio to elevate your corporate
+              events with expert corporate event management and corporate event
+              planning services that engage audiences, strengthen your brand,
+              and create lasting memories.
             </p>
           </div>
         </div>
@@ -400,7 +455,9 @@ const CorporateEventManagement = () => {
               Our Workflow – Corporate Event Management Process
             </h2>
             <p className="text-black max-w-4xl mx-auto leading-relaxed">
-              At Strides Design Studio, we follow a structured workflow to ensure every corporate event management project is delivered on time, exceeds expectations, and perfectly represents your brand.
+              At Strides Design Studio, we follow a structured workflow to
+              ensure every corporate event management project is delivered on
+              time, exceeds expectations, and perfectly represents your brand.
             </p>
           </motion.div>
 
@@ -523,7 +580,7 @@ const CorporateEventManagement = () => {
 
       {/* ================= ADDITIONAL INFO ================= */}
       <section className="py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-6 text-center space-y-16">
+        <div className="mx-auto max-w-7xl px-6 text-center space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -533,11 +590,22 @@ const CorporateEventManagement = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
               Corporate Event Management Services
             </h2>
-            <p className="text-black leading-relaxed mb-6">
-              At Strides Design Studio, we specialize in corporate event management, helping businesses across India and internationally plan and execute impactful, memorable, and engaging corporate events. From Delhi and Mumbai to Bangalore, Hyderabad, and major global business hubs, our expert team delivers tailored corporate event planning services that reflect your brand identity, captivate your audience, and achieve measurable results.
+            <p className="text-black leading-relaxed mb-6 text-justify">
+              At Strides Design Studio, we specialize in corporate event
+              management, helping businesses across India and internationally
+              plan and execute impactful, memorable, and engaging corporate
+              events. From Delhi and Mumbai to Bangalore, Hyderabad, and major
+              global business hubs, our expert team delivers tailored corporate
+              event planning services that reflect your brand identity,
+              captivate your audience, and achieve measurable results.
             </p>
-            <p className="text-black leading-relaxed">
-              Our approach combines creativity, precision, and end-to-end solutions. From event concept development and theme design to logistics, execution, and post-event analysis, our corporate event management services are designed to meet your objectives, budget, and multi-city requirements—ensuring every event leaves a lasting impression.
+            <p className="text-black leading-relaxed text-justify">
+              Our approach combines creativity, precision, and end-to-end
+              solutions. From event concept development and theme design to
+              logistics, execution, and post-event analysis, our corporate event
+              management services are designed to meet your objectives, budget,
+              and multi-city requirements—ensuring every event leaves a lasting
+              impression.
             </p>
           </motion.div>
 
@@ -552,7 +620,13 @@ const CorporateEventManagement = () => {
               Transform Your Corporate Events with Strides Design Studio
             </h2>
             <p className="text-black leading-relaxed mb-8">
-              Take your business events to the next level with professional corporate event management and corporate event planning services from Strides Design Studio. Our expert team plans and executes corporate events that engage audiences, showcase your brand, and leave a lasting impression—whether it’s a conference, product launch, award ceremony, team-building program, or corporate celebration across India and internationally.
+              Take your business events to the next level with professional
+              corporate event management and corporate event planning services
+              from Strides Design Studio. Our expert team plans and executes
+              corporate events that engage audiences, showcase your brand, and
+              leave a lasting impression—whether it’s a conference, product
+              launch, award ceremony, team-building program, or corporate
+              celebration across India and internationally.
             </p>
 
             <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 text-lg font-medium text-black">
@@ -576,7 +650,4 @@ const CorporateEventManagement = () => {
   );
 };
 
-
-
-
-export default CorporateEventManagement
+export default CorporateEventManagement;
