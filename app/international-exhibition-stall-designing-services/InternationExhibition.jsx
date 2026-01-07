@@ -34,7 +34,7 @@ const InternationalExhibition = () => {
     setLoading(true);
     try {
       const res = await createContactForm(formData);
-      console.log(res,"res");
+      console.log(res, "res");
       if (res?.success) {
         setFormData({
           name: "",
@@ -191,14 +191,14 @@ const InternationalExhibition = () => {
                 Expert International Exhibition Stall Design Process
               </h3>
 
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 At <strong>Strides Design Studio</strong>, we specialize in
                 creating and fabricating custom exhibition stall designs for
                 international trade fairs, expos, and corporate events. Each
                 stall is designed to reflect your brand identity, optimize
                 space, and maximize visitor engagement.
               </p>
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 Our International Exhibition Stall Design Process ensures every
                 design combines innovation, functionality, and professionalism,
                 giving your brand a global impact.
@@ -221,7 +221,7 @@ const InternationalExhibition = () => {
               <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
                 Get Your Custom Exhibition Stall Design Today!
               </h3>
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 Take your brand to the next level at international trade shows
                 with a bespoke exhibition stall design. Our stalls captivate
                 audiences, encourage engagement, and create memorable brand
@@ -405,7 +405,7 @@ const InternationalExhibition = () => {
                   Strides Design Studio for Your Exhibition Stall Design?
                 </h3>
 
-                <p className="text-black leading-7">
+                <p className="text-black leading-7 text-justify">
                   At Strides Design Studio, we specialize in delivering Domestic
                   Exhibition Stall Design that combine creativity,
                   functionality, and impact. Our clients choose us because we go

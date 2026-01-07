@@ -147,7 +147,7 @@ const GraphicDesign = () => {
                 Expert Product Launch Services
               </h3>
 
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 At <strong>Strides Design Studio</strong>, we specialize in
                 planning and executing end-to-end product launch events and
                 product launch services for businesses across India. From
@@ -156,7 +156,7 @@ const GraphicDesign = () => {
                 activations, our services are designed to ensure your product
                 makes a strong market entry.
               </p>
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 Every product launch campaign we deliver combines creativity,
                 strategy, and meticulous execution to ensure your product
                 attracts attention, engages your target audience, and generates
@@ -180,14 +180,14 @@ const GraphicDesign = () => {
               <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
                 Launch Your Product with Strides Design Studio Today!
               </h3>
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 Take your product to the next level with professional product
                 launch and product launch services from Strides Design Studio.
                 Whether it’s a market introduction, experiential launch event,
                 roadshow, or retail activation, we create campaigns that attract
                 attention, engage your audience, and leave a lasting impression.
               </p>
-              <p className="text-black leading-7 mt-4">
+              <p className="text-black leading-7 text-justify mt-4">
                 Why Choose Us? Our team delivers product launch services that
                 are creative, strategic, and tailored to your brand, ensuring
                 every launch generates excitement, engagement, and measurable
@@ -383,7 +383,7 @@ const GraphicDesign = () => {
                   Why Choose Strides Design Studio for Your Product Launch?
                 </h3>
 
-                <p className="text-black leading-7">
+                <p className="text-black leading-7 text-justify">
                   At Strides Design Studio, we specialize in delivering product
                   launch services that combine creativity, strategy, and
                   measurable impact. Our clients choose us because we go beyond
@@ -644,6 +644,4 @@ const GraphicDesign = () => {
   );
 };
 
-
-
-export default GraphicDesign
+export default GraphicDesign;

@@ -31,8 +31,9 @@ export default function Navbar() {
               <Image
                 src="/logo1.png"
                 alt="Logo"
-                width={135}
-                height={60}
+                width={145}
+                height={70}
+
                 priority
               />
             </Link>
@@ -41,8 +42,8 @@ export default function Navbar() {
               <Image
                 src="/logo2.png"
                 alt="Logo"
-                width={110}
-                height={60}
+                width={90}
+                height={40}
                 priority
               />
             </Link>

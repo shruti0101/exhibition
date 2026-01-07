@@ -204,7 +204,7 @@ export default function Page() {
                 Expert Domestic Exhibition Stall Design
               </h3>
 
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 At Strides Design Studio, we specialize in creating and
                 fabricating custom <strong>exhibition stall designs</strong> for
                 domestic trade fairs, expos, and corporate events across India.
@@ -232,7 +232,7 @@ export default function Page() {
               <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
                 Get Your Custom Exhibition Stall Design Today!
               </h3>
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 Take your brand to the next level with a bespoke exhibition
                 stall design from Strides Design Studio. Whether it’s a domestic
                 trade fair, expo, or corporate event, we create stalls that
@@ -416,7 +416,7 @@ export default function Page() {
                   Design?
                 </h3>
 
-                <p className="text-black leading-7">
+                <p className="text-black leading-7 text-justify ">
                   At Strides Design Studio, we specialize in delivering Domestic
                   Exhibition Stall Design that combine creativity,
                   functionality, and impact. Our clients choose us because we go
@@ -474,7 +474,7 @@ export default function Page() {
                 Trusted Partner for Domestic Exhibitions
               </h3>
 
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 Our domestic exhibition stall designing services are trusted by
                 brands for their reliability, cost efficiency, and consistent
                 quality. We focus on long-term partnerships and measurable
@@ -508,7 +508,7 @@ export default function Page() {
           className="relative z-10 flex h-full items-center justify-center text-center px-6"
         >
           <div>
-            <h2 className="font-serif text-4xl md:text-5xl text-white">
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-5">
               Let’s Design Your Next Exhibition Stall
             </h2>
 
@@ -537,7 +537,7 @@ export default function Page() {
                 About Strides Design
               </h2>
 
-              <p className="mt-6 text-black leading-8">
+              <p className="mt-6 text-black leading-8 text-justify">
                 Strides Design is a trusted name in{" "}
                 <strong className="text-[#039C98]">
                   Domestic / International Exhibition Stall Designing Services
@@ -551,7 +551,7 @@ export default function Page() {
                 attract, engage, and convert.
               </p>
 
-              <p className="mt-4 text-black leading-8">
+              <p className="mt-4 text-black leading-8 text-justify">
                 Established in 2004, our approach is driven by creativity,
                 technical expertise, and transparent execution—ensuring
                 world-class exhibition stalls tailored for the Indian market.
@@ -652,7 +652,9 @@ export default function Page() {
                     {item.title}
                   </h4>
 
-                  <p className="mt-2 text-black leading-7">{item.desc}</p>
+                  <p className="mt-2 text-black leading-7 text-justify">
+                    {item.desc}
+                  </p>
                 </motion.div>
               ))}
             </div>

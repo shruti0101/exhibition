@@ -194,14 +194,14 @@ const ExhibitionFabricationService = () => {
                 Expert Exhibition Fabrication
               </h3>
 
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 At <strong>Strides Design Studio</strong>, we provide complete
                 exhibition fabrication services, converting your approved
                 exhibition stall designs into tangible, high-quality structures.
                 Every element—from walls and counters to lighting, displays, and
                 graphics—is fabricated with precision and attention to detail.
               </p>
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 With Strides Design Studio, your exhibition fabrication services
                 are end-to-end, ensuring your stall is visually impressive,
                 structurally sound, and optimized for visitor engagement.
@@ -224,14 +224,14 @@ const ExhibitionFabricationService = () => {
               <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
                 Get Your Custom Exhibition Fabrication Services Today!
               </h3>
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 Take your brand to the next level with a bespoke exhibition
                 stall design from Strides Design Studio. Whether it’s a domestic
                 trade fair, expo, or corporate event, we create stalls that
                 attract attention, engage visitors, and leave a lasting
                 impression.
               </p>
-              <p className="text-black leading-7 mt-4">
+              <p className="text-black leading-7 text-justify mt-4">
                 Why Choose Us? Our team delivers exhibition stall designs that
                 are creative, functional, and tailored to your brand, ensuring a
                 memorable presence at every event.
@@ -414,7 +414,7 @@ const ExhibitionFabricationService = () => {
                   Fabrication Services?
                 </h3>
 
-                <p className="text-black leading-7">
+                <p className="text-black leading-7 text-justify">
                   At Strides Design Studio, we specialize in delivering
                   Exhibition Fabrication Services that combine precision,
                   durability, and visual impact. Our clients choose us because

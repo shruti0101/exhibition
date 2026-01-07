@@ -9,6 +9,9 @@ const CareerPage = () => {
     email: "",
     phone: "",
     resume: null,
+    location: "",
+    position: "",
+    lastSalary: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -29,11 +32,22 @@ const CareerPage = () => {
     data.append("email", formData.email);
     data.append("phone", formData.phone);
     data.append("resume", formData.resume);
+    data.append("location", formData.location);
+    data.append("position", formData.position);
+    data.append("lastSalary", formData.lastSalary);
 
     try {
       await createCareerForm(data);
       toast.success("Application submitted successfully!");
-      setFormData({ name: "", email: "", phone: "", resume: null });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        resume: null,
+        location: "",
+        position: "",
+        lastSalary: "",
+      });
       e.target.reset(); // Reset file input UI
     } catch (error) {
       console.log(error);
@@ -116,6 +130,63 @@ const CareerPage = () => {
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                 placeholder="+1 (555) 123-4567"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="location"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Current Location
+              </label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                required
+                value={formData.location}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                placeholder="City, Country"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="position"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Position Applied For
+              </label>
+              <input
+                type="text"
+                id="position"
+                name="position"
+                required
+                value={formData.position}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                placeholder="Software Engineer"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="lastSalary"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Last Salary
+              </label>
+              <input
+                type="text"
+                id="lastSalary"
+                name="lastSalary"
+                required
+                value={formData.lastSalary}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                placeholder="e.g. $50,000"
               />
             </div>
 

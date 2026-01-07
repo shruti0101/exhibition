@@ -12,7 +12,7 @@ import { createContactForm } from "@/service/axiosInstance";
 const CorporateEventManagement = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [loading, setLoading] = useState(false);
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
@@ -191,7 +191,7 @@ const CorporateEventManagement = () => {
                 Expert Corporate Event Management
               </h3>
 
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 At <strong>Strides Design Studio</strong>, we specialize in
                 corporate event management and corporate event planning
                 services, helping businesses plan, organize, and execute events
@@ -201,7 +201,7 @@ const CorporateEventManagement = () => {
                 your brand identity, engage your audience, and achieve your
                 business objectives.
               </p>
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 Every event we manage combines creativity, precision, and
                 seamless execution to ensure a professional, impactful, and
                 memorable experience for all attendees. Our corporate event
@@ -227,7 +227,7 @@ const CorporateEventManagement = () => {
               <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
                 Plan Your Next Corporate Event Today!
               </h3>
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 Take your business events to the next level with professional
                 corporate event management and corporate event planning services
                 from Strides Design Studio. Whether it’s a conference, product
@@ -235,7 +235,7 @@ const CorporateEventManagement = () => {
                 events that captivate your audience, strengthen your brand, and
                 leave a lasting impression.
               </p>
-              <p className="text-black leading-7 mt-4">
+              <p className="text-black leading-7 text-justify mt-4">
                 Why Choose Us? Our team delivers corporate event management and
                 corporate event planning services that are creative,
                 professional, and tailored to your brand, ensuring every event
@@ -422,7 +422,7 @@ const CorporateEventManagement = () => {
                   Management?
                 </h3>
 
-                <p className="text-black leading-7">
+                <p className="text-black leading-7 text-justify">
                   At Strides Design Studio, we specialize in delivering
                   corporate event management and corporate event planning
                   services that combine creativity, precision, and impact. Our

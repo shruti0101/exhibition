@@ -11,48 +11,48 @@ import { createContactForm } from "@/service/axiosInstance";
 
 const ProductLaunch = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-    const [loading, setLoading] = useState(false);
-  
-    function handleChange(e) {
-      const { name, value } = e.target;
-      setFormData((prev) => ({ ...prev, [name]: value }));
+  const [loading, setLoading] = useState(false);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
     }
-    async function handleSubmit(e) {
-      e.preventDefault();
-      const phoneDigits = formData.phone.replace(/\D/g, "");
-      if (phoneDigits.length < 10) {
-        toast.error("Please enter a valid phone number");
-        return;
+
+    setLoading(true);
+    try {
+      const res = await createContactForm(formData);
+      console.log(res, "res");
+      if (res?.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        toast.success(res.message || "thank for contact");
       }
-  
-      setLoading(true);
-      try {
-        const res = await createContactForm(formData);
-        console.log(res,"res");
-        if (res?.success) {
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            message: "",
-          });
-          toast.success(res.message || "thank for contact");
-        }
-      } catch (error) {
-        console.log(error);
-        toast.error(
-          error.message || "something went wrong while send contact details"
-        );
-      } finally {
-        setLoading(false);
-      }
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error.message || "something went wrong while send contact details"
+      );
+    } finally {
+      setLoading(false);
     }
+  }
 
   const faqs = [
     {
@@ -191,7 +191,7 @@ const ProductLaunch = () => {
                 Expert Product Launch Services
               </h3>
 
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 At <strong>Strides Design Studio</strong>, we specialize in
                 planning and executing end-to-end product launch events and
                 product launch services for businesses across India. From
@@ -200,7 +200,7 @@ const ProductLaunch = () => {
                 activations, our services are designed to ensure your product
                 makes a strong market entry.
               </p>
-              <p className="text-black leading-7 text-justify">
+              <p className="text-black leading-7 text-justify text-justify">
                 Every product launch campaign we deliver combines creativity,
                 strategy, and meticulous execution to ensure your product
                 attracts attention, engages your target audience, and generates
@@ -224,14 +224,14 @@ const ProductLaunch = () => {
               <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
                 Launch Your Product with Strides Design Studio Today!
               </h3>
-              <p className="text-black leading-7">
+              <p className="text-black leading-7 text-justify">
                 Take your product to the next level with professional product
                 launch and product launch services from Strides Design Studio.
                 Whether it’s a market introduction, experiential launch event,
                 roadshow, or retail activation, we create campaigns that attract
                 attention, engage your audience, and leave a lasting impression.
               </p>
-              <p className="text-black leading-7 mt-4">
+              <p className="text-black leading-7 text-justify mt-4">
                 Why Choose Us? Our team delivers product launch services that
                 are creative, strategic, and tailored to your brand, ensuring
                 every launch generates excitement, engagement, and measurable
@@ -239,7 +239,7 @@ const ProductLaunch = () => {
               </p>
             </div>
             <div className="bg-white p-6 md:p-8 shadow-sm border border-gray-200 rounded-sm">
-            <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label
                     htmlFor="name"
@@ -417,7 +417,7 @@ const ProductLaunch = () => {
                   Why Choose Strides Design Studio for Your Product Launch?
                 </h3>
 
-                <p className="text-black leading-7">
+                <p className="text-black leading-7 text-justify">
                   At Strides Design Studio, we specialize in delivering product
                   launch services that combine creativity, strategy, and
                   measurable impact. Our clients choose us because we go beyond

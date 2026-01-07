@@ -11,48 +11,48 @@ import { createContactForm } from "@/service/axiosInstance";
 
 const BrandActivation = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-    const [loading, setLoading] = useState(false);
-     const [formData, setFormData] = useState({
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-    
-      function handleChange(e) {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await createContactForm(formData);
+      console.log(res, "res");
+      if (res?.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        toast.success(res.message || "thank for contact");
       }
-      async function handleSubmit(e) {
-        e.preventDefault();
-        const phoneDigits = formData.phone.replace(/\D/g, "");
-        if (phoneDigits.length < 10) {
-          toast.error("Please enter a valid phone number");
-          return;
-        }
-    
-        setLoading(true);
-        try {
-          const res = await createContactForm(formData);
-          console.log(res,"res");
-          if (res?.success) {
-            setFormData({
-              name: "",
-              email: "",
-              phone: "",
-              message: "",
-            });
-            toast.success(res.message || "thank for contact");
-          }
-        } catch (error) {
-          console.log(error);
-          toast.error(
-            error.message || "something went wrong while send contact details"
-          );
-        } finally {
-          setLoading(false);
-        }
-      }
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error.message || "something went wrong while send contact details"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const faqs = [
     {
@@ -61,8 +61,7 @@ const BrandActivation = () => {
         "Brand activation services involve creating immersive, engaging experiences for your target audience, including product launches, experiential marketing campaigns, roadshows, retail activations, and promotional events designed to strengthen brand awareness and engagement.",
     },
     {
-      question:
-        "Why should I invest in brand activation for my brand?",
+      question: "Why should I invest in brand activation for my brand?",
       answer:
         "Professional brand activation ensures your brand stands out, engages the audience effectively, builds emotional connections, and drives measurable marketing results.",
     },
@@ -84,8 +83,7 @@ const BrandActivation = () => {
         "Absolutely. We combine offline activations with online strategies, social media promotions, and digital engagement to maximize reach and ROI.",
     },
     {
-      question:
-        "How can I get started with your brand activation services?",
+      question: "How can I get started with your brand activation services?",
       answer:
         "Contact us at +91-9810119546 or info@stridesdezine.com. Our team will discuss your objectives and create a tailored brand activation services plan to engage your audience and strengthen your brand.",
     },
@@ -147,10 +145,18 @@ const BrandActivation = () => {
           </h2>
 
           <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
-            At Strides Design Studio, we specialize in brand activation and brand activation services that help businesses create memorable, engaging experiences for their target audience. From product launches, roadshows, and experiential marketing campaigns to in-store activations and promotional events, we design strategies that amplify your brand visibility and foster meaningful customer engagement.
+            At Strides Design Studio, we specialize in brand activation and
+            brand activation services that help businesses create memorable,
+            engaging experiences for their target audience. From product
+            launches, roadshows, and experiential marketing campaigns to
+            in-store activations and promotional events, we design strategies
+            that amplify your brand visibility and foster meaningful customer
+            engagement.
           </p>
           <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed text-justify">
-            Our expert team works across India and internationally, delivering end-to-end solutions that reflect your brand identity, engage your audience, and drive measurable results.
+            Our expert team works across India and internationally, delivering
+            end-to-end solutions that reflect your brand identity, engage your
+            audience, and drive measurable results.
           </p>
         </div>
       </motion.section>
@@ -183,11 +189,20 @@ const BrandActivation = () => {
                 Expert Brand Activation Services
               </h3>
 
-              <p className="text-black leading-7 text-justify">
-                At <strong>Strides Design Studio</strong>, we specialize in brand activation and brand activation services, helping businesses create immersive and memorable experiences for their target audience. From product launches, experiential marketing campaigns, and retail activations to roadshows and promotional events, our strategies are designed to amplify brand visibility and engage consumers effectively.
+              <p className="text-black leading-7 text-justify text-justify">
+                At <strong>Strides Design Studio</strong>, we specialize in
+                brand activation and brand activation services, helping
+                businesses create immersive and memorable experiences for their
+                target audience. From product launches, experiential marketing
+                campaigns, and retail activations to roadshows and promotional
+                events, our strategies are designed to amplify brand visibility
+                and engage consumers effectively.
               </p>
-              <p className="text-black leading-7 text-justify">
-                Every brand activation campaign we execute combines creativity, strategic planning, and flawless execution to ensure your brand makes a lasting impression, drives engagement, and achieves measurable results.
+              <p className="text-black leading-7 text-justify text-justify">
+                Every brand activation campaign we execute combines creativity,
+                strategic planning, and flawless execution to ensure your brand
+                makes a lasting impression, drives engagement, and achieves
+                measurable results.
               </p>
             </div>
           </motion.div>
@@ -207,15 +222,23 @@ const BrandActivation = () => {
               <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
                 Launch Your Brand Activation Campaign Today!
               </h3>
-              <p className="text-black leading-7">
-                Take your brand to the next level with professional brand activation and brand activation services from Strides Design Studio. Whether it’s a product launch, experiential marketing campaign, roadshow, or retail activation, we create immersive experiences that captivate your audience, strengthen your brand, and leave a lasting impression.
+              <p className="text-black leading-7 text-justify">
+                Take your brand to the next level with professional brand
+                activation and brand activation services from Strides Design
+                Studio. Whether it’s a product launch, experiential marketing
+                campaign, roadshow, or retail activation, we create immersive
+                experiences that captivate your audience, strengthen your brand,
+                and leave a lasting impression.
               </p>
-              <p className="text-black leading-7 mt-4">
-                Why Choose Us? Our team delivers brand activation services that are creative, impactful, and tailored to your brand identity, ensuring every campaign engages your audience and drives measurable results.
+              <p className="text-black leading-7 text-justify mt-4">
+                Why Choose Us? Our team delivers brand activation services that
+                are creative, impactful, and tailored to your brand identity,
+                ensuring every campaign engages your audience and drives
+                measurable results.
               </p>
             </div>
             <div className="bg-white p-6 md:p-8 shadow-sm border border-gray-200 rounded-sm">
-             <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label
                     htmlFor="name"
@@ -319,27 +342,34 @@ const BrandActivation = () => {
                 <ul className="space-y-3 text-black">
                   <li>
                     <strong>• Campaign Concept & Creative Strategy:</strong>{" "}
-                    Developing innovative and strategic activation concepts tailored to your brand objectives.
+                    Developing innovative and strategic activation concepts
+                    tailored to your brand objectives.
                   </li>
                   <li>
-                    <strong>• Event & Experiential Planning:</strong>{" "}
-                    Planning and organizing product launches, roadshows, retail activations, and experiential marketing campaigns.
+                    <strong>• Event & Experiential Planning:</strong> Planning
+                    and organizing product launches, roadshows, retail
+                    activations, and experiential marketing campaigns.
                   </li>
                   <li>
-                    <strong>• On-Ground Execution & Staffing:</strong>{" "}
-                    Seamless on-site management, including trained staff, logistics, and event coordination for flawless delivery.
+                    <strong>• On-Ground Execution & Staffing:</strong> Seamless
+                    on-site management, including trained staff, logistics, and
+                    event coordination for flawless delivery.
                   </li>
                   <li>
                     <strong>• Audio-Visual & Interactive Experiences:</strong>{" "}
-                    High-quality AV setups, interactive displays, and experiential elements to engage audiences effectively.
+                    High-quality AV setups, interactive displays, and
+                    experiential elements to engage audiences effectively.
                   </li>
                   <li>
                     <strong>• Branding & Visual Merchandising:</strong>
-                    Designing impactful branding materials, signage, and displays to ensure consistent brand visibility.
+                    Designing impactful branding materials, signage, and
+                    displays to ensure consistent brand visibility.
                   </li>
                   <li>
                     <strong>• Multi-City & Scalable Campaigns:</strong>
-                    Flexible brand activation services suitable for multi-city campaigns and large-scale events, ensuring consistent execution.
+                    Flexible brand activation services suitable for multi-city
+                    campaigns and large-scale events, ensuring consistent
+                    execution.
                   </li>
                 </ul>
               </div>
@@ -353,7 +383,10 @@ const BrandActivation = () => {
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
-              With Strides Design Studio, your brand activation campaign is handled end-to-end—from concept and planning to execution and post-event analysis—delivering immersive experiences that strengthen your brand and leave a lasting impression.
+              With Strides Design Studio, your brand activation campaign is
+              handled end-to-end—from concept and planning to execution and
+              post-event analysis—delivering immersive experiences that
+              strengthen your brand and leave a lasting impression.
             </p>
           </div>
         </div>
@@ -375,7 +408,9 @@ const BrandActivation = () => {
               Our Workflow – Brand Activation Process
             </h2>
             <p className="text-black max-w-4xl mx-auto leading-relaxed">
-              At Strides Design Studio, we follow a structured workflow to ensure every brand activation campaign is delivered on time, exceeds expectations, and perfectly represents your brand.
+              At Strides Design Studio, we follow a structured workflow to
+              ensure every brand activation campaign is delivered on time,
+              exceeds expectations, and perfectly represents your brand.
             </p>
           </motion.div>
 
@@ -509,10 +544,21 @@ const BrandActivation = () => {
               Brand Activation Services
             </h2>
             <p className="text-black leading-relaxed mb-6 text-justify">
-              At Strides Design Studio, we specialize in brand activation, helping businesses across India and internationally create impactful, engaging, and memorable experiences. From product launches and experiential marketing campaigns to roadshows, retail activations, and promotional events, our expert team delivers tailored brand activation services that reflect your brand identity, captivate your audience, and maximize engagement.
+              At Strides Design Studio, we specialize in brand activation,
+              helping businesses across India and internationally create
+              impactful, engaging, and memorable experiences. From product
+              launches and experiential marketing campaigns to roadshows, retail
+              activations, and promotional events, our expert team delivers
+              tailored brand activation services that reflect your brand
+              identity, captivate your audience, and maximize engagement.
             </p>
             <p className="text-black leading-relaxed text-justify">
-              Our approach combines creativity, strategy, and end-to-end solutions. From concept development and campaign design to on-ground execution, staffing, and post-event analysis, our brand activation services are designed to meet your objectives, budget, and multi-city campaign needs—ensuring your brand leaves a lasting impression.
+              Our approach combines creativity, strategy, and end-to-end
+              solutions. From concept development and campaign design to
+              on-ground execution, staffing, and post-event analysis, our brand
+              activation services are designed to meet your objectives, budget,
+              and multi-city campaign needs—ensuring your brand leaves a lasting
+              impression.
             </p>
           </motion.div>
 
@@ -527,7 +573,13 @@ const BrandActivation = () => {
               Transform Your Brand Presence with Strides Design Studio
             </h2>
             <p className="text-black leading-relaxed mb-8">
-              Take your marketing campaigns to the next level with professional brand activation and brand activation services from Strides Design Studio. Our expert team creates immersive campaigns that engage your audience, showcase your brand, and leave a lasting impression—whether it’s a product launch, roadshow, retail activation, or experiential marketing campaign across India and internationally.
+              Take your marketing campaigns to the next level with professional
+              brand activation and brand activation services from Strides Design
+              Studio. Our expert team creates immersive campaigns that engage
+              your audience, showcase your brand, and leave a lasting
+              impression—whether it’s a product launch, roadshow, retail
+              activation, or experiential marketing campaign across India and
+              internationally.
             </p>
 
             <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 text-lg font-medium text-black">
@@ -551,6 +603,4 @@ const BrandActivation = () => {
   );
 };
 
-
-
-export default BrandActivation
+export default BrandActivation;

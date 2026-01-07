@@ -113,7 +113,7 @@ const About = () => {
                 className=""
                 width={1000}
                 height={1000}
-                className="object-cover lg:h-full "
+                className="object-cover lg:h-full"
               />
             </motion.div>
 
@@ -252,7 +252,7 @@ const About = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2  gap-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {reasons.map((item, i) => (
               <motion.div
                 key={i}
@@ -294,10 +294,10 @@ const About = () => {
           {/* Heading */}
           <div className="mb-14 flex items-center justify-center gap-6">
             <span className="h-[2px] w-20 bg-[#039C98]" />
-            <h2 className="text-2xl lg:text-4xl font-semibold text-black text-center">
+            <h2 className="text-lg lg:text-4xl font-semibold text-black text-center">
               Our Stand Services Around The World
             </h2>
-            <span className="h-[2px] w-20 bg-[#039C98]" />
+            <span className="h-0.5 w-20 bg-[#039C98]" />
           </div>
 
           {/* Slider */}
@@ -434,7 +434,7 @@ const About = () => {
           >
             <motion.span
               variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="mb-3 text-xs font-semibold tracking-[0.35em] uppercase text-red-500"
+              className="mb-3 text-xs font-semibold tracking-[0.35em] uppercase text-cyan-500"
             >
               Our Clients
             </motion.span>
@@ -451,12 +451,12 @@ const About = () => {
 
             <motion.div
               variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
-              className="mt-5 mb-8 h-0.75 w-10 origin-left rounded-full bg-red-500"
+              className="mt-5 mb-8 h-0.75 w-10 origin-left rounded-full bg-cyan-500"
             />
 
             <motion.p
               variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="text-lg leading-relaxed text-black"
+              className="text-lg leading-relaxed text-black text-justify"
             >
               From global corporates to fast-growing brands, we partner with
               businesses that want to make a bold impact on the exhibition
@@ -466,7 +466,7 @@ const About = () => {
 
             <motion.p
               variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="mt-3 text-lg  text-black"
+              className="mt-3 text-lg  text-black text-justify"
             >
               With in-house design, fabrication, and execution, we deliver
               seamless exhibition experiences that reflect your brand’s vision
@@ -475,14 +475,14 @@ const About = () => {
 
             <motion.p
               variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="mt-6 text-md  text-red-600 animate-pulse"
+              className="mt-6 text-md  text-cyan-600 animate-pulse"
             >
               500+ Exhibitions Delivered • Pan-India & International Experience
             </motion.p>
           </motion.div>
 
           <div className="w-full lg:w-1/2">
-            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-red-500">
+            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-cyan-500">
               Empaneled Design & Fabrication Partner
             </p>
             <div className="grid  grid-cols-2 gap-8 items-center md:grid-cols-3">
@@ -532,7 +532,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden py-5">
           <motion.div
             className="flex"
             animate={{ x: "-50%" }}
@@ -547,8 +547,8 @@ const About = () => {
               <Image
                 key={index}
                 src={"/Stride.png"}
-                width={1000}
-                height={1000}
+                width={2000}
+                height={2000}
                 alt="Clients Banner"
                 className="h-30 w-[340vw] md:w-[200vw] lg:w-[150vw] max-w-none"
               />

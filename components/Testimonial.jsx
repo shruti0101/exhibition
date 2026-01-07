@@ -99,7 +99,7 @@ export default function Testimonials() {
               >
                 <Quote className="mb-5 h-8 w-8 text-[#039C98] opacity-80" />
 
-                <p className="text-base leading-relaxed text-gray-700">
+                <p className="text-base leading-relaxed text-gray-700 text-justify">
                   “{item.quote}”
                 </p>
 

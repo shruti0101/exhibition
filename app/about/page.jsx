@@ -37,8 +37,8 @@ const AboutPage = () => {
     <div className="bg-white">
       {/* ================= HERO SECTION ================= */}
       <div
-        className="relative h-[70vh] flex items-center justify-center text-center bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/domestic-image/JAYEM.jpg')" }}
+        className="relative h-[70vh] flex items-center justify-center text-center bg-cover "
+        style={{ backgroundImage: "url('https://i.pinimg.com/736x/c8/cd/90/c8cd9002a6edbf84f1e42a182eb00797.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 px-6 max-w-4xl">
@@ -92,7 +92,7 @@ const AboutPage = () => {
             className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/newabout.jpg"
+              src="https://i.pinimg.com/736x/e6/d0/a4/e6d0a4e40986e701f55ac9d4c3e4b19f.jpg"
               alt="Exhibition Stall Design"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"

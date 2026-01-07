@@ -41,7 +41,7 @@ export default function HeroVideo() {
   return (
 
     <>
-<section className="relative h-screen w-full overflow-hidden">
+<section className="relative h-[70vh] md:h-screen w-full overflow-hidden">
 
   {/* 🔹 VIDEO */}
   <AnimatePresence mode="wait">
@@ -56,7 +56,7 @@ export default function HeroVideo() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="absolute inset-0 h-full w-full object-cover"
+      className="absolute inset-0 h-[50vh] md:h-full w-full object-cover mt-20"
     />
   </AnimatePresence>
 
