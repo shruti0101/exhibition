@@ -6,9 +6,53 @@ import GallerySection from "@/components/Galley";
 import { Minus } from "lucide-react";
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { createContactForm } from "@/service/axiosInstance";
 
 const InternationalExhibition = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await createContactForm(formData);
+      console.log(res,"res");
+      if (res?.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        toast.success(res.message || "thank for contact");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error.message || "something went wrong while send contact details"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const faqs = [
     {
@@ -28,14 +72,12 @@ const InternationalExhibition = () => {
         "Custom stalls, two-storey stalls, country pavilion stalls, outdoor stalls, and modular designs for international exhibitions.",
     },
     {
-      question:
-        "Do you provide 3D visualization for exhibition stalls?",
+      question: "Do you provide 3D visualization for exhibition stalls?",
       answer:
         "Yes, we provide realistic 3D mockups so you can approve layouts, branding, and design features before fabrication.",
     },
     {
-      question:
-        "Can international exhibition stalls be reused?",
+      question: "Can international exhibition stalls be reused?",
       answer:
         "Absolutely. Modular and portable exhibition stall designs are reusable and easy to transport for multiple international events.",
     },
@@ -187,7 +229,7 @@ const InternationalExhibition = () => {
               </p>
             </div>
             <div className="bg-white p-6 md:p-8 shadow-sm border border-gray-200 rounded-sm">
-              <form action="" className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label
                     htmlFor="name"
@@ -197,7 +239,10 @@ const InternationalExhibition = () => {
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Name"
                   />
@@ -212,6 +257,10 @@ const InternationalExhibition = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    required
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Email"
                   />
@@ -226,6 +275,10 @@ const InternationalExhibition = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Phone"
                   />
@@ -240,12 +293,19 @@ const InternationalExhibition = () => {
                   <textarea
                     id="requirements"
                     rows={3}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition resize-none"
                     placeholder="Your Requirements"
                   ></textarea>
                 </div>
-                <button className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium">
-                  Submit
+                <button
+                  disabled={loading}
+                  className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium"
+                >
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -546,13 +606,23 @@ const InternationalExhibition = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
-              International Exhibition Stall Designing Services 
+              International Exhibition Stall Designing Services
             </h2>
             <p className="text-black leading-relaxed mb-6">
-             At Strides Design Studio, we specialize in international exhibition stall design, helping businesses create impactful and memorable trade show experiences across the globe. From Dubai and Singapore to London, New York, Frankfurt, and beyond, our expert team delivers custom exhibition stall designs that reflect your brand identity, engage visitors, and maximize ROI.
+              At Strides Design Studio, we specialize in international
+              exhibition stall design, helping businesses create impactful and
+              memorable trade show experiences across the globe. From Dubai and
+              Singapore to London, New York, Frankfurt, and beyond, our expert
+              team delivers custom exhibition stall designs that reflect your
+              brand identity, engage visitors, and maximize ROI.
             </p>
             <p className="text-black leading-relaxed">
-              Our approach combines creativity, functionality, and end-to-end solutions. From concept development and 3D visualization to fabrication, installation, and on-site support, our international exhibition stall designs are tailored to meet your objectives, budget, and multi-city global exhibition needs, ensuring your brand leaves a lasting impression worldwide.
+              Our approach combines creativity, functionality, and end-to-end
+              solutions. From concept development and 3D visualization to
+              fabrication, installation, and on-site support, our international
+              exhibition stall designs are tailored to meet your objectives,
+              budget, and multi-city global exhibition needs, ensuring your
+              brand leaves a lasting impression worldwide.
             </p>
           </motion.div>
 
@@ -564,10 +634,15 @@ const InternationalExhibition = () => {
             className="bg-[#039C98]/5 p-10 rounded-lg border border-[#039C98]/20"
           >
             <h2 className="font-serif text-3xl md:text-4xl text-black mb-6">
-             Transform Your Global Trade Show Presence with Strides Design Studio
+              Transform Your Global Trade Show Presence with Strides Design
+              Studio
             </h2>
             <p className="text-black leading-relaxed mb-8">
-             Take your brand to the next level with a custom <strong>exhibition stall design.</strong> Our expert team creates exhibition stall designs that captivate visitors, showcase your products, and leave a lasting impression at international trade shows, expos, and corporate events.
+              Take your brand to the next level with a custom{" "}
+              <strong>exhibition stall design.</strong> Our expert team creates
+              exhibition stall designs that captivate visitors, showcase your
+              products, and leave a lasting impression at international trade
+              shows, expos, and corporate events.
             </p>
 
             <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 text-lg font-medium text-black">

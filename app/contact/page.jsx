@@ -73,9 +73,8 @@ export default function ContactPage() {
                   Location
                 </h4>
                 <p className="text-md leading-relaxed text-white/90">
-                  49C, JD Block <br />
-                  Rohini, Pitampura <br />
-                  Delhi – 110034
+                  49C, Block JD, <br /> Dakshini Pitampura,
+                  <br /> Delhi, 110034
                 </p>
               </div>
 

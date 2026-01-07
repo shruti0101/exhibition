@@ -6,9 +6,53 @@ import GallerySection from "@/components/Galley";
 import { Minus } from "lucide-react";
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { createContactForm } from "@/service/axiosInstance";
 
 const CorporateEventManagement = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [loading, setLoading] = useState(false);
+   const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await createContactForm(formData);
+      console.log(res, "res");
+      if (res?.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        toast.success(res.message || "thank for contact");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error.message || "something went wrong while send contact details"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const faqs = [
     {
@@ -199,7 +243,7 @@ const CorporateEventManagement = () => {
               </p>
             </div>
             <div className="bg-white p-6 md:p-8 shadow-sm border border-gray-200 rounded-sm">
-              <form action="" className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label
                     htmlFor="name"
@@ -209,7 +253,10 @@ const CorporateEventManagement = () => {
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Name"
                   />
@@ -224,6 +271,10 @@ const CorporateEventManagement = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    required
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Email"
                   />
@@ -238,36 +289,12 @@ const CorporateEventManagement = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Phone"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
-                    placeholder="Your Company Name"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="event"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Event Name / Type
-                  </label>
-                  <input
-                    type="text"
-                    id="event"
-                    className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
-                    placeholder="Event Name / Type"
                   />
                 </div>
                 <div>
@@ -275,17 +302,24 @@ const CorporateEventManagement = () => {
                     htmlFor="requirements"
                     className="block text-sm font-medium text-gray-700 mb-1"
                   >
-                    Message / Requirements
+                    Requirements
                   </label>
                   <textarea
                     id="requirements"
                     rows={3}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition resize-none"
-                    placeholder="Your Message / Requirements"
+                    placeholder="Your Requirements"
                   ></textarea>
                 </div>
-                <button className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium">
-                  Request a Free Quote
+                <button
+                  disabled={loading}
+                  className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium"
+                >
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>

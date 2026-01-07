@@ -30,13 +30,13 @@ export default function HeroVideo() {
 
  const [index, setIndex] = useState(0);
 
-  const prevVideo = () => {
-    setIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
-  };
+  // const prevVideo = () => {
+  //   setIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
+  // };
 
-  const nextVideo = () => {
-    setIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
-  };
+  // const nextVideo = () => {
+  //   setIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
+  // };
 
   return (
 
@@ -66,7 +66,7 @@ export default function HeroVideo() {
   <div className="absolute bottom-10 right-10 z-30 flex items-center gap-4">
 
     {/* LEFT */}
-    <button
+    {/* <button
       onClick={prevVideo}
       className="flex h-12 w-12 items-center justify-center 
                  rounded-full bg-black/60 backdrop-blur 
@@ -74,10 +74,10 @@ export default function HeroVideo() {
                  transition"
     >
       <ChevronLeft size={22} />
-    </button>
+    </button> */}
 
     {/* RIGHT */}
-    <button
+    {/* <button
       onClick={nextVideo}
       className="flex h-12 w-12 items-center justify-center 
                  rounded-full bg-black/60 backdrop-blur 
@@ -85,7 +85,7 @@ export default function HeroVideo() {
                  transition"
     >
       <ChevronRight size={22} />
-    </button>
+    </button> */}
 
   </div>
 

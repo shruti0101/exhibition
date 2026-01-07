@@ -14,9 +14,24 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
+import Link from "next/link";
+import toast from "react-hot-toast";
+import { createContactForm } from "@/service/axiosInstance";
 
 export default function Page() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
 
   const faqs = [
     {
@@ -54,6 +69,36 @@ export default function Page() {
         "Contact us at +91-9810119546 or info@stridesdezine.com. Our team will discuss your requirements and create a tailored exhibition stall design solution for your domestic events.",
     },
   ];
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await createContactForm(formData);
+      if (res?.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        toast.success(res.success || "thank for contact");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error.message || "something went wrong while send contact details"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <main className="bg-white">
@@ -196,7 +241,7 @@ export default function Page() {
               </p>
             </div>
             <div className="bg-white p-6 md:p-8 shadow-sm border border-gray-200 rounded-sm">
-              <form action="" className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label
                     htmlFor="name"
@@ -207,6 +252,10 @@ export default function Page() {
                   <input
                     type="text"
                     id="name"
+                    required
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Name"
                   />
@@ -221,6 +270,10 @@ export default function Page() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    required
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Email"
                   />
@@ -235,6 +288,10 @@ export default function Page() {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Phone"
                   />
@@ -249,12 +306,19 @@ export default function Page() {
                   <textarea
                     id="requirements"
                     rows={3}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition resize-none"
                     placeholder="Your Requirements"
                   ></textarea>
                 </div>
-                <button className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium">
-                  Submit
+                <button
+                  disabled={loading}
+                  className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium"
+                >
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -448,9 +512,12 @@ export default function Page() {
               Let’s Design Your Next Exhibition Stall
             </h2>
 
-            <button className="mt-8 bg-green-600 px-10 py-4 text-sm uppercase tracking-wide text-white hover:bg-black transition">
+            <Link
+              href={"/contact"}
+              className="mt-8 bg-green-600 px-10 py-4 text-sm uppercase tracking-wide text-white hover:bg-black transition"
+            >
               Get in Touch
-            </button>
+            </Link>
           </div>
         </motion.div>
       </section>

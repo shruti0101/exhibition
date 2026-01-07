@@ -6,9 +6,53 @@ import GallerySection from "@/components/Galley";
 import { Minus } from "lucide-react";
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { createContactForm } from "@/service/axiosInstance";
 
 const ExhibitionFabricationService = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await createContactForm(formData);
+      console.log(res, "res");
+      if (res?.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        toast.success(res.message || "thank for contact");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error.message || "something went wrong while send contact details"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const faqs = [
     {
@@ -17,8 +61,7 @@ const ExhibitionFabricationService = () => {
         "Exhibition fabrication services involve the construction and assembly of custom exhibition stalls, counters, kiosks, and displays based on approved designs. These services ensure high-quality, durable, and visually appealing stalls for trade shows, expos, and corporate events.",
     },
     {
-      question:
-        "Why should I choose professional exhibition fabrication?",
+      question: "Why should I choose professional exhibition fabrication?",
       answer:
         "Professional fabrication ensures your stall is structurally sound, visually impressive, and aligned with your brand identity. It also guarantees precision, durability, and compliance with safety standards for both domestic and international events.",
     },
@@ -28,14 +71,12 @@ const ExhibitionFabricationService = () => {
         "We fabricate a wide range of stalls including custom stalls, modular and portable stalls, two-storey structures, country pavilions, retail kiosks, and themed exhibition booths.",
     },
     {
-      question:
-        "Do you provide on-site installation and support?",
+      question: "Do you provide on-site installation and support?",
       answer:
         "Yes. Our exhibition fabrication services include delivery, on-site assembly, technical adjustments, and dismantling. Our team ensures a smooth setup and flawless functionality throughout the event.",
     },
     {
-      question:
-        "Can fabricated stalls be reused for multiple events?",
+      question: "Can fabricated stalls be reused for multiple events?",
       answer:
         "Absolutely. We specialize in modular and portable fabrication solutions, allowing stalls to be reused across multiple events and locations, making them cost-effective and convenient for multi-city exhibitions.",
     },
@@ -103,13 +144,24 @@ const ExhibitionFabricationService = () => {
           </h2>
 
           <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed">
-            Strides Design Studio offers professional exhibition fabrication services for trade shows, expos, corporate events, and international exhibitions. We specialize in transforming your approved stall designs into high-quality, durable, and visually impactful exhibition stalls that reflect your brand identity and engage visitors.
+            Strides Design Studio offers professional exhibition fabrication
+            services for trade shows, expos, corporate events, and international
+            exhibitions. We specialize in transforming your approved stall
+            designs into high-quality, durable, and visually impactful
+            exhibition stalls that reflect your brand identity and engage
+            visitors.
           </p>
           <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed">
-            Our team works across India and internationally, ensuring flawless execution—from concept approval to installation and post-event support. With our exhibition stall design, your stall will not only stand out visually but also be functional, reusable, and designed to maximize ROI.
+            Our team works across India and internationally, ensuring flawless
+            execution—from concept approval to installation and post-event
+            support. With our exhibition stall design, your stall will not only
+            stand out visually but also be functional, reusable, and designed to
+            maximize ROI.
           </p>
           <p className="mt-8 text-lg text-black max-w-7xl mx-auto leading-relaxed">
-            We combine creativity, technical expertise, and premium materials to deliver exhibition structures that leave a lasting impression on your audience.
+            We combine creativity, technical expertise, and premium materials to
+            deliver exhibition structures that leave a lasting impression on
+            your audience.
           </p>
         </div>
       </motion.section>
@@ -143,10 +195,16 @@ const ExhibitionFabricationService = () => {
               </h3>
 
               <p className="text-black leading-7 text-justify">
-                At <strong>Strides Design Studio</strong>, we provide complete exhibition fabrication services, converting your approved exhibition stall designs into tangible, high-quality structures. Every element—from walls and counters to lighting, displays, and graphics—is fabricated with precision and attention to detail.
+                At <strong>Strides Design Studio</strong>, we provide complete
+                exhibition fabrication services, converting your approved
+                exhibition stall designs into tangible, high-quality structures.
+                Every element—from walls and counters to lighting, displays, and
+                graphics—is fabricated with precision and attention to detail.
               </p>
               <p className="text-black leading-7 text-justify">
-                With Strides Design Studio, your exhibition fabrication services are end-to-end, ensuring your stall is visually impressive, structurally sound, and optimized for visitor engagement.
+                With Strides Design Studio, your exhibition fabrication services
+                are end-to-end, ensuring your stall is visually impressive,
+                structurally sound, and optimized for visitor engagement.
               </p>
             </div>
           </motion.div>
@@ -167,14 +225,20 @@ const ExhibitionFabricationService = () => {
                 Get Your Custom Exhibition Fabrication Services Today!
               </h3>
               <p className="text-black leading-7">
-                Take your brand to the next level with a bespoke exhibition stall design from Strides Design Studio. Whether it’s a domestic trade fair, expo, or corporate event, we create stalls that attract attention, engage visitors, and leave a lasting impression.
+                Take your brand to the next level with a bespoke exhibition
+                stall design from Strides Design Studio. Whether it’s a domestic
+                trade fair, expo, or corporate event, we create stalls that
+                attract attention, engage visitors, and leave a lasting
+                impression.
               </p>
               <p className="text-black leading-7 mt-4">
-                Why Choose Us? Our team delivers exhibition stall designs that are creative, functional, and tailored to your brand, ensuring a memorable presence at every event.
+                Why Choose Us? Our team delivers exhibition stall designs that
+                are creative, functional, and tailored to your brand, ensuring a
+                memorable presence at every event.
               </p>
             </div>
             <div className="bg-white p-6 md:p-8 shadow-sm border border-gray-200 rounded-sm">
-              <form action="" className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label
                     htmlFor="name"
@@ -184,7 +248,10 @@ const ExhibitionFabricationService = () => {
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Name"
                   />
@@ -199,6 +266,10 @@ const ExhibitionFabricationService = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    required
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Email"
                   />
@@ -213,36 +284,12 @@ const ExhibitionFabricationService = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
                     placeholder="Your Phone"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
-                    placeholder="Your Company Name"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="event"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Event / Exhibition Name
-                  </label>
-                  <input
-                    type="text"
-                    id="event"
-                    className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition"
-                    placeholder="Event Name"
                   />
                 </div>
                 <div>
@@ -250,17 +297,24 @@ const ExhibitionFabricationService = () => {
                     htmlFor="requirements"
                     className="block text-sm font-medium text-gray-700 mb-1"
                   >
-                    Message / Requirements
+                    Requirements
                   </label>
                   <textarea
                     id="requirements"
                     rows={3}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full border border-gray-300 p-3 rounded-sm focus:outline-none focus:border-[#039C98] transition resize-none"
-                    placeholder="Your Message / Requirements"
+                    placeholder="Your Requirements"
                   ></textarea>
                 </div>
-                <button className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium">
-                  Request a Free Quote
+                <button
+                  disabled={loading}
+                  className="w-full bg-green-600 py-3 text-sm uppercase tracking-wide text-white hover:bg-black transition font-medium"
+                >
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -287,29 +341,32 @@ const ExhibitionFabricationService = () => {
 
                 <ul className="space-y-3 text-black">
                   <li>
-                    <strong>• Concept Fabrication & Mockups:</strong>{" "}
-                    Translate your approved design into 3D mockups and prototypes.
+                    <strong>• Concept Fabrication & Mockups:</strong> Translate
+                    your approved design into 3D mockups and prototypes.
                   </li>
                   <li>
-                    <strong>• Material Sourcing & Procurement:</strong>{" "}
-                    Use premium materials for strength, aesthetics, and longevity.
+                    <strong>• Material Sourcing & Procurement:</strong> Use
+                    premium materials for strength, aesthetics, and longevity.
                   </li>
                   <li>
-                    <strong>• Modular & Portable Fabrication:</strong>{" "}
-                    Create reusable stalls suitable for multiple venues and events.
+                    <strong>• Modular & Portable Fabrication:</strong> Create
+                    reusable stalls suitable for multiple venues and events.
                   </li>
-                 
+
                   <li>
                     <strong>• Quality Inspection:</strong>
-                    Rigorous checks for design accuracy, structural integrity, and brand alignment.
+                    Rigorous checks for design accuracy, structural integrity,
+                    and brand alignment.
                   </li>
                   <li>
                     <strong>• Installation & Dismantling:</strong>
-                    On-site support for seamless setup, adjustment, and removal post-event.
+                    On-site support for seamless setup, adjustment, and removal
+                    post-event.
                   </li>
                   <li>
                     <strong>• Storage & Maintenance:</strong>
-                    Safe storage options for modular stalls to be reused in future exhibitions.
+                    Safe storage options for modular stalls to be reused in
+                    future exhibitions.
                   </li>
                 </ul>
               </div>
@@ -323,7 +380,9 @@ const ExhibitionFabricationService = () => {
               />
             </motion.div>
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
-              Our expertise ensures your exhibition fabrication results in stalls that are visually striking, structurally robust, and optimized for visitor experience.
+              Our expertise ensures your exhibition fabrication results in
+              stalls that are visually striking, structurally robust, and
+              optimized for visitor experience.
             </p>
           </div>
 
@@ -351,39 +410,58 @@ const ExhibitionFabricationService = () => {
                 </p>
 
                 <h3 className="mb-6 font-serif text-3xl md:text-4xl text-black">
-                  Why Choose Strides Design Studio for Your Exhibition Fabrication Services?
+                  Why Choose Strides Design Studio for Your Exhibition
+                  Fabrication Services?
                 </h3>
 
                 <p className="text-black leading-7">
-                  At Strides Design Studio, we specialize in delivering Exhibition Fabrication Services that combine precision, durability, and visual impact. Our clients choose us because we go beyond simple construction to create exhibition stalls that leave a lasting impression and elevate brand experiences.
+                  At Strides Design Studio, we specialize in delivering
+                  Exhibition Fabrication Services that combine precision,
+                  durability, and visual impact. Our clients choose us because
+                  we go beyond simple construction to create exhibition stalls
+                  that leave a lasting impression and elevate brand experiences.
                 </p>
 
                 <ul className="space-y-3 text-black">
                   <li>
-                    <strong>• Custom & Brand-Aligned Fabrication:</strong> Every stall is fabricated to reflect your brand identity and align with your design objectives.
+                    <strong>• Custom & Brand-Aligned Fabrication:</strong> Every
+                    stall is fabricated to reflect your brand identity and align
+                    with your design objectives.
                   </li>
                   <li>
                     <strong>• High-Quality Materials & Craftsmanship:</strong>{" "}
-                    We use premium materials and skilled artisans to ensure every component is built to last.
+                    We use premium materials and skilled artisans to ensure
+                    every component is built to last.
                   </li>
                   <li>
-                    <strong>• End-to-End Fabrication Solutions:</strong> From material selection and production to installation and on-site support, we manage your project seamlessly.
+                    <strong>• End-to-End Fabrication Solutions:</strong> From
+                    material selection and production to installation and
+                    on-site support, we manage your project seamlessly.
                   </li>
                   <li>
-                    <strong>• Budget-Friendly & Efficient:</strong> We optimize fabrication costs without compromising on quality, ensuring durable, high-impact stalls within your budget.
+                    <strong>• Budget-Friendly & Efficient:</strong> We optimize
+                    fabrication costs without compromising on quality, ensuring
+                    durable, high-impact stalls within your budget.
                   </li>
                   <li>
-                    <strong>• Reusable & Portable Options:</strong> Modular and portable fabrication solutions allow your stalls to be reused across multiple events and locations.
+                    <strong>• Reusable & Portable Options:</strong> Modular and
+                    portable fabrication solutions allow your stalls to be
+                    reused across multiple events and locations.
                   </li>
                   <li>
-                    <strong>• Professional Project Management:</strong> Timely delivery, meticulous attention to detail, and flawless execution for every fabrication project.
+                    <strong>• Professional Project Management:</strong> Timely
+                    delivery, meticulous attention to detail, and flawless
+                    execution for every fabrication project.
                   </li>
                 </ul>
               </div>
             </motion.div>
 
             <p className="text-justify text-sm my-5 bg-[#039C98]/10 p-4 rounded-lg">
-              Partner with Strides Design Studio to bring your exhibition stall designs to life with expert fabrication services that engage visitors, strengthen your brand presence, and make your trade show experience unforgettable.
+              Partner with Strides Design Studio to bring your exhibition stall
+              designs to life with expert fabrication services that engage
+              visitors, strengthen your brand presence, and make your trade show
+              experience unforgettable.
             </p>
           </div>
         </div>
@@ -405,7 +483,9 @@ const ExhibitionFabricationService = () => {
               Our Workflow – Exhibition Fabrication Process
             </h2>
             <p className="text-black max-w-4xl mx-auto leading-relaxed">
-              At Strides Design Studio, we follow a structured Exhibition Fabrication Process to ensure every stall is fabricated on time, exceeds expectations, and perfectly represents your brand.
+              At Strides Design Studio, we follow a structured Exhibition
+              Fabrication Process to ensure every stall is fabricated on time,
+              exceeds expectations, and perfectly represents your brand.
             </p>
           </motion.div>
 
@@ -539,10 +619,21 @@ const ExhibitionFabricationService = () => {
               Exhibition Fabrication Services
             </h2>
             <p className="text-black leading-relaxed mb-6 text-justify">
-              At Strides Design Studio, we specialize in exhibition fabrication services, helping businesses across India and internationally bring their stall designs to life with precision, quality, and impact. From Delhi and Mumbai to Bangalore, Hyderabad, and major global exhibition hubs, our skilled team delivers custom-fabricated stalls that reflect your brand identity, engage visitors, and enhance your trade show presence.
+              At Strides Design Studio, we specialize in exhibition fabrication
+              services, helping businesses across India and internationally
+              bring their stall designs to life with precision, quality, and
+              impact. From Delhi and Mumbai to Bangalore, Hyderabad, and major
+              global exhibition hubs, our skilled team delivers
+              custom-fabricated stalls that reflect your brand identity, engage
+              visitors, and enhance your trade show presence.
             </p>
             <p className="text-black leading-relaxed text-justify">
-              Our approach combines craftsmanship, functionality, and end-to-end solutions. From material selection and production to installation, branding integration, and on-site support, our exhibition fabrication services are tailored to meet your objectives, budget, and multi-city exhibition needs, ensuring your brand makes a strong and lasting impression.
+              Our approach combines craftsmanship, functionality, and end-to-end
+              solutions. From material selection and production to installation,
+              branding integration, and on-site support, our exhibition
+              fabrication services are tailored to meet your objectives, budget,
+              and multi-city exhibition needs, ensuring your brand makes a
+              strong and lasting impression.
             </p>
           </motion.div>
 
@@ -557,7 +648,11 @@ const ExhibitionFabricationService = () => {
               Transform Your Trade Show Presence with Strides Design Studio
             </h2>
             <p className="text-black leading-relaxed mb-8">
-              Take your brand to the next level with a custom Exhibition Fabrication Services from Strides Design Studio. Our expert team creates Exhibition Fabrication Services that captivate visitors, showcase your products, and leave a lasting impression at trade shows, expos, and corporate events across India.
+              Take your brand to the next level with a custom Exhibition
+              Fabrication Services from Strides Design Studio. Our expert team
+              creates Exhibition Fabrication Services that captivate visitors,
+              showcase your products, and leave a lasting impression at trade
+              shows, expos, and corporate events across India.
             </p>
 
             <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 text-lg font-medium text-black">
@@ -581,7 +676,4 @@ const ExhibitionFabricationService = () => {
   );
 };
 
-
-
-
-export default ExhibitionFabricationService
+export default ExhibitionFabricationService;

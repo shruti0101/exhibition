@@ -96,22 +96,24 @@ const About = () => {
   return (
     <>
       {/* about us */}
-      <section className="relative w-full bg-white py-15 ">
+      <section className="relative w-full bg-white py-5 md:py-10">
         <div className="mx-auto px-8 md:px-16 ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* 🔹 LEFT : IMAGE */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative h-[520px] overflow-hidden bg-gray-100"
+              className="relative h-50 md:h-90 lg:h-125 overflow-hidden bg-gray-100"
             >
               <Image
                 src="/newabout.jpg"
                 alt="Exhibition Stall Design"
-                fill
-                className="object-cover scale-105"
+                className=""
+                width={1000}
+                height={1000}
+                className="object-cover lg:h-full "
               />
             </motion.div>
 
@@ -126,7 +128,7 @@ const About = () => {
                 About Us
               </p>
 
-              <h2 className="text-lg md:text-3xl  font-bold  text-black">
+              <h2 className="text-2xl md:text-3xl  font-bold  text-black">
                 Specialists in Exhibition <br /> Stand Design & Construction
               </h2>
 
@@ -150,7 +152,7 @@ const About = () => {
                 the unique requirements of business firms, resulting in
                 tailor-made solutions. If you are looking forward to
                 collaborating with the best exhibition stall designer in India,
-                please don't hesitate to reach out to us.
+                please don&apos;t hesitate to reach out to us.
               </p>
 
               {/* 🔹 CTA */}
@@ -184,7 +186,7 @@ const About = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <h2 className="text-lg md:text-3xl  font-bold text-black leading-tight">
+              <h2 className="text-2xl md:text-3xl  font-bold text-black leading-tight">
                 What makes Strides Design Studio the best exhibition stall
                 design company in India?
               </h2>
@@ -292,7 +294,7 @@ const About = () => {
           {/* Heading */}
           <div className="mb-14 flex items-center justify-center gap-6">
             <span className="h-[2px] w-20 bg-[#039C98]" />
-            <h2 className="text-3xl lg:text-4xl font-semibold text-black text-center">
+            <h2 className="text-2xl lg:text-4xl font-semibold text-black text-center">
               Our Stand Services Around The World
             </h2>
             <span className="h-[2px] w-20 bg-[#039C98]" />
@@ -397,9 +399,12 @@ const About = () => {
 
         {/* CTA */}
         <div className="mt-14 flex justify-center">
-          <Link href="/domestic-portfolio" className="group relative inline-flex items-center gap-3 rounded-full border-2 border-[#039C98] px-8 py-3 text-sm font-medium uppercase tracking-wide text-[#039C98] transition-all duration-300 hover:bg-[#039C98] hover:text-white">
+          <Link
+            href="/domestic-portfolio"
+            className="group relative inline-flex items-center gap-3 rounded-full border-2 border-[#039C98] px-8 py-3 text-sm font-medium uppercase tracking-wide text-[#039C98] transition-all duration-300 hover:bg-[#039C98] hover:text-white"
+          >
             View All Projects
-            <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
+            <span className="block h-px w-0 bg-white transition-all duration-300 group-hover:w-6" />
           </Link>
         </div>
       </section>
@@ -477,51 +482,52 @@ const About = () => {
           </motion.div>
 
           <div className="w-full lg:w-1/2">
-            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-red-500">Empaneled Design & Fabrication Partner</p>
-            <div className="grid  grid-cols-1 gap-8 items-center md:grid-cols-3">
+            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-red-500">
+              Empaneled Design & Fabrication Partner
+            </p>
+            <div className="grid  grid-cols-2 gap-8 items-center md:grid-cols-3">
               <Image
-                src="/home-client/acma.png"
-                width="400"
-                height="400"
+                src="/Stride Logo/3.png"
+                width="1000"
+                height="1000"
                 alt="logo"
-                className="h-40 w-auto"
+                className="h-40 w-auto mx-auto"
               />
               <Image
-                src="/home-client/confederation.png"
-                width="400"
-                height="400"
+                src="/Stride Logo/CII.png"
+                width="1000"
+                height="1000"
                 alt="logo"
-                className="h-40 w-auto"
+                className="h-40 w-auto mx-auto"
               />
               <Image
-                src="/home-client/ficci.png"
-                width="400"
-                height="400"
+                src="/Stride Logo/aa.png"
+                width="1000"
+                height="1000"
                 alt="logo"
-                className="h-40 w-auto"
+                className="h-40 w-auto mx-auto"
               />
               <Image
-                src="/home-client/icc.png"
-                width="400"
-                height="400"
+                src="/Stride Logo/4.png"
+                width="1000"
+                height="1000"
                 alt="logo"
-                className="h-40 w-auto"
+                className="h-40 w-auto mx-auto"
               />
               <Image
-                src="/home-client/ITA_Airways.webp"
-                width="400"
-                height="400"
+                src="/Stride Logo/ITAA.png"
+                width="1000"
+                height="1000"
                 alt="logo"
-                className="h-40 w-auto"
+                className="h-40 w-auto mx-auto"
               />
               <Image
-                src="/home-client/jiipa.png"
-                width="400"
-                height="400"
+                src="/Stride Logo/2.png"
+                width="1000"
+                height="1000"
                 alt="logo"
-                className="h-40 w-auto"
+                className="h-40 w-auto mx-auto"
               />
-            
             </div>
           </div>
         </div>
@@ -544,7 +550,7 @@ const About = () => {
                 width={1000}
                 height={1000}
                 alt="Clients Banner"
-                className="h-30 w-[140vw] max-w-none"
+                className="h-30 w-[340vw] md:w-[200vw] lg:w-[150vw] max-w-none"
               />
             ))}
           </motion.div>

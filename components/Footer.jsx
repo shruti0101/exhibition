@@ -1,19 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Phone,
-  Mail,
-  Facebook,
-  Linkedin,
-  MapPin,
-  Star,
-} from "lucide-react";
+import { Phone, Mail, Facebook, Linkedin, MapPin, Star } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="relative mx-auto bg-[#1b1b1b] text-white">
-
       {/* TOP CONTACT BAR */}
       <div className="border-b border-white/10">
         <div className="mx-auto flex w-11/12 max-w-[1400px] flex-wrap items-center justify-between gap-4 py-4 text-sm">
@@ -41,7 +33,6 @@ export default function Footer() {
       {/* MAIN FOOTER INFO */}
       <div className="border-b border-white/10">
         <div className="mx-auto grid w-11/12 max-w-[1400px] grid-cols-1 gap-10 py-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
-
           {/* USEFUL LINKS */}
           <div>
             <h4 className="mb-4 font-semibold uppercase tracking-wider">
@@ -52,8 +43,8 @@ export default function Footer() {
                 "Home",
                 "About us",
                 "Services",
-            "Portfolio",
-           
+                "Portfolio",
+
                 "Careers",
                 "Contact Us",
               ].map((item) => (
@@ -67,9 +58,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-
-
-            
           </div>
 
           {/* CONTACT DETAILS */}
@@ -94,38 +82,37 @@ export default function Footer() {
           </div>
 
           {/* LOCATION */}
-       {/* LOCATIONS */}
-<div>
-  <h4 className="mb-4 font-semibold uppercase tracking-wider">
-    Our Locations
-  </h4>
+          {/* LOCATIONS */}
+          <div>
+            <h4 className="mb-4 font-semibold uppercase tracking-wider">
+              Our Locations
+            </h4>
 
-  <div className="space-y-4 text-white/80 text-sm">
-    {/* DELHI */}
-    <div className="flex items-start gap-2">
-      <MapPin size={14} className="mt-1 text-[#039C98]" />
-      <div>
-        <p className="font-semibold text-white">India (Delhi)</p>
-        <p className="leading-relaxed">
-          49C, JD Block, Rohini, Pitampura, Delhi 110034
-        </p>
-      </div>
-    </div>
+            <div className="space-y-4 text-white/80 text-sm">
+              {/* DELHI */}
+              <div className="flex items-start gap-2">
+                <MapPin size={14} className="mt-1 text-[#039C98]" />
+                <div>
+                  <p className="font-semibold text-white">India (Delhi)</p>
+                  <p className="leading-relaxed">
+                    49C, Block JD, Dakshini Pitampura, Delhi, 110034
+                  </p>
+                </div>
+              </div>
 
-    {/* NETHERLANDS */}
-    <div className="flex items-start gap-2">
-      <MapPin size={14} className="mt-1 text-[#039C98]" />
-      <div>
-        <p className="font-semibold text-white">Netherlands</p>
-        <p className="leading-relaxed">
-          {/* Replace with exact address if you want */}
-          Amsterdam, Netherlands
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
+              {/* NETHERLANDS */}
+              <div className="flex items-start gap-2">
+                <MapPin size={14} className="mt-1 text-[#039C98]" />
+                <div>
+                  <p className="font-semibold text-white">Netherlands</p>
+                  <p className="leading-relaxed">
+                    {/* Replace with exact address if you want */}
+                    Henriette Bosmansplein 119 3122 CC SCHIEDAM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* GOOGLE REVIEW */}
           <div>
@@ -141,11 +128,8 @@ export default function Footer() {
               Review us on Google
             </a>
           </div>
-
         </div>
       </div>
-
-
 
       {/* COPYRIGHT */}
       <div className="py-4 text-center text-sm text-white">
@@ -159,7 +143,6 @@ export default function Footer() {
     </footer>
   );
 }
-
 
 /* DATA */
 
@@ -262,12 +245,5 @@ const seoColumns = [
     "Stall Fabricators Delhi",
     "Stall Fabricators Kolkata",
   ],
-  [
-    "Home",
-    "About",
-    "portfolio",
-    "services",
-    "clients",
-    "contact us"
-  ]
+  ["Home", "About", "portfolio", "services", "clients", "contact us"],
 ];
