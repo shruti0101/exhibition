@@ -12,6 +12,7 @@ const CareerPage = () => {
     location: "",
     position: "",
     lastSalary: "",
+    countryCode: "+91",
   });
   const [loading, setLoading] = useState(false);
 
@@ -30,7 +31,7 @@ const CareerPage = () => {
     const data = new FormData();
     data.append("name", formData.name);
     data.append("email", formData.email);
-    data.append("phone", formData.phone);
+    data.append("phone", `${formData.countryCode} ${formData.phone}`);
     data.append("resume", formData.resume);
     data.append("location", formData.location);
     data.append("position", formData.position);
@@ -47,6 +48,7 @@ const CareerPage = () => {
         location: "",
         position: "",
         lastSalary: "",
+        countryCode: "+91",
       });
       e.target.reset(); // Reset file input UI
     } catch (error) {
@@ -121,16 +123,29 @@ const CareerPage = () => {
               >
                 Phone Number
               </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
-                placeholder="+1 (555) 123-4567"
-              />
+              <div className="flex gap-2">
+                <select
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleChange}
+                  className="w-28 px-2 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white"
+                >
+                  <option value="+91">IN +91</option>
+                  <option value="+1">US +1</option>
+                  <option value="+44">UK +44</option>
+                  <option value="+971">UAE +971</option>
+                </select>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                  placeholder="98765 43210"
+                />
+              </div>
             </div>
 
             <div>
@@ -176,7 +191,7 @@ const CareerPage = () => {
                 htmlFor="lastSalary"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                Last Salary
+                Expected Salary
               </label>
               <input
                 type="text"
@@ -186,7 +201,7 @@ const CareerPage = () => {
                 value={formData.lastSalary}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
-                placeholder="e.g. $50,000"
+                placeholder="e.g. ₹50,000"
               />
             </div>
 
