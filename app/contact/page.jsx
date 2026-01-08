@@ -51,10 +51,10 @@ export default function ContactPage() {
         className="relative h-[40vh] md:h-[90vh] flex items-center justify-center text-center bg-cover bg-center bg-fixed overflow-hidden"
         style={{
           backgroundImage:
-            "url('https://i.pinimg.com/736x/6d/35/95/6d3595a2839f66ba371637d5f7e9fa30.jpg')",
+            "url('https://i.pinimg.com/1200x/d5/27/db/d527dba6c380c188cdd6ec2ac7b6cec6.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-900/60 to-slate-800/60" />
+        <div className="absolute inset-0 bg-linear-to-r from-slate-950/50 via-slate-900/60 to-slate-800/60" />
 
         <div className="relative z-10 px-6 max-w-5xl">
           <div className="mx-auto mb-5 h-0.75 w-24 bg-[#039C98] rounded-full" />

@@ -10,11 +10,11 @@ export default function CTASection() {
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      style={{ backgroundImage: "url(/ctabg.jpg)" }}
-      className="relative   overflow-hidden  bg-center bg-cover px-8 py-18 md:px-16"
+      style={{ backgroundImage: "url(https://i.pinimg.com/736x/4d/46/f2/4d46f250ce424cc7d557adc9e69a458b.jpg)" }}
+      className="relative overflow-hidden  bg-center bg-cover px-8 py-18 md:px-16"
     >
       {/* subtle background glow */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/70" />
 
       <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center ">
         {/* Text */}

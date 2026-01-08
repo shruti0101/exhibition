@@ -169,7 +169,7 @@ const AboutPage = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Our Vision
             </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-600 mb-6 leading-relaxed text-justify">
               To be India’s most trusted and innovative exhibition stall design
               company, delivering creative and high-impact stalls that enhance
               brand presence. We aim to set global standards in design quality,
@@ -209,7 +209,7 @@ const AboutPage = () => {
               <Lightbulb className="text-white w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <p className="text-white/90 mb-6 leading-relaxed">
+            <p className="text-white/90 mb-6 leading-relaxed text-justify">
               To provide comprehensive exhibition stall design solutions that
               combine creativity, functionality, and brand storytelling. We
               ensure every stall meets client objectives through seamless
@@ -321,7 +321,7 @@ const AboutPage = () => {
               >
                 <div className="mb-4 ">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
-                <p className="text-white leading-relaxed">{item.desc}</p>
+                <p className="text-white leading-relaxed text-justify">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
