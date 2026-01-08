@@ -8,8 +8,19 @@ export async function POST(req) {
     const email = formData.get("email");
     const phone = formData.get("phone");
     const resume = formData.get("resume");
+    const location = formData.get("location");
+    const position = formData.get("position");
+    const lastSalary = formData.get("lastSalary");
 
-    if (!name || !email || !phone || !resume) {
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !resume ||
+      !location ||
+      !position ||
+      !lastSalary
+    ) {
       return NextResponse.json(
         { success: false, message: "Missing required fields" },
         { status: 400 }
@@ -35,7 +46,7 @@ export async function POST(req) {
       to: process.env.EMAIL_ADDRESS, // Receiver address from .env
       cc: "info@stridesdezine.com", // Add your CC email address here
       subject: `New Career Application: ${name}`,
-      text: `You have received a new application.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`,
+      text: `You have received a new application.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nLocation: ${location}\nPosition: ${position}\nLast Salary: ${lastSalary}`,
       attachments: [
         {
           filename: resume.name,

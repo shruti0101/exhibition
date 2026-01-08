@@ -112,7 +112,7 @@ const AboutPage = () => {
             className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-1"
           >
             <Image
-              src="/whychoose4.jpg"
+              src="https://i.pinimg.com/1200x/4f/b0/04/4fb004a70775904ecbd46e553a48e198.jpg"
               alt="Our Journey"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"

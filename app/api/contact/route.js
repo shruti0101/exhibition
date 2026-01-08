@@ -3,18 +3,9 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    const { name, email, phone, message, location, position, lastSalary } =
-      await req.json();
+    const { name, email, phone, message } = await req.json();
 
-    if (
-      !name ||
-      !email ||
-      !phone ||
-      !message ||
-      !location ||
-      !position ||
-      !lastSalary
-    ) {
+    if (!name || !email || !phone || !message) {
       return NextResponse.json({
         success: false,
         message: "Please fill in all required fields",
@@ -43,9 +34,6 @@ export async function POST(req) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Location:</strong> ${location}</p>
-        <p><strong>Position:</strong> ${position}</p>
-        <p><strong>Last Salary:</strong> ${lastSalary}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
     });

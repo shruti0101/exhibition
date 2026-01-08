@@ -29,9 +29,11 @@ export default function ContactPage() {
 
     setLoading(true);
     try {
-      await createContactForm(formData);
-      toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      const res = await createContactForm(formData);
+      if (res.success) {
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      }
     } catch (error) {
       console.log(error);
       toast.error(
@@ -47,7 +49,10 @@ export default function ContactPage() {
       {/* ================= HERO ================= */}
       <div
         className="relative h-[40vh] md:h-[90vh] flex items-center justify-center text-center bg-cover bg-center bg-fixed overflow-hidden"
-        style={{ backgroundImage: "url('https://i.pinimg.com/736x/6d/35/95/6d3595a2839f66ba371637d5f7e9fa30.jpg')" }}
+        style={{
+          backgroundImage:
+            "url('https://i.pinimg.com/736x/6d/35/95/6d3595a2839f66ba371637d5f7e9fa30.jpg')",
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-900/60 to-slate-800/60" />
 
@@ -73,7 +78,7 @@ export default function ContactPage() {
                   Location
                 </h4>
                 <p className="text-md leading-relaxed text-white/90">
-                  49C, Block JD, <br /> Dakshini Pitampura,
+                  49C, Block JD, Dakshini Pitampura,
                   <br /> Delhi, 110034
                 </p>
               </div>
