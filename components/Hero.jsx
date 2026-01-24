@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight,ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
 const videos = [
   {
     id: "exhibition",
@@ -16,90 +17,55 @@ const videos = [
   },
 ];
 
-
 // why  choose
 
-
-
-
 export default function HeroVideo() {
-
-
-
-    
-
- const [index, setIndex] = useState(0);
-
-  // const prevVideo = () => {
-  //   setIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
-  // };
-
-  // const nextVideo = () => {
-  //   setIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
-  // };
+  const [index, setIndex] = useState(0);
 
   return (
-
     <>
-<section className="relative h-[70vh] md:h-screen w-full overflow-hidden">
+      <section className="relative h-[70vh] md:h-screen w-full overflow-hidden">
+        {/* 🔹 VIDEO */}
+        <AnimatePresence mode="wait">
+          <motion.video
+            key={videos[index].id}
+            src={videos[index].src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute inset-0 h-[50vh] md:h-full w-full object-cover mt-20"
+          />
+        </AnimatePresence>
 
-  {/* 🔹 VIDEO */}
-  <AnimatePresence mode="wait">
-    <motion.video
-      key={videos[index].id}
-      src={videos[index].src}
-      autoPlay
-      muted
-      loop
-      playsInline
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="absolute inset-0 h-[50vh] md:h-full w-full object-cover mt-20"
-    />
-  </AnimatePresence>
+        {/* 🔹 OVERLAY */}
+        <div className="absolute inset-0 z-10 bg-black/30" />
 
+        {/* 🔹 CENTER TEXT */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center px-4 text-center">
+          <h1 className="text-3xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
+            <TypeAnimation
+              sequence={[
+                "Exhibition Stall Designing Services",
+                2000,
+                "Exhibition Stall Fabrication",
+                2000,
+                "Corporate Interior Design",
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h1>
+        </div>
 
-
-  {/* 🔹 ARROWS (FIXED & VISIBLE) */}
-  <div className="absolute bottom-10 right-10 z-30 flex items-center gap-4">
-
-    {/* LEFT */}
-    {/* <button
-      onClick={prevVideo}
-      className="flex h-12 w-12 items-center justify-center 
-                 rounded-full bg-black/60 backdrop-blur 
-                 text-white hover:bg-white hover:text-black 
-                 transition"
-    >
-      <ChevronLeft size={22} />
-    </button> */}
-
-    {/* RIGHT */}
-    {/* <button
-      onClick={nextVideo}
-      className="flex h-12 w-12 items-center justify-center 
-                 rounded-full bg-black/60 backdrop-blur 
-                 text-white hover:bg-white hover:text-black 
-                 transition"
-    >
-      <ChevronRight size={22} />
-    </button> */}
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-
-
+       
+      </section>
     </>
-
   );
 }

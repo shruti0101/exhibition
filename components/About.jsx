@@ -95,6 +95,210 @@ const About = () => {
   ];
   return (
     <>
+      <section className="my-20 bg-white">
+        <div className="mx-auto w-full px-8 md:px-16">
+          {/* Heading */}
+          <div className="mb-14 flex items-center justify-center gap-6">
+            <span className="h-[2px] w-20 bg-[#039C98]" />
+            <h2 className="text-lg lg:text-4xl font-semibold text-black text-center">
+              Our Stand Services Around The World
+            </h2>
+            <span className="h-0.5 w-20 bg-[#039C98]" />
+          </div>
+
+          {/* Slider */}
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            loop
+            spaceBetween={24}
+            breakpoints={{
+              0: { slidesPerView: 1.2 },
+              480: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+              1280: { slidesPerView: 6 },
+            }}
+          >
+            {locations.map((item, i) => (
+              <SwiperSlide key={i}>
+                <div className="overflow-hidden border border-gray-200 shadow-sm">
+                  {/* Image */}
+                  <div className="relative h-[130px] w-full">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+
+                    {/* Pin */}
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-white/90 rounded-full p-2 shadow">
+                      <MapPin size={18} className="text-black" />
+                    </div>
+                  </div>
+
+                  {/* Country Name */}
+                  <div className="bg-[#039C98] py-2 text-center">
+                    <span className="text-sm font-semibold uppercase text-white">
+                      {item.name}
+                    </span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* clientele */}
+
+      <section className="relative w-full overflow-hidden  py-14">
+        <div className="mx-auto flex flex-col lg:flex-row px-8 md:px-16 items-center gap-14 ">
+          {/* LEFT CONTENT */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.3,
+                  ease: "easeOut",
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+            className="flex w-full lg:w-1/2 flex-col"
+          >
+            <motion.span
+              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+              className="mb-3 text-xs font-semibold tracking-[0.35em] uppercase text-cyan-500"
+            >
+              Our Clients
+            </motion.span>
+
+            <motion.h2
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              className="text-2xl md:text-4xl font-bold  text-black"
+            >
+              Trusted by Leading Brands Across Exhibitions & Trade Shows
+            </motion.h2>
+
+            <motion.div
+              variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
+              className="mt-5 mb-8 h-0.75 w-10 origin-left rounded-full bg-cyan-500"
+            />
+
+            <motion.p
+              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+              className="text-lg leading-relaxed text-black text-justify"
+            >
+              From global corporates to fast-growing brands, we partner with
+              businesses that want to make a bold impact on the exhibition
+              floor. Our custom-designed exhibition stalls are crafted to
+              attract, engage, and convert visitors into lasting connections.
+            </motion.p>
+
+            <motion.p
+              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+              className="mt-3 text-lg  text-black text-justify"
+            >
+              With in-house design, fabrication, and execution, we deliver
+              seamless exhibition experiences that reflect your brand’s vision
+              and elevate your presence across trade shows, expos, and events.
+            </motion.p>
+
+            <motion.p
+              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+              className="mt-6 text-md  text-cyan-600 animate-pulse"
+            >
+              500+ Exhibitions Delivered • Pan-India & International Experience
+            </motion.p>
+          </motion.div>
+
+          <div className="w-full lg:w-1/2">
+            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-cyan-500">
+              Empaneled Design & Fabrication Partner
+            </p>
+            <div className="grid  grid-cols-2 gap-8 items-center md:grid-cols-3">
+              <Image
+                src="/Stride Logo/3.png"
+                width="1000"
+                height="1000"
+                alt="logo"
+                className="h-40 w-auto mx-auto"
+              />
+              <Image
+                src="/Stride Logo/CII.png"
+                width="1000"
+                height="1000"
+                alt="logo"
+                className="h-40 w-auto mx-auto"
+              />
+              <Image
+                src="/Stride Logo/aa.png"
+                width="1000"
+                height="1000"
+                alt="logo"
+                className="h-40 w-auto mx-auto"
+              />
+              <Image
+                src="/Stride Logo/4.png"
+                width="1000"
+                height="1000"
+                alt="logo"
+                className="h-40 w-auto mx-auto"
+              />
+              <Image
+                src="/Stride Logo/ITAA.png"
+                width="1000"
+                height="1000"
+                alt="logo"
+                className="h-40 w-auto mx-auto"
+              />
+              <Image
+                src="/Stride Logo/2.png"
+                width="1000"
+                height="1000"
+                alt="logo"
+                className="h-40 w-auto mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full overflow-hidden py-5">
+          <motion.div
+            className="flex"
+            animate={{ x: "-50%" }}
+            transition={{
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            style={{ width: "fit-content" }}
+          >
+            {[1, 2].map((index) => (
+              <Image
+                key={index}
+                src={"/Stride.png"}
+                width={2000}
+                height={2000}
+                alt="Clients Banner"
+                className="h-30 w-[340vw] md:w-[200vw] lg:w-[150vw] max-w-none"
+              />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* about us */}
       <section className="relative w-full bg-white py-5 md:py-10">
         <div className="mx-auto px-8 md:px-16 ">
@@ -289,62 +493,6 @@ const About = () => {
         </div>
       </section>
 
-      <section className="my-20 bg-white">
-        <div className="mx-auto w-full px-8 md:px-16">
-          {/* Heading */}
-          <div className="mb-14 flex items-center justify-center gap-6">
-            <span className="h-[2px] w-20 bg-[#039C98]" />
-            <h2 className="text-lg lg:text-4xl font-semibold text-black text-center">
-              Our Stand Services Around The World
-            </h2>
-            <span className="h-0.5 w-20 bg-[#039C98]" />
-          </div>
-
-          {/* Slider */}
-          <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            loop
-            spaceBetween={24}
-            breakpoints={{
-              0: { slidesPerView: 1.2 },
-              480: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
-              1280: { slidesPerView: 6 },
-            }}
-          >
-            {locations.map((item, i) => (
-              <SwiperSlide key={i}>
-                <div className="overflow-hidden border border-gray-200 shadow-sm">
-                  {/* Image */}
-                  <div className="relative h-[130px] w-full">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
-
-                    {/* Pin */}
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-white/90 rounded-full p-2 shadow">
-                      <MapPin size={18} className="text-black" />
-                    </div>
-                  </div>
-
-                  {/* Country Name */}
-                  <div className="bg-[#039C98] py-2 text-center">
-                    <span className="text-sm font-semibold uppercase text-white">
-                      {item.name}
-                    </span>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
-
       <Cta></Cta>
 
       {/* portfolio */}
@@ -406,154 +554,6 @@ const About = () => {
             View All Projects
             <span className="block h-px w-0 bg-white transition-all duration-300 group-hover:w-6" />
           </Link>
-        </div>
-      </section>
-
-      {/* clientele */}
-
-      <section className="relative w-full overflow-hidden  py-14">
-        <div className="mx-auto flex flex-col lg:flex-row px-8 md:px-16 items-center gap-14 ">
-          {/* LEFT CONTENT */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={{
-              hidden: { opacity: 0, y: 40 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.3,
-                  ease: "easeOut",
-                  staggerChildren: 0.15,
-                },
-              },
-            }}
-            className="flex w-full lg:w-1/2 flex-col"
-          >
-            <motion.span
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="mb-3 text-xs font-semibold tracking-[0.35em] uppercase text-cyan-500"
-            >
-              Our Clients
-            </motion.span>
-
-            <motion.h2
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-2xl md:text-4xl font-bold  text-black"
-            >
-              Trusted by Leading Brands Across Exhibitions & Trade Shows
-            </motion.h2>
-
-            <motion.div
-              variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
-              className="mt-5 mb-8 h-0.75 w-10 origin-left rounded-full bg-cyan-500"
-            />
-
-            <motion.p
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="text-lg leading-relaxed text-black text-justify"
-            >
-              From global corporates to fast-growing brands, we partner with
-              businesses that want to make a bold impact on the exhibition
-              floor. Our custom-designed exhibition stalls are crafted to
-              attract, engage, and convert visitors into lasting connections.
-            </motion.p>
-
-            <motion.p
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="mt-3 text-lg  text-black text-justify"
-            >
-              With in-house design, fabrication, and execution, we deliver
-              seamless exhibition experiences that reflect your brand’s vision
-              and elevate your presence across trade shows, expos, and events.
-            </motion.p>
-
-            <motion.p
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-              className="mt-6 text-md  text-cyan-600 animate-pulse"
-            >
-              500+ Exhibitions Delivered • Pan-India & International Experience
-            </motion.p>
-          </motion.div>
-
-          <div className="w-full lg:w-1/2">
-            <p className="mb-3 text-lg font-semibold tracking-[0.35em] uppercase text-cyan-500">
-              Empaneled Design & Fabrication Partner
-            </p>
-            <div className="grid  grid-cols-2 gap-8 items-center md:grid-cols-3">
-              <Image
-                src="/Stride Logo/3.png"
-                width="1000"
-                height="1000"
-                alt="logo"
-                className="h-40 w-auto mx-auto"
-              />
-              <Image
-                src="/Stride Logo/CII.png"
-                width="1000"
-                height="1000"
-                alt="logo"
-                className="h-40 w-auto mx-auto"
-              />
-              <Image
-                src="/Stride Logo/aa.png"
-                width="1000"
-                height="1000"
-                alt="logo"
-                className="h-40 w-auto mx-auto"
-              />
-              <Image
-                src="/Stride Logo/4.png"
-                width="1000"
-                height="1000"
-                alt="logo"
-                className="h-40 w-auto mx-auto"
-              />
-              <Image
-                src="/Stride Logo/ITAA.png"
-                width="1000"
-                height="1000"
-                alt="logo"
-                className="h-40 w-auto mx-auto"
-              />
-              <Image
-                src="/Stride Logo/2.png"
-                width="1000"
-                height="1000"
-                alt="logo"
-                className="h-40 w-auto mx-auto"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full overflow-hidden py-5">
-          <motion.div
-            className="flex"
-            animate={{ x: "-50%" }}
-            transition={{
-              duration: 20,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-            style={{ width: "fit-content" }}
-          >
-            {[1, 2].map((index) => (
-              <Image
-                key={index}
-                src={"/Stride.png"}
-                width={2000}
-                height={2000}
-                alt="Clients Banner"
-                className="h-30 w-[340vw] md:w-[200vw] lg:w-[150vw] max-w-none"
-              />
-            ))}
-          </motion.div>
         </div>
       </section>
     </>
