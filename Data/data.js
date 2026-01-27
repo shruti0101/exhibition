@@ -179,13 +179,7 @@ export const categories = [
     name: "Product Launch",
     desc: "We are counted amongst the prominent service providers engaged in offering Corporate Event Management Services to the valuable clients. We are supported by dedicated designers who make optimum utilization of the allotted area, in order to plan and execute these services.",
     image: "/service4.jpg",
-  },
-  // {
-  //   id: "graphic-design",
-  //   name: "Graphic Design ",
-  //   desc: "We are counted amongst the prominent service providers engaged in offering Corporate Event Management Services to the valuable clients. We are supported by dedicated designers who make optimum utilization of the allotted area, in order to plan and execute these services.",
-  //   image: "/service4.jpg",
-  // },
+  }
 ];
 
 export const portfolioNavItem = [

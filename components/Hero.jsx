@@ -47,7 +47,7 @@ export default function HeroVideo() {
 
         {/* 🔹 CENTER TEXT */}
         <div className="absolute inset-0 z-20 flex items-center justify-center px-4 text-center">
-          <h1 className="text-3xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
+          <h1 className="text-3xl font-bold text-white sm:text-5xl md:text-6xl lg:text-6xl drop-shadow-lg">
             25+ years of proven excellence in exhibition stand construction
           </h1>
         </div>
