@@ -108,6 +108,25 @@ const portfolioItems = [
     alt: "ITA",
     title: "ITA",
   },
+  {
+    id: 18,
+    src: "/domestic-image/Ministry of Food Processing Industries.jpeg",
+    alt: "Ministry of Food Processing Industries",
+    title: "Ministry of Food Processing Industries",
+  },
+  {
+    id: 19,
+    src: "/domestic-image/apeda.jpeg",
+    alt: "BHARATI",
+    title: "BHARATI",
+  },
+  {
+    id: 20,
+    src: "/domestic-image/shiv-vilas.jpeg",
+    alt: "IFEMA Madrid",
+    title: "IFEMA Madrid",
+  },
+
 ];
 
 const DomesticPortfolio = () => {

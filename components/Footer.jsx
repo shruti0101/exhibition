@@ -5,7 +5,7 @@ import { Phone, Mail, Facebook, Linkedin, MapPin, Star } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative mx-auto bg-[#1b1b1b] text-white">
+    <footer className="relative mx-auto bg-[#000000cc] text-white">
       {/* TOP CONTACT BAR */}
       <div className="border-b border-white/10">
         <div className="mx-auto flex w-11/12 max-w-[1400px] flex-wrap items-center justify-between gap-4 py-4 text-sm">

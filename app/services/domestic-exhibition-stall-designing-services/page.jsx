@@ -93,7 +93,7 @@ export default function Page() {
     } catch (error) {
       console.log(error);
       toast.error(
-        error.message || "something went wrong while send contact details"
+        error.message || "something went wrong while send contact details",
       );
     } finally {
       setLoading(false);
@@ -188,7 +188,7 @@ export default function Page() {
             className="grid items-center gap-16 lg:grid-cols-2"
           >
             <Image
-              src="/domestic-image/JAYEM.jpg"
+              src="/domestic-image/PARACOAT-new-2.jpeg"
               alt="Domestic Exhibition Stall Design"
               width={1000}
               height={1000}
@@ -373,7 +373,7 @@ export default function Page() {
               </div>
 
               <Image
-                src="/domestic-image/RAMSONS.jpg"
+                src="/domestic-image/VIRGROUP-new-2.jpg.jpeg"
                 alt="Exhibition Fabrication"
                 width={1000}
                 height={1000}

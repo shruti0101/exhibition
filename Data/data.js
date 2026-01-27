@@ -150,32 +150,32 @@ export const portfolioItems = [
 
 export const categories = [
   {
-    id: "domestic-exhibition-stall-designing-services",
+    id: "services/domestic-exhibition-stall-designing-services",
     name: "Domestic Exhibition Stall Designing Services",
     desc: "Service Provider of a wide range of services which include Exhibition Stall Designing Services, Stall Designing Services, Exhibition Designing Services, Exhibition Pavilion Designing Services and ITB,Berlin 2013 Exhibition Stall Designing.",
   },
   {
-    id: "international-exhibition-stall-designing-services",
+    id: "services/international-exhibition-stall-designing-services",
     name: "international Exhibition Stall Designing Services",
     desc: "Service Provider of a wide range of services which include Exhibition Stall Designing Services, Stall Designing Services, Exhibition Designing Services, Exhibition Pavilion Designing Services and ITB,Berlin 2013 Exhibition Stall Designing.",
   },
   {
-    id: "exhibition-fabrication-services",
+    id: "services/exhibition-fabrication-services",
     name: "Exhibition Fabrication Services",
     desc: "We are counted amongst the prominent service providers engaged in offering exhibition design fabrication services to the valuable clients. We are supported by dedicated designers who make optimum utilization of the allotted area.",
   },
   {
-    id: "corporate-event-management",
+    id: "services/corporate-event-management",
     name: "Corporate Event Management",
     desc: "We are counted amongst the prominent service providers engaged in offering Corporate Event Management Services to the valuable clients. We are supported by dedicated designers who make optimum utilization of the allotted area, in order to plan and execute these services.",
   },
   {
-    id: "brand-activation",
+    id: "services/brand-activation",
     name: "Brand Activation",
     desc: "We are counted amongst the prominent service providers engaged in offering Corporate Event Management Services to the valuable clients. We are supported by dedicated designers who make optimum utilization of the allotted area, in order to plan and execute these services.",
   },
   {
-    id: "product-launch",
+    id: "services/product-launch",
     name: "Product Launch",
     desc: "We are counted amongst the prominent service providers engaged in offering Corporate Event Management Services to the valuable clients. We are supported by dedicated designers who make optimum utilization of the allotted area, in order to plan and execute these services.",
     image: "/service4.jpg",

@@ -43,28 +43,14 @@ export default function HeroVideo() {
         </AnimatePresence>
 
         {/* 🔹 OVERLAY */}
-        <div className="absolute inset-0 z-10 bg-black/30" />
+        <div className="absolute inset-0 z-10 bg-black/50" />
 
         {/* 🔹 CENTER TEXT */}
         <div className="absolute inset-0 z-20 flex items-center justify-center px-4 text-center">
           <h1 className="text-3xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
-            <TypeAnimation
-              sequence={[
-                "Exhibition Stall Designing Services",
-                2000,
-                "Exhibition Stall Fabrication",
-                2000,
-                "Corporate Interior Design",
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+            25+ years of proven excellence in exhibition stand construction
           </h1>
         </div>
-
-       
       </section>
     </>
   );

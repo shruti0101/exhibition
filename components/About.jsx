@@ -80,7 +80,7 @@ const About = () => {
     {
       title: "In-House Fabrication",
       desc: "Complete fabrication handled in-house ensuring quality control, faster execution, and flawless finishes.",
-      image: "/whychoose2.jpg",
+      image: "/domestic-image/PARACOAT-new-2.jpeg",
     },
     {
       title: "Premium Build Quality",
@@ -90,7 +90,7 @@ const About = () => {
     {
       title: "Global Exhibition Experience",
       desc: "Proven experience across India and international exhibitions, delivering consistent excellence worldwide.",
-      image: "/whychoose4.jpg",
+      image: "/domestic-image/VIRGROUP-new-2.jpg.jpeg",
     },
   ];
   return (

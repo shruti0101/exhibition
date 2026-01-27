@@ -49,13 +49,26 @@ const portfolioItems = [
     src: "/internation-image/ACCURUB.jpg",
     alt: "FRESH DESK",
     title: "FRESH DESK",
-  },
-
+  }, 
   {
     id: 9,
     src: "/internation-image/GOA.jpg",
     alt: "GOA",
     title: "GOA",
+  },
+
+  {
+    id: 10,
+    src: "/internation-image/Rockman Industries.jpeg",
+    alt: "Rockman Industries",
+    title: "Nuremberg, German",
+  },
+
+  {
+    id: 11,
+    src: "/internation-image/TVS Group – Sundaram Clayton.jpeg",
+    alt: "TVS Group – Sundaram Clayton",
+    title: "TVS Group – Sundaram Clayton",
   },
 ];
 
