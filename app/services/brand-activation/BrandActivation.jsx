@@ -47,7 +47,7 @@ const BrandActivation = () => {
     } catch (error) {
       console.log(error);
       toast.error(
-        error.message || "something went wrong while send contact details"
+        error.message || "something went wrong while send contact details",
       );
     } finally {
       setLoading(false);
@@ -85,7 +85,7 @@ const BrandActivation = () => {
     {
       question: "How can I get started with your brand activation services?",
       answer:
-        "Contact us at +91-9810119546 or info@stridesdezine.com. Our team will discuss your objectives and create a tailored brand activation services plan to engage your audience and strengthen your brand.",
+        "Contact us at +91-9810119546 or info@stridesdesign.com. Our team will discuss your objectives and create a tailored brand activation services plan to engage your audience and strengthen your brand.",
     },
   ];
 
@@ -590,10 +590,10 @@ const BrandActivation = () => {
                 Call us today: +91-9810119546
               </a>
               <a
-                href="mailto:info@stridesdezine.com"
+                href="mailto:info@stridesdesign.com"
                 className="hover:text-[#039C98] transition-colors"
               >
-                Email us: info@stridesdezine.com
+                Email us: info@stridesdesign.com
               </a>
             </div>
           </motion.div>

@@ -19,7 +19,7 @@ export default function Footer() {
               <Phone size={14} /> +91 9953686374, 9810119546
             </span>
             <span className="flex items-center gap-2">
-              <Mail size={14} /> info@stridesdezine.com
+              <Mail size={14} /> info@stridesdesign.com
             </span>
 
             <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Mail size={14} className="mt-1" />
-                info@stridesdezine.com
+                info@stridesdesign.com
               </li>
             </ul>
           </div>
@@ -133,7 +133,7 @@ export default function Footer() {
 
       {/* COPYRIGHT */}
       <div className="py-4 text-center text-sm text-white">
-        © 2025 Strides Dezine. All rights reserved.
+        © 2025 Strides design. All rights reserved.
       </div>
 
       {/* FLOATING CALLBACK */}

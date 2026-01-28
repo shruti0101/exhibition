@@ -41,7 +41,7 @@ const GraphicDesign = () => {
     {
       question: "How can I get started with your product launch services?",
       answer:
-        "Contact us at +91-9810119546 or info@stridesdezine.com. Our team will discuss your product, objectives, and target audience to create a tailored product launch campaign that delivers measurable results.",
+        "Contact us at +91-9810119546 or info@stridesdesign.com. Our team will discuss your product, objectives, and target audience to create a tailored product launch campaign that delivers measurable results.",
     },
   ];
 
@@ -631,10 +631,10 @@ const GraphicDesign = () => {
                 Call us today: +91-9810119546
               </a>
               <a
-                href="mailto:info@stridesdezine.com"
+                href="mailto:info@stridesdesign.com"
                 className="hover:text-[#039C98] transition-colors"
               >
-                Email us: info@stridesdezine.com
+                Email us: info@stridesdesign.com
               </a>
             </div>
           </motion.div>
