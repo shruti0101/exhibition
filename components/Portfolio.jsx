@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { portfolioItems } from "@/Data/data";
 
-export default function PortfolioGrid() {
+export default function PortfolioGrid({ connect }) {
   return (
     <section className="relative bg-white py-20">
       {/* Heading */}
@@ -76,10 +76,16 @@ export default function PortfolioGrid() {
 
       {/* CTA */}
       <div className="mt-14 flex justify-center">
-        <button className="group relative inline-flex items-center gap-3 rounded-full border-2 border-red-600 px-8 py-3 text-sm font-medium uppercase tracking-wide text-red-600 transition-all duration-300 hover:bg-red-600 hover:text-white">
-          View All Projects
-          <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
-        </button>
+        {connect ? (
+          <a href="https://wa.me/9999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-red-600 px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
+            Connect with our team
+            <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
+          </a>
+        )
+          : <button className="group relative inline-flex items-center gap-3 rounded-full border-2 border-red-600 px-8 py-3 text-sm font-medium uppercase tracking-wide text-red-600 transition-all duration-300 hover:bg-red-600 hover:text-white">
+            View All Projects
+            <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
+          </button>}
       </div>
     </section>
   );

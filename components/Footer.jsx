@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Phone, Mail, Facebook, Linkedin, MapPin, Star } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -137,9 +138,9 @@ export default function Footer() {
       </div>
 
       {/* FLOATING CALLBACK */}
-      <button className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-green-600">
-        Arrange Callback
-      </button>
+      <a href="tel:+919953686374" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 text-md font-semibold text-white shadow-lg hover:bg-green-600">
+        <PhoneCall size={20} /> Arrange Callback
+      </a>
     </footer>
   );
 }
