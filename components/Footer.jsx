@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Phone, Mail, Facebook, Linkedin, MapPin, Star } from "lucide-react";
 import { PhoneCall } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -138,8 +139,13 @@ export default function Footer() {
       </div>
 
       {/* FLOATING CALLBACK */}
-      <a href="tel:+919953686374" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 text-md font-semibold text-white shadow-lg hover:bg-green-600">
-        <PhoneCall size={20} /> Arrange Callback
+      <a href="https://wa.me/+919999402424" className="fixed bottom-6 md:hidden left-6 z-50 flex items-center gap-2 rounded-full bg-green-500 md:px-5 md:py-3 p-3 text-md font-semibold text-white shadow-lg hover:bg-green-600">
+        <FaWhatsapp size={22} />
+      </a>
+
+      {/* FLOATING CALLBACK */}
+      <a href="tel:+919953686374" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-red-500 md:px-5 md:py-3 p-3 text-md font-semibold text-white shadow-lg hover:bg-red-600">
+        <PhoneCall size={20} /> <span className="hidden md:block">Arrange Callback</span>
       </a>
     </footer>
   );

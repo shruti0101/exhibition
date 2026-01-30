@@ -72,9 +72,8 @@ export default function Navbar() {
                 SERVICES
                 <ChevronDown
                   size={16}
-                  className={`transition-transform duration-300 ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""
+                    }`}
                 />
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#039C98] transition-all duration-300 group-hover:w-full" />
               </button>
@@ -120,9 +119,8 @@ export default function Navbar() {
                 PORTFOLIO
                 <ChevronDown
                   size={16}
-                  className={`transition-transform duration-300 ${
-                    portfolioOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-300 ${portfolioOpen ? "rotate-180" : ""
+                    }`}
                 />
                 <span className="absolute -bottom-2 left-0 h-0.5 w-0 bg-[#039C98] transition-all duration-300 group-hover:w-full" />
               </button>
@@ -170,7 +168,7 @@ export default function Navbar() {
 
             {/* WHATSAPP CTA */}
             <a
-              href="https://wa.me/9999402424"
+              href="https://wa.me/+919999402424"
               target="_blank"
               className="ml-2 inline-flex items-center gap-2 rounded-full bg-[#039C98] px-5 py-2 text-white text-xs tracking-widest hover:shadow-lg hover:scale-[1.03] transition"
             >
@@ -214,9 +212,8 @@ export default function Navbar() {
                 Services
                 <ChevronDown
                   size={16}
-                  className={`transition-transform ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${servicesOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -242,9 +239,8 @@ export default function Navbar() {
                 Portfolio
                 <ChevronDown
                   size={16}
-                  className={`transition-transform ${
-                    portfolioOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${portfolioOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 

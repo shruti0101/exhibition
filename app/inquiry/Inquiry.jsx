@@ -136,7 +136,7 @@ export default function InquiryPage() {
 
                         {/* WHATSAPP CTA */}
                         <a
-                            href="https://wa.me/9999402424"
+                            href="https://wa.me/+919999402424"
                             target="_blank"
                             className="ml-2 inline-flex items-center gap-2 rounded-full bg-[#039C98] px-5 py-2 text-white text-xs tracking-widest hover:shadow-lg hover:scale-[1.03] transition"
                         >
@@ -199,20 +199,17 @@ export default function InquiryPage() {
         <div className='mt-20 container mx-auto pb-4 flex flex-col'>
             {/* hero */}
             <div className="relative bg-[#f5fbfb] border-b border-gray-300">
-                {/* Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: "url(/ctabg.jpg)" }}
                 ></div>
 
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-black opacity-45"></div>
 
-                {/* Content */}
                 <div className="relative container mx-auto px-2 lg:py-15 py-4">
                     <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-                        <div className='lg:pl-8 lg:text-left text-center'>
-                            <h1 className="mb-4 lg:text-4xl text-2xl font-extrabold leading-tight text-white">
+                        <div className='lg:pl-8 flex flex-col justify-center lg:justify-start'>
+                            <h1 className="mb-4 lg:text-4xl text-2xl font-extrabold leading-tight text-white text-center">
                                 Be the Showstopper at Every Event with Premium Exhibition Stall Designs.
                             </h1>
 
@@ -220,17 +217,17 @@ export default function InquiryPage() {
                                 Strides Design is a leading Exhibition Stall Designer delivering world-class exhibition stands that attract attention, engage visitors, and elevate your brand presence.
                             </p>
 
-                            <p className="mb-8 max-w-xl text-gray-100 font-semibold">
+                            <p className="mb-8 max-w-xl text-gray-100 font-semibold text-left">
                                 We specialize in custom exhibition stall design, exhibition stand fabrication, and Exhibition Fabrication Services to ensure your brand space stands out at every trade show and premier industry event.
                             </p>
 
-                            <div className="flex flex-wrap gap-4">
-                                <a href='tel:+91 9953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
+                            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                                <a href='tel:+919953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
                                     Call Us
                                     <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
                                 </a>
 
-                                <a href="https://wa.me/9999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
+                                <a href="https://wa.me/+919999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
                                     Whatsapp
                                     <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
                                 </a>
@@ -350,7 +347,7 @@ export default function InquiryPage() {
                             </p>
 
                             <a
-                                href="https://wa.me/9999402424"
+                                href="https://wa.me/+919999402424"
                                 target="_blank"
                                 className="inline-flex items-center gap-2 rounded-full bg-[#039C98] px-6 py-3 text-white text-xs tracking-widest uppercase hover:shadow-lg hover:scale-[1.03] transition"
                             >
@@ -374,7 +371,7 @@ export default function InquiryPage() {
 
             <div className="bg-[#c4fdfd] py-10 my-5 rounded-md">
                 <div className="mx-auto max-w-7xl px-6 md:px-12">
-                    <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+                    <div className="grid gap-6 grid-cols-2 lg:grid-cols-4">
 
                         {/* STAT */}
                         <div className="text-center">
@@ -398,12 +395,12 @@ export default function InquiryPage() {
                             </p>
                         </div>
 
-                        <div className="text-center">
+                        {/* <div className="text-center">
                             <h2 className="text-3xl font-bold text-[#039C98]">Pan-India</h2>
                             <p className="mt-2 text-sm font-medium text-gray-700">
                                 Execution Capability
                             </p>
-                        </div>
+                        </div> */}
 
                         <div className="text-center">
                             <h2 className="text-3xl font-bold text-[#039C98]">100%</h2>
@@ -528,7 +525,7 @@ export default function InquiryPage() {
                                 </li>
                             </ul>
 
-                            <a href='tel:+91 9953686374' className="mt-4 group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-[#039C98] px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-[#027a76]">
+                            <a href='tel:+919953686374' className="mt-4 group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-[#039C98] px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-[#027a76]">
                                 Connect with us
                             </a>
                         </div>
@@ -553,7 +550,7 @@ export default function InquiryPage() {
                 <div className="flex flex-wrap items-center gap-4">
 
                     {/* ENQUIRE BUTTON */}
-                    <a href="https://wa.me/9999402424">
+                    <a href="https://wa.me/+919999402424" className='md:block hidden'>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -577,7 +574,7 @@ export default function InquiryPage() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-flex items-center gap-3 rounded-full border-2 border-white px-7 py-4 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-white hover:text-[#039C98]"
+                            className="inline-flex text-nowrap items-center gap-3 rounded-full border-2 border-white px-7 py-4 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-white hover:text-[#039C98]"
                         >
                             Request a Free Consultation
                             {/* <span className="text-sm font-normal normal-case">

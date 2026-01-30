@@ -5,7 +5,7 @@ import { portfolioItems } from "@/Data/data";
 
 export default function PortfolioGrid({ connect }) {
   return (
-    <section className="relative bg-white py-20">
+    <section className="relative bg-white py-10">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -75,9 +75,9 @@ export default function PortfolioGrid({ connect }) {
       </div>
 
       {/* CTA */}
-      <div className="mt-14 flex justify-center">
+      <div className="mt-5 flex justify-center">
         {connect ? (
-          <a href="https://wa.me/9999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-red-600 px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
+          <a href="https://wa.me/+919999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-red-600 px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
             Connect with our team
             <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
           </a>
