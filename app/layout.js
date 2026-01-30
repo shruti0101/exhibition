@@ -36,8 +36,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${nunitoSans.variable} antialiased`}>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZSMNXN3"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KZSMNXN3"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Navbar />
         {children}
         <Toaster />
