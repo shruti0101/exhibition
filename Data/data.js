@@ -41,105 +41,105 @@ export const portfolioItems = [
   },
 
   {
-    id: 5,
+    id: 7,
     image: "/portfolio/test7.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 8,
     image: "/portfolio/test8.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 9,
     image: "/portfolio/test9.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 10,
     image: "/portfolio/test10.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 11,
     image: "/portfolio/test11.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 12,
     image: "/portfolio/test12.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 13,
     image: "/portfolio/test13.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 14,
     image: "/portfolio/test14.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 15,
     image: "/portfolio/test15.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 16,
     image: "/portfolio/test16.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 17,
     image: "/portfolio/test17.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 18,
     image: "/portfolio/test18.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 19,
     image: "/portfolio/test19.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 20,
     image: "/portfolio/test20.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
   },
 
   {
-    id: 5,
+    id: 21,
     image: "/portfolio/test21.jpg",
     title: "Pharma Exhibition Stall",
     location: "Mumbai Expo",
@@ -179,7 +179,7 @@ export const categories = [
     name: "Product Launch",
     desc: "We are counted amongst the prominent service providers engaged in offering Corporate Event Management Services to the valuable clients. We are supported by dedicated designers who make optimum utilization of the allotted area, in order to plan and execute these services.",
     image: "/service4.jpg",
-  }
+  },
 ];
 
 export const portfolioNavItem = [
@@ -192,5 +192,28 @@ export const portfolioNavItem = [
     id: "international-portfolio",
     name: "International Portfolio",
     desc: "",
+  },
+];
+
+export const reasons = [
+  {
+    title: "Creative Design Excellence",
+    desc: "Innovative exhibition stall designs that attract, engage, and elevate brand presence on the show floor.",
+    image: "/whychoose1.png",
+  },
+  {
+    title: "In-House Fabrication",
+    desc: "Complete fabrication handled in-house ensuring quality control, faster execution, and flawless finishes.",
+    image: "/domestic-image/PARACOAT-new-2.jpeg",
+  },
+  {
+    title: "Premium Build Quality",
+    desc: "We use high-grade materials, advanced techniques, and precision engineering for durable structures.",
+    image: "/whychoose3.png",
+  },
+  {
+    title: "Global Exhibition Experience",
+    desc: "Proven experience across India and international exhibitions, delivering consistent excellence worldwide.",
+    image: "/domestic-image/VIRGROUP-new-2.jpg.jpeg",
   },
 ];
