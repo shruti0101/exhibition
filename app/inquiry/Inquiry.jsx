@@ -18,6 +18,7 @@ import Popup from "@/components/Popup";
 export default function InquiryPage() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [open, setOpen] = useState(false);
+  const [thankyou, setThankyou] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,6 +35,10 @@ export default function InquiryPage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    if (/\d/.test(formData.name)) {
+      toast.error("Name should not contain numbers");
+      return;
+    }
     const phoneDigits = formData.phone.replace(/\D/g, "");
     if (phoneDigits.length < 10) {
       toast.error("Please enter a valid phone number");
@@ -60,6 +65,8 @@ export default function InquiryPage() {
       );
       if (data.success) {
         toast.success("Message sent successfully!");
+        setThankyou(true)
+        setOpen(false)
         setFormData({ name: "", email: "", phone: "", message: "" });
       }
     } catch (error) {
@@ -209,17 +216,17 @@ export default function InquiryPage() {
           <div className="relative container mx-auto px-2 lg:py-15 py-4">
             <div className="grid grid-cols-1 items-center md:gap-12 gap-5 lg:grid-cols-2">
               <div className='lg:pl-8 flex flex-col justify-center lg:justify-start'>
-                <h1 className="mb-4 lg:text-4xl text-2xl font-extrabold leading-tight text-white text-center">
+                <h1 className="mb-4 lg:text-4xl text-2xl font-extrabold leading-tight text-white text-justify">
                   Be the Showstopper at Every Event with Premium Exhibition Stall Designs.
                 </h1>
 
-                <p className="mb-2 max-w-xl text-gray-100 md:block hidden lg:text-lg font-semibold">
+                <p className="mb-2 max-w-xl text-white md:block hidden lg:text-xl font-semibold text-justify">
                   Strides Design is a leading Exhibition Stall Designer
                   delivering world-class exhibition stands that attract
                   attention, engage visitors, and elevate your brand presence.
                 </p>
 
-                <p className="md:mb-8 mb-4 max-w-xl text-gray-100 font-semibold text-left">
+                <p className="md:mb-8 mb-4 max-w-xl text-white font-semibold  lg:text-xl text-justify">
                   We specialize in custom exhibition stall design, exhibition stand fabrication, and Exhibition Fabrication Services to ensure your brand space stands out at every trade show and premier industry event.
                 </p>
 
@@ -676,6 +683,7 @@ export default function InquiryPage() {
           </div>
         </div>
       </div>
+
       <Popup
         isOpen={open}
         onClose={() => setOpen(false)}
@@ -730,6 +738,17 @@ export default function InquiryPage() {
             {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
+      </Popup>
+
+      <Popup
+        isOpen={thankyou}
+        onClose={() => setThankyou(false)}
+        title="Thank You!"
+      >
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">Thank You for Reaching Out!</h2>
+          <p className="text-gray-700">We appreciate you contacting Strides Design. One of our colleagues will get back in touch with you soon! Have a great day!</p>
+        </div>
       </Popup>
     </>
   );
