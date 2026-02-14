@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 
 import Testimonials from "@/components/Testimonial";
 import GallerySection from "@/components/Galley";
+import CitySection from "@/components/CitySection";
 
 export const metadata = {
   title:
@@ -19,6 +20,7 @@ const page = () => {
       <About />
       <Testimonials />
       <GallerySection />
+      <CitySection/>
     </div>
   );
 };
