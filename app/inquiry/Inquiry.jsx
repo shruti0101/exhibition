@@ -216,27 +216,27 @@ export default function InquiryPage() {
           <div className="relative container mx-auto px-2 lg:py-15 py-4">
             <div className="grid grid-cols-1 items-center md:gap-12 gap-5 lg:grid-cols-2">
               <div className='lg:pl-8 flex flex-col justify-center lg:justify-start'>
-                <h1 className="mb-4 lg:text-4xl text-2xl font-extrabold leading-tight text-white text-justify">
+                <h1 className="mb-4 lg:text-4xl text-lg font-extrabold text-white">
                   Be the Showstopper at Every Event with Premium Exhibition Stall Designs.
                 </h1>
 
-                <p className="mb-2 max-w-xl text-white md:block hidden lg:text-xl font-semibold text-justify">
+                <p className="mb-2 max-w-xl text-white md:block hidden lg:text-xl font-semibold">
                   Strides Design is a leading Exhibition Stall Designer
                   delivering world-class exhibition stands that attract
                   attention, engage visitors, and elevate your brand presence.
                 </p>
 
-                <p className="md:mb-8 mb-4 max-w-xl text-white font-semibold  lg:text-xl text-justify">
+                <p className="md:mb-8 mb-4 max-w-xl text-white font-semibold lg:text-xl text-base">
                   We specialize in custom exhibition stall design, exhibition stand fabrication, and Exhibition Fabrication Services to ensure your brand space stands out at every trade show and premier industry event.
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <a href='tel:+919953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
+                  <a href='tel:+919953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-red-600 hover:border-red-700 bg-red-600 px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
                     Call Us
                     <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
                   </a>
 
-                  <a href="https://wa.me/+919999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
+                  <a href="https://wa.me/+919999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-green-600 hover:border-green-700 bg-green-600 px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-green-700">
                     Whatsapp
                     <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
                   </a>
@@ -307,8 +307,8 @@ export default function InquiryPage() {
         </div>
 
         {/* clients banner */}
-        <section className="relative w-full overflow-hidden pt-5 pb-2">
-          <div className="w-full overflow-hidden py-5">
+        <section className="relative w-full overflow-hidden bg-gray-100">
+          <div className="w-full overflow-hidden py-2">
             <motion.div
               className="flex"
               animate={{ x: "-50%" }}
