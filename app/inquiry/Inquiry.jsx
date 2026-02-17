@@ -220,17 +220,16 @@ export default function InquiryPage() {
                   Make Your Brand Stand Out at Every Event & Exhibition
                 </h1>
 
-                <p className="mb-2 max-w-xl text-white md:block hidden lg:text-xl font-semibold">
+                <p className="mb-2 text-white lg:text-xl font-semibold">
                   Strides Design Studio specializes in Exhibition Stalls, Corporate Events, Event Management, and Creative Design across Delhi NCR & Pan India. We don’t just build stalls—we create experiences that attract, engage & convert.
                 </p>
 
-                <ul className="list-disc list-inside text-white space-y-2 max-w-xl font-semibold lg:text-xl text-base">
+                <ul className="list-disc list-inside text-white space-y-1 max-w-xl font-semibold lg:text-xl text-base">
                   <li>Custom Exhibition Stall Designs</li>
                   <li>3D Visualization Before Fabrication</li>
                   <li>Complete Design to Execution Solutions</li>
                   <li>Pan-India Fabrication & Installation Support</li>
                 </ul>
-
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
                   <a href='tel:+919953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-red-600 hover:border-red-700 bg-red-600 px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
