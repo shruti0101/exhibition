@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,10 +13,12 @@ import { createContactForm } from "@/service/axiosInstance";
 import toast from "react-hot-toast";
 import { reasons } from "@/Data/data";
 import axios from "axios";
+import Popup from "@/components/Popup";
 
 export default function InquiryPage() {
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [thankyou, setThankyou] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,6 +35,10 @@ export default function InquiryPage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    if (/\d/.test(formData.name)) {
+      toast.error("Name should not contain numbers");
+      return;
+    }
     const phoneDigits = formData.phone.replace(/\D/g, "");
     if (phoneDigits.length < 10) {
       toast.error("Please enter a valid phone number");
@@ -59,6 +65,8 @@ export default function InquiryPage() {
       );
       if (data.success) {
         toast.success("Message sent successfully!");
+        setThankyou(true)
+        setOpen(false)
         setFormData({ name: "", email: "", phone: "", message: "" });
       }
     } catch (error) {
@@ -70,6 +78,12 @@ export default function InquiryPage() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(true)
+    }, 600)
+  }, [])
 
   return (
     <>
@@ -200,36 +214,37 @@ export default function InquiryPage() {
           <div className="absolute inset-0 bg-black opacity-45"></div>
 
           <div className="relative container mx-auto px-2 lg:py-15 py-4">
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <div className="grid grid-cols-1 items-center md:gap-12 gap-5 lg:grid-cols-2">
               <div className='lg:pl-8 flex flex-col justify-center lg:justify-start'>
-                <h1 className="mb-4 lg:text-4xl text-2xl font-extrabold leading-tight text-white text-center">
-                  Be the Showstopper at Every Event with Premium Exhibition Stall Designs.
+                <h1 className="mb-4 lg:text-4xl text-xl font-extrabold text-white">
+                  Make Your Brand Stand Out at Every Event & Exhibition
                 </h1>
 
-                <p className="mb-2 max-w-xl text-gray-100 md:block hidden lg:text-lg font-semibold">
-                  Strides Design is a leading Exhibition Stall Designer
-                  delivering world-class exhibition stands that attract
-                  attention, engage visitors, and elevate your brand presence.
+                <p className="mb-2 text-white lg:text-xl font-semibold">
+                  Strides Design Studio specializes in Exhibition Stalls, Corporate Events, Event Management, and Creative Design across Delhi NCR & Pan India. We don’t just build stalls—we create experiences that attract, engage & convert.
                 </p>
 
-                <p className="mb-8 max-w-xl text-gray-100 font-semibold text-left">
-                  We specialize in custom exhibition stall design, exhibition stand fabrication, and Exhibition Fabrication Services to ensure your brand space stands out at every trade show and premier industry event.
-                </p>
+                <ul className="list-disc list-inside text-white space-y-1 max-w-xl font-semibold lg:text-xl text-base">
+                  <li>Custom Exhibition Stall Designs</li>
+                  <li>3D Visualization Before Fabrication</li>
+                  <li>Complete Design to Execution Solutions</li>
+                  <li>Pan-India Fabrication & Installation Support</li>
+                </ul>
 
-                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <a href='tel:+919953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
+                  <a href='tel:+919953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-red-600 hover:border-red-700 bg-red-600 px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
                     Call Us
                     <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
                   </a>
 
-                  <a href="https://wa.me/+919999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-white hover:border-black bg-white px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-black transition-all duration-300 hover:bg-black hover:text-white">
+                  <a href="https://wa.me/+919999402424" className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-[#039C98] border-[#039C98] px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300">
                     Whatsapp
                     <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
                   </a>
                 </div>
               </div>
 
-              <div className="lg:px-10">
+              <div className="lg:px-10 lg:block hidden">
                 <div className="rounded-xl bg-gray-50 p-4 shadow-xl">
                   <div className="mb-4">
                     <p className="text-2xl font-semibold text-gray-900 text-center">
@@ -237,7 +252,7 @@ export default function InquiryPage() {
                     </p>
                   </div>
 
-                  <form className="space-y-6" onSubmit={handleSubmit}>
+                  <form className="md:space-y-6 space-y-2" onSubmit={handleSubmit}>
                     <input
                       type="text"
                       name="name"
@@ -293,8 +308,8 @@ export default function InquiryPage() {
         </div>
 
         {/* clients banner */}
-        <section className="relative w-full overflow-hidden py-6" id="aboutUs">
-          <div className="w-full overflow-hidden py-5">
+        <section className="relative w-full overflow-hidden bg-gray-100">
+          <div className="w-full overflow-hidden py-2">
             <motion.div
               className="flex"
               animate={{ x: "-50%" }}
@@ -319,8 +334,10 @@ export default function InquiryPage() {
           </div>
         </section>
 
+        <GallerySection />
+
         {/* about us */}
-        <section className="relative bg-white py-2">
+        <section className="relative bg-white pb-2 pt-6" id="aboutUs">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
               <div>
@@ -539,8 +556,6 @@ export default function InquiryPage() {
           </div>
         </section>
 
-        <GallerySection />
-
         {/* CTA */}
         <div
           className="relative flex flex-col mx-4 items-start mt-5 justify-between gap-8 rounded-2xl bg-[#039C98] px-8 py-10 md:flex-row md:items-center"
@@ -560,7 +575,7 @@ export default function InquiryPage() {
           <div className="flex flex-wrap items-center gap-4">
 
             {/* ENQUIRE BUTTON */}
-            <a href="https://wa.me/9999402424">
+            <a href="https://wa.me/9999402424" className="md:block hidden">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -580,18 +595,15 @@ export default function InquiryPage() {
             </a>
 
             {/* CALL BUTTON */}
-            <a href="tel:+919953686374">
+            <button onClick={() => setOpen(true)}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 rounded-full border-2 border-white px-7 py-4 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-white hover:text-[#039C98]"
+                className="inline-flex items-center gap-3 text-nowrap rounded-full border-2 border-white px-7 py-4 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-white hover:text-[#039C98]"
               >
                 Request a Free Consultation
-                {/* <span className="text-sm font-normal normal-case">
-                                +91 9953686374
-                            </span> */}
               </motion.button>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -672,6 +684,73 @@ export default function InquiryPage() {
           </div>
         </div>
       </div>
+
+      <Popup
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        title="Contact Us"
+      >
+        <form className="space-y-2" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            placeholder="Your Name"
+            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+          />
+
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="Email Address"
+            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+          />
+
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            placeholder="Phone Number"
+            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+          />
+
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            placeholder="Tell us about your project..."
+            rows={2}
+            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-[#039C98] px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#027a76]"
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+        </form>
+      </Popup>
+
+      <Popup
+        isOpen={thankyou}
+        onClose={() => setThankyou(false)}
+        title="Thank You!"
+      >
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">Thank You for Reaching Out!</h2>
+          <p className="text-gray-700">We appreciate you contacting Strides Design. One of our colleagues will get back in touch with you soon! Have a great day!</p>
+        </div>
+      </Popup>
     </>
   );
 }

@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Cta from "@/components/Cta";
 import "swiper/css";
 import Link from "next/link";
+import RecentPorfolio from "./RecentPorfolio";
 
 const About = () => {
   const locations = [
@@ -26,51 +27,7 @@ const About = () => {
     { name: "Germany", image: "/location/germany.avif" },
   ];
 
-  // portfolio
-  const port = [
-    {
-      id: 1,
-      image: "/domestic-image/DONGSHENGINTERNATIONAL.jpg",
-      title: "DONGSHENG INTERNATIONAL",
-      location: "STONA 2025 - Bengaluru",
-    },
-    {
-      id: 2,
-      image: "/domestic-image/EGARRMARBLE.jpg",
-      title: "EGARR MARBLE",
-      location: "STONA 2025 - Bengaluru",
-    },
-    {
-      id: 3,
-      image: "/domestic-image/OERLIKON.jpg",
-      title: "OERLIKON",
-      location: "AERO INDIA 2025 - BENGALURU",
-    },
-
-    {
-      id: 4,
-      image: "/internation-image/ACCURUB.jpg",
-      title: "ACCURUB",
-      location: "IAA 2022 - HANNOVER, GERMANY",
-    },
-
-    {
-      id: 5,
-      image: "/internation-image/INNOVARUBBERSVIR.jpg",
-      title: "INNOVA RUBBERS , VIR",
-      location: "AUTOMECHANIKA 2024 - FRANKFURT, GERMANY",
-    },
-
-    {
-      id: 6,
-      image: "/internation-image/ACCURUB1.jpg",
-      title: "FRESH DESK",
-      location: "CCW - BERLIN, GERMANY",
-    },
-  ];
-
   // reasons
-
   const reasons = [
     {
       title: "Creative Design Excellence",
@@ -93,6 +50,7 @@ const About = () => {
       image: "/domestic-image/VIRGROUP-new-2.jpg.jpeg",
     },
   ];
+
   return (
     <>
       <section className="my-20 bg-white">
@@ -314,7 +272,6 @@ const About = () => {
               <Image
                 src="/newabout.jpg"
                 alt="Exhibition Stall Design"
-                className=""
                 width={1000}
                 height={1000}
                 className="object-cover lg:h-full"
@@ -337,8 +294,7 @@ const About = () => {
               </h2>
 
               <p className="mt-3 text-lg text-black  text-justify">
-                We are a leading Exhibition Stall Design, Stand Construction,
-                and Raw Space Design company based in Delhi, India. With over
+                Strides Design Studio is a leading Exhibition Stall Designing Services provider in Delhi, specializing in custom stand construction and innovative raw space design solutions across India. With over
                 <strong> 25 years of industry experience</strong>, we have been
                 part of some of the most prominent exhibitions across India and
                 around the world.
@@ -378,7 +334,6 @@ const About = () => {
       </section>
 
       {/* count up */}
-
       <section className="bg-gray-100 py-10">
         <div className="mx-auto w-full px-8 md:px-16">
           {/* TOP CONTENT */}
@@ -496,66 +451,7 @@ const About = () => {
       <Cta></Cta>
 
       {/* portfolio */}
-
-      <section className="relative bg-white py-8">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <p className="mb-3 text-xs tracking-[0.35em] uppercase text-[#039C98]">
-            Our Work
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-            Recent Portfolio
-          </h2>
-          <div className="mx-auto mt-4 h-[3px] w-20 rounded-full bg-gradient-to-r from-[#039C98] to-[#039C98]" />
-        </motion.div>
-
-        {/* Cards Grid */}
-        <div className="mx-auto  w-full grid px-8 md:px-16 grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {port.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-              className="relative overflow-hidden rounded-xl shadow-xl group bg-white"
-            >
-              {/* Image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="h-[320px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-
-              {/* Bottom Glass Content */}
-              <div className="absolute bottom-0 left-0 right-0 backdrop-blur-md  bg-white/60  px-5 py-4 transition-all duration-300 group-hover:bg-white">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-sm text-black">{item.location}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-14 flex justify-center">
-          <Link
-            href="/domestic-portfolio"
-            className="group relative inline-flex items-center gap-3 rounded-full border-2 border-[#039C98] px-8 py-3 text-sm font-medium uppercase tracking-wide text-[#039C98] transition-all duration-300 hover:bg-[#039C98] hover:text-white"
-          >
-            View All Projects
-            <span className="block h-px w-0 bg-white transition-all duration-300 group-hover:w-6" />
-          </Link>
-        </div>
-      </section>
+      <RecentPorfolio />
     </>
   );
 };

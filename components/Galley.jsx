@@ -53,16 +53,16 @@ export default function GallerySection() {
   return (
     <section className="bg-white pt-6">
       <div className="mx-auto w-full">
-        <div className="mb-14 flex items-center justify-center gap-6">
-          <span className="h-[2px] w-20 bg-[#039C98]" />
+        <div className="mb-6 flex items-center justify-center gap-6">
+          <span className="h-[2px] w-20 bg-[#039C98] lg:block hidden" />
           <h2 className="text-3xl lg:text-4xl font-semibold text-black text-center">
             Glimpse of our work
           </h2>
-          <span className="h-[2px] w-20 bg-[#039C98]" />
+          <span className="h-[2px] w-20 bg-[#039C98] lg:block hidden" />
         </div>
 
         {/* GALLERY GRID */}
-        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-0">
           {galleryItems.map((item, i) => (
             <motion.div
               key={i}
@@ -87,7 +87,7 @@ export default function GallerySection() {
                   {/* <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800">
                     <ZoomIn size={18} />
                   </div> */}
-                  <Link href="/domestic-portfolio"  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800">
+                  <Link href="/domestic-portfolio" className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-800">
                     <Link2 size={18} />
                   </Link>
                 </div>

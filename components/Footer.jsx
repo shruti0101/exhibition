@@ -4,8 +4,19 @@ import Link from "next/link";
 import { Phone, Mail, Facebook, Linkedin, MapPin, Star } from "lucide-react";
 import { PhoneCall } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
+  const usefulLinks = [
+    { name: "Home", href: "/" },
+    { name: "About us", href: "/about" },
+    { name: "Services", href: "/services/domestic-exhibition-stall-designing-services/" },
+    { name: "Portfolio", href: "/domestic-portfolio/" },
+    { name: "Careers", href: "/career" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Inquiry", href: "/inquiry" },
+  ]
+
   return (
     <footer className="relative mx-auto bg-[#000000cc] text-white">
       {/* TOP CONTACT BAR */}
@@ -14,19 +25,26 @@ export default function Footer() {
           <div className="font-semibold text-white">Quick Contact</div>
 
           <div className="flex flex-wrap items-center gap-6 text-white">
-            <span className="flex items-center gap-2">
+            <a href="tel:+0114571-9352" className="flex items-center gap-2">
               <Phone size={14} /> (011) 4571-9352
-            </span>
-            <span className="flex items-center gap-2">
+            </a>
+            <a href="tel:+919810119546" className="flex items-center gap-2">
               <Phone size={14} /> +91 9953686374, 9810119546
-            </span>
-            <span className="flex items-center gap-2">
+            </a>
+            <a href="mailto:info@stridesdesign.com" className="flex items-center gap-2">
               <Mail size={14} /> info@stridesdesign.com
-            </span>
+            </a>
 
             <div className="flex items-center gap-3">
-              <Facebook size={16} className="hover:text-[#039C98]" />
-              <Linkedin size={16} className="hover:text-[#039C98]" />
+              <a href="https://www.facebook.com/stridesdesignstudio" target="_blank" rel="noopener noreferrer">
+                <Facebook size={16} className="hover:text-[#039C98]" />
+              </a>
+              <a href="https://www.instagram.com/strides_designstudio/" target="_blank" rel="noopener noreferrer">
+                <Instagram size={16} className="hover:text-[#039C98]" />
+              </a>
+              <a href="https://www.linkedin.com/company/strides-designstudio/" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={16} className="hover:text-[#039C98]" />
+              </a>
             </div>
           </div>
         </div>
@@ -41,21 +59,13 @@ export default function Footer() {
               Useful Links
             </h4>
             <ul className="space-y-2 text-white/80">
-              {[
-                "Home",
-                "About us",
-                "Services",
-                "Portfolio",
-
-                "Careers",
-                "Contact Us",
-              ].map((item) => (
-                <li key={item}>
+              {usefulLinks.map((item) => (
+                <li key={item.name}>
                   <Link
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
+                    href={item.href}
                     className="hover:text-[#039C98]"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -68,18 +78,18 @@ export default function Footer() {
               Contact Us
             </h4>
             <ul className="space-y-3 text-white/80">
-              <li className="flex items-start gap-2">
+              <a href="tel:+0114571-9352" className="flex items-start gap-2">
                 <Phone size={14} className="mt-1" />
                 (011) 4571-9352
-              </li>
-              <li className="flex items-start gap-2">
+              </a>
+              <a href="tel:+919953686374" className="flex items-start gap-2">
                 <Phone size={14} className="mt-1" />
                 +91 9953686374, 9810119546
-              </li>
-              <li className="flex items-start gap-2">
+              </a>
+              <a href="mailto:info@stridesdesign.com" className="flex items-start gap-2">
                 <Mail size={14} className="mt-1" />
                 info@stridesdesign.com
-              </li>
+              </a>
             </ul>
           </div>
 
@@ -139,12 +149,12 @@ export default function Footer() {
       </div>
 
       {/* FLOATING CALLBACK */}
-      <a href="https://wa.me/+919999402424" className="fixed bottom-6 md:hidden left-6 z-50 flex items-center gap-2 rounded-full bg-green-500 md:px-5 md:py-3 p-3 text-md font-semibold text-white shadow-lg hover:bg-green-600">
+      <a href="https://wa.me/+919999402424" className="fixed bottom-6 md:hidden left-6 z-50 flex items-center gap-2 rounded-full bg-green-500 md:px-5 md:py-3 p-4 text-md font-semibold text-white shadow-lg hover:bg-green-600">
         <FaWhatsapp size={22} />
       </a>
 
       {/* FLOATING CALLBACK */}
-      <a href="tel:+919953686374" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-red-500 md:px-5 md:py-3 p-3 text-md font-semibold text-white shadow-lg hover:bg-red-600">
+      <a href="tel:+919953686374" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-red-500 md:px-5 md:py-3 p-4 text-md font-semibold text-white shadow-lg hover:bg-red-600">
         <PhoneCall size={20} /> <span className="hidden md:block">Arrange Callback</span>
       </a>
     </footer>

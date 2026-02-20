@@ -49,7 +49,7 @@ const portfolioItems = [
     src: "/internation-image/ACCURUB.jpg",
     alt: "FRESH DESK",
     title: "FRESH DESK",
-  }, 
+  },
   {
     id: 9,
     src: "/internation-image/GOA.jpg",
@@ -66,7 +66,7 @@ const portfolioItems = [
 
   {
     id: 11,
-    src: "/internation-image/TVS Group – Sundaram Clayton.jpeg",
+    src: "/internation-image/TVSGroupSundaramClayton.jpeg",
     alt: "TVS Group – Sundaram Clayton",
     title: "TVS Group – Sundaram Clayton",
   },

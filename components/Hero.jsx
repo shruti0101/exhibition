@@ -24,7 +24,7 @@ export default function HeroVideo() {
 
   return (
     <>
-      <section className="relative h-[70vh] md:h-screen w-full overflow-hidden">
+      <section className="relative h-[63vh] md:h-screen w-full overflow-hidden">
         {/* 🔹 VIDEO */}
         <AnimatePresence mode="wait">
           <motion.video
