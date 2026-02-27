@@ -1,16 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  trailingSlash: true,
-
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.pinimg.com",
-      },
-    ],
-    unoptimized: true,
+    domains: ["res.cloudinary.com"],
+    unoptimized: false,
   },
+  reactStrictMode: true,
 };
 
 export default nextConfig;
