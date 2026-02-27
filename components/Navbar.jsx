@@ -155,7 +155,7 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {["Contact", "Career"].map((item) => (
+            {["Contact", "Blogs", "Career"].map((item) => (
               <Link
                 key={item}
                 href={`/${item.toLowerCase()}`}
@@ -261,6 +261,9 @@ export default function Navbar() {
 
               <Link href="/career" onClick={closeAll}>
                 Career
+              </Link>
+              <Link href="/blogs" onClick={closeAll}>
+                Blogs
               </Link>
               <Link href="/contact" onClick={closeAll}>
                 Contact

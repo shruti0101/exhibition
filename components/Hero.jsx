@@ -7,7 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 const videos = [
   {
     id: "exhibition",
-    src: "https://res.cloudinary.com/dzbkxqqo9/video/upload/v1766493871/herovideo_qynqha.mp4",
+    src: "https://res.cloudinary.com/dqllcskwa/video/upload/v1772177005/compressed-video_m7ufad.mp4",
     label: "Exhibition Stalls",
   },
   {
@@ -24,7 +24,7 @@ export default function HeroVideo() {
 
   return (
     <>
-      <section className="relative h-[63vh] md:h-screen w-full overflow-hidden">
+      <section className="relative h-[60vh] md:h-screen w-full overflow-hidden">
         {/* 🔹 VIDEO */}
         <AnimatePresence mode="wait">
           <motion.video
