@@ -11,15 +11,6 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /jodit\.min\.css$/,
-      use: 'null-loader',
-    });
-
-    return config;
-  },
 };
 
 export default nextConfig;
