@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: "export",
   trailingSlash: true,
+
   images: {
     remotePatterns: [
       {
@@ -10,6 +10,15 @@ const nextConfig = {
       },
     ],
     unoptimized: true,
+  },
+
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /jodit\.min\.css$/,
+      use: 'null-loader',
+    });
+
+    return config;
   },
 };
 
