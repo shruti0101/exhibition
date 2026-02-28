@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Sidebar from '@/components/admin/Sidebar';
 import { X } from 'lucide-react';
 import { Menu } from 'lucide-react';

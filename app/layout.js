@@ -21,10 +21,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/jodit@4.9.14/build/jodit.min.css"
-        />
         <Script
           id="clarity-script"
           strategy="afterInteractive"
