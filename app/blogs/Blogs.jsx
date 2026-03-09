@@ -73,7 +73,7 @@ export default function Blogs() {
                                         </h3>
                                         <div className="mt-auto">
                                             <a
-                                                href={`${item.permalink}`}
+                                                href={`/blogs/${item.permalink}`}
                                                 className="inline-flex items-center text-base font-medium text-blue-600 hover:text-blue-800 transition hover:underline"
                                             >
                                                 Read More →
