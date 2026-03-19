@@ -13,6 +13,24 @@ body {
 }
 
 
+.jodit-wysiwyg ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.jodit-wysiwyg ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+.jodit-wysiwyg ul ul {
+  list-style: circle;
+}
+
+.jodit-wysiwyg ul ul ul {
+  list-style: square;
+}
+
 /* ===============================
    Portfolio 3D Coverflow Fix
 ================================ */
