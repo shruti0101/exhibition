@@ -3,6 +3,7 @@
 import { createContactForm } from "@/service/axiosInstance";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import axios from "axios";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -27,10 +28,26 @@ export default function ContactPage() {
       return;
     }
 
+    const formDataTemplate = {
+      platform: "Stridres Contact Page",
+      platformEmail: "info@stridesdesign.com",
+      name: formData?.name,
+      phone: formData?.phone,
+      email: formData?.email,
+      product: "Na",
+      place: "Na",
+      message: "Na",
+    };
+
     setLoading(true);
     try {
-      const res = await createContactForm(formData);
-      if (res.success) {
+      const res = await axios.post(
+        "https://brandbnalo.com/api/form/add",
+        formDataTemplate,
+      );
+
+      console.log(res, "res");
+      if (res.status === 201) {
         toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", phone: "", message: "" });
       }
