@@ -232,7 +232,7 @@ export default function InquiryPage() {
                 </ul>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
-                  <a href='tel:+919953686374' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-red-600 hover:border-red-700 bg-red-600 px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
+                  <a href='tel:+919810119546' className="group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-red-600 hover:border-red-700 bg-red-600 px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700">
                     Call Us
                     <span className="block h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-6" />
                   </a>
@@ -548,7 +548,7 @@ export default function InquiryPage() {
                   </li>
                 </ul>
 
-                <a href='tel:+91 9953686374' className="mt-4 group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-[#039C98] px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-[#027a76]">
+                <a href='tel:+919810119546' className="mt-4 group relative inline-flex cursor-pointer items-center gap-2 rounded-full border-2 bg-[#039C98] px-8 py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-[#027a76]">
                   Connect with us
                 </a>
               </div>
