@@ -154,7 +154,7 @@ export default function Footer() {
       </a>
 
       {/* FLOATING CALLBACK */}
-      <a href="tel:+919953686374" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-red-500 md:px-5 md:py-3 p-4 text-md font-semibold text-white shadow-lg hover:bg-red-600">
+      <a href="tel:+919810119546" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-red-500 md:px-5 md:py-3 p-4 text-md font-semibold text-white shadow-lg hover:bg-red-600">
         <PhoneCall size={20} /> <span className="hidden md:block">Arrange Callback</span>
       </a>
     </footer>
