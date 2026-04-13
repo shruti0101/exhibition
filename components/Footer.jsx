@@ -5,7 +5,7 @@ import { Phone, Mail, Facebook, Linkedin, MapPin, Star } from "lucide-react";
 import { PhoneCall } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Instagram } from "lucide-react";
-
+import { usePathname } from "next/navigation";
 export default function Footer() {
   const usefulLinks = [
     { name: "Home", href: "/" },
@@ -16,6 +16,10 @@ export default function Footer() {
     { name: "Contact Us", href: "/contact" },
     { name: "Inquiry", href: "/inquiry" },
   ]
+
+  const pathname = usePathname();
+  const adminLayout = pathname.startsWith("/admin")
+  if (adminLayout) return null;
 
   return (
     <footer className="relative mx-auto bg-[#000000cc] text-white">

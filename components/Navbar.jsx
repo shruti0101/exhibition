@@ -7,7 +7,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { categories, portfolioNavItem } from "@/Data/data";
-
+import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -19,6 +19,10 @@ export default function Navbar() {
     setServicesOpen(false);
     setPortfolioOpen(false);
   };
+
+  const pathname = usePathname();
+  const adminLayout = pathname.startsWith("/admin")
+  if (adminLayout) return null;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">

@@ -38,7 +38,7 @@ export default function page() {
     };
 
     return (<>
-        <div className="min-h-screen bg-gray-100 flex mt-20">
+        <div className="min-h-screen bg-gray-100 flex">
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
             <div className="flex-1 flex flex-col">
