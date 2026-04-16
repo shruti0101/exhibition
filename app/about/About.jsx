@@ -92,7 +92,7 @@ const AboutPage = () => {
             className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="https://i.pinimg.com/736x/e6/d0/a4/e6d0a4e40986e701f55ac9d4c3e4b19f.jpg"
+              src="/count.jpg"
               alt="Exhibition Stall Design"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
@@ -112,7 +112,7 @@ const AboutPage = () => {
             className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-1"
           >
             <Image
-              src="https://i.pinimg.com/1200x/4f/b0/04/4fb004a70775904ecbd46e553a48e198.jpg"
+              src="/Whatmakesstridesbest.....jpg"
               alt="Our Journey"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
