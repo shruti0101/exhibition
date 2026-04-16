@@ -112,7 +112,7 @@ const AboutPage = () => {
             className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-1"
           >
             <Image
-              src="/Whatmakesstridesbest.....jpg"
+              src="/Whatmakesstridesbest.....webp"
               alt="Our Journey"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
