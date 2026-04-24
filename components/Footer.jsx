@@ -15,6 +15,7 @@ export default function Footer() {
     { name: "Careers", href: "/career" },
     { name: "Contact Us", href: "/contact" },
     { name: "Inquiry", href: "/inquiry" },
+    { name: "Sitemap", href: "/sitemap" },
   ]
 
   const pathname = usePathname();
