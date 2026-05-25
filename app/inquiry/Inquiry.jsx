@@ -14,8 +14,11 @@ import toast from "react-hot-toast";
 import { reasons } from "@/Data/data";
 import axios from "axios";
 import Popup from "@/components/Popup";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { auth } from "@/utils/firebase";
 
 export default function InquiryPage() {
+  
   const [mobileOpen, setMobileOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [thankyou, setThankyou] = useState(false);
@@ -26,64 +29,133 @@ export default function InquiryPage() {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [otp, setOtp] = useState("");
+const [showOtp, setShowOtp] = useState(false);
+const [confirmationResult, setConfirmationResult] = useState(null);
+const [isVerified, setIsVerified] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const { name, value } = e.target;
+  setFormData((prev) => ({ ...prev, [name]: value }));
+};
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+useEffect(() => {
+  if (!window.recaptchaVerifier) {
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      auth,
+      "recaptcha-container",
+      {
+        size: "invisible",
+      }
+    );
 
-    if (/\d/.test(formData.name)) {
-      toast.error("Name should not contain numbers");
-      return;
-    }
-    const phoneDigits = formData.phone.replace(/\D/g, "");
-    if (phoneDigits.length < 10) {
-      toast.error("Please enter a valid phone number");
-      return;
-    }
+    window.recaptchaVerifier.render();
+  }
+}, []);
 
+
+
+ const sendOTP = async () => {
+  try {
     setLoading(true);
 
-    const formDataTemplate = {
+    const appVerifier = window.recaptchaVerifier;
+
+    const result = await signInWithPhoneNumber(
+      auth,
+      "+91" + formData.phone,
+      appVerifier
+    );
+
+    setConfirmationResult(result);
+    setShowOtp(true);
+
+    toast.success("OTP sent");
+  } catch (err) {
+    console.log(err);
+    toast.error("OTP failed");
+  } finally {
+    setLoading(false);
+  }
+};
+
+// ---------------- VERIFY OTP ----------------
+const verifyOTP = async () => {
+  try {
+    setLoading(true);
+
+    await confirmationResult.confirm(otp);
+
+    toast.success("Phone verified");
+
+    await submitForm(); // ✅ submit after OTP success
+  } catch (err) {
+    console.log(err);
+    toast.error("Invalid OTP");
+  } finally {
+    setLoading(false);
+  }
+};
+
+// ---------------- MAIN SUBMIT ----------------
+const submitForm = async () => {
+  try {
+    setLoading(true);
+
+    const payload = {
       platform: "Strides design studio",
       platformEmail: "info@stridesdesign.com",
-      name: formData?.name,
-      phone: formData?.phone,
-      email: formData?.email,
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
       product: "NA",
       place: "NA",
-      message: formData?.message,
+      message: formData.message,
     };
 
-    try {
-      const { data } = await axios.post(
-        "https://brandbnalo.com/api/form/add",
-        formDataTemplate,
-      );
-      if (data.success) {
-        toast.success("Message sent successfully!");
-        setThankyou(true)
-        setOpen(false)
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error(
-        error.message || "something went wrong while send content details",
-      );
-    } finally {
-      setLoading(false);
+    const { data } = await axios.post(
+      "https://brandbnalo.com/api/form/add",
+      payload
+    );
+
+    if (data.success) {
+      toast.success("Message sent!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
+      setOtp("");
+      setShowOtp(false);
     }
+  } catch (err) {
+    console.log(err);
+    toast.error("Server error");
+  } finally {
+    setLoading(false);
+  }
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!showOtp) {
+    await sendOTP();   // STEP 1
+    return;
   }
 
-  useEffect(() => {
-    setTimeout(() => {
-      setOpen(true)
-    }, 600)
-  }, [])
+  await verifyOTP();   // STEP 2
+};
+
+// ---------------- AUTO OPEN ----------------
+useEffect(() => {
+  setTimeout(() => {
+    setOpen(true);
+  }, 600);
+}, []);
 
   return (
     <>
@@ -252,55 +324,84 @@ export default function InquiryPage() {
                     </p>
                   </div>
 
-                  <form className="md:space-y-6 space-y-2" onSubmit={handleSubmit}>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Your Name"
-                      className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                    />
+                   <div id="recaptcha-container"></div>
 
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="Email Address"
-                      className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                    />
+      <form className="md:space-y-6 space-y-2" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          placeholder="Your Name"
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
 
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      placeholder="Phone Number"
-                      className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                    />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          placeholder="Email Address"
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
 
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      placeholder="Tell us about your project..."
-                      rows={2}
-                      className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                    />
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          placeholder="Phone Number"
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
 
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="inline-flex w-full rounded-lg cursor-pointer items-center justify-center bg-[#039C98] px-10 py-4 text-xs tracking-widest uppercase text-white transition hover:bg-[#027a76]"
-                    >
-                      {loading ? "Sending..." : "Send Message"}
-                    </button>
-                  </form>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          placeholder="Tell us about your project..."
+          rows={2}
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
+
+        {/* OTP INPUT */}
+        {showOtp && !isVerified && (
+          <input
+            type="text"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            placeholder="Enter OTP"
+            className="w-full border rounded-md border-green-500 px-4 py-3 text-sm outline-none"
+          />
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="inline-flex w-full rounded-lg cursor-pointer items-center justify-center bg-[#039C98] px-10 py-4 text-xs tracking-widest uppercase text-white transition hover:bg-[#027a76]"
+        >
+          {loading
+  ? "Processing..."
+  : !showOtp
+  ? "Send OTP"
+  : "Verify OTP"}
+        </button>
+
+        {status === "success" && (
+          <p className="text-green-600 text-sm font-semibold">
+            Message sent successfully!
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="text-red-600 text-sm font-semibold">
+            Something went wrong
+          </p>
+        )}
+      </form>
                 </div>
               </div>
             </div>
@@ -632,54 +733,72 @@ export default function InquiryPage() {
               </p>
 
               <form className="space-y-6" onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your Name"
-                  className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                />
+  <div id="recaptcha-container"></div>
 
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Email Address"
-                  className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                />
+  <input
+    type="text"
+    name="name"
+    value={formData.name}
+    onChange={handleChange}
+    required
+    placeholder="Your Name"
+    className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+  />
 
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  placeholder="Phone Number"
-                  className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                />
+  <input
+    type="email"
+    name="email"
+    value={formData.email}
+    onChange={handleChange}
+    required
+    placeholder="Email Address"
+    className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+  />
 
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  placeholder="Tell us about your project..."
-                  rows={2}
-                  className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-                />
+  <input
+    type="tel"
+    name="phone"
+    value={formData.phone}
+    onChange={handleChange}
+    required
+    placeholder="Phone Number"
+    className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+  />
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-[#039C98] px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#027a76]"
-                >
-                  {loading ? "Sending..." : "Send Message"}
-                </button>
-              </form>
+  <textarea
+    name="message"
+    value={formData.message}
+    onChange={handleChange}
+    required
+    placeholder="Tell us about your project..."
+    rows={2}
+    className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+  />
+
+  {/* OTP INPUT */}
+  {showOtp && (
+    <input
+      type="text"
+      value={otp}
+      onChange={(e) => setOtp(e.target.value)}
+      placeholder="Enter OTP"
+      className="w-full border rounded-md border-green-500 px-4 py-3 text-sm outline-none"
+    />
+  )}
+
+  {/* BUTTON */}
+  <button
+    type="submit"
+    disabled={loading}
+    className="w-full bg-[#039C98] px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#027a76]"
+  >
+    {loading
+      ? "Processing..."
+      : !showOtp
+      ? "Send OTP"
+      : "Verify OTP"}
+  </button>
+</form>
             </div>
           </div>
         </div>
@@ -690,55 +809,75 @@ export default function InquiryPage() {
         onClose={() => setOpen(false)}
         title="Contact Us"
       >
-        <form className="space-y-2" onSubmit={handleSubmit}>
+         <div id="recaptcha-container"></div>
+
+      {/* YOUR EXACT FORM (NO DESIGN CHANGE) */}
+      <form className="space-y-2" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          placeholder="Your Name"
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
+
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          placeholder="Email Address"
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
+
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          placeholder="Phone Number"
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
+
+        {/* OTP INPUT (ONLY WHEN REQUIRED) */}
+        {showOtp && !isVerified && (
           <input
             type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Your Name"
-            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            placeholder="Enter OTP"
+            className="w-full border rounded-md border-green-500 px-4 py-3 text-sm outline-none"
           />
+        )}
 
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="Email Address"
-            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-          />
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          placeholder="Tell us about your project..."
+          rows={2}
+          className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
+        />
 
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            placeholder="Phone Number"
-            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-          />
-
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            placeholder="Tell us about your project..."
-            rows={2}
-            className="w-full border rounded-md border-gray-300 px-4 py-3 text-sm outline-none focus:border-[#039C98]"
-          />
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-[#039C98] px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#027a76]"
-          >
-            {loading ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-[#039C98] px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#027a76]"
+        >
+          {loading
+            ? "Sending..."
+            : !showOtp
+            ? "Send OTP"
+            : !isVerified
+            ? "Verify OTP"
+            : "Submit Message"}
+        </button>
+      </form>
       </Popup>
 
       <Popup
