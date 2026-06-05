@@ -7,7 +7,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Instagram } from "lucide-react";
 import { usePathname } from "next/navigation";
 export default function Footer() {
+  const date = new Date();
   const usefulLinks = [
+    
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
     { name: "Services", href: "/services/domestic-exhibition-stall-designing-services/" },
@@ -149,8 +151,18 @@ export default function Footer() {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="py-4 text-center text-sm text-white">
-        © 2025 Strides design. All rights reserved.
+      <div className="py-4 text-center text-sm text-white flex flex-col md:flex-row justify-between md:px-10">
+        <span> © {date.getFullYear()} Strides design. All rights reserved. </span>
+        <span>
+            Website Designed By   Inquiry Bazaar Pvt. Ltd.  {" "}
+        <a
+          target="_blank"
+          href="https://inquirybazaar.com/"
+          className="text-[#FAAC18] hover:underline"
+        >
+           B2B Marketplace
+        </a>
+          </span>
       </div>
 
       {/* FLOATING CALLBACK */}
@@ -159,7 +171,7 @@ export default function Footer() {
       </a>
 
       {/* FLOATING CALLBACK */}
-      <a href="tel:+919810119546" className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-red-500 md:px-5 md:py-3 p-4 text-md font-semibold text-white shadow-lg hover:bg-red-600">
+      <a href="tel:+919810119546" className="fixed bottom-10 right-6 z-50 flex items-center gap-2 rounded-full bg-red-500 md:px-5 md:py-3 p-4 text-md font-semibold text-white shadow-lg hover:bg-red-600">
         <PhoneCall size={20} /> <span className="hidden md:block">Arrange Callback</span>
       </a>
     </footer>
