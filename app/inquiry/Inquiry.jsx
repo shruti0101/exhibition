@@ -19,6 +19,7 @@ import { auth } from "@/utils/firebase";
 
 export default function InquiryPage() {
   
+  const [status, setstatus] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [thankyou, setThankyou] = useState(false);
