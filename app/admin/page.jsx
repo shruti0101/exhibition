@@ -18,6 +18,9 @@ export default function page() {
             });
     }, []);
 
+
+    console.log(blogs);
+
     const handleDelete = async (id) => {
         if (!confirm("Delete this blog?")) return;
         const res = await fetch(`/api/blog/${id}`, { method: "DELETE" });
@@ -52,7 +55,7 @@ export default function page() {
                                     <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
                                         <div className="relative">
                                             <img
-                                                src={item.image}
+                                                src={item?.image}
                                                 alt="blog"
                                                 className="h-48 w-full object-cover"
                                             />

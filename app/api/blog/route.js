@@ -1,20 +1,20 @@
 import { connect } from "@/Database/db";
 import Blog from "@/models/blog";
-import cloudinary from "@/utils/cloudinary";
+import { uploadToR2 } from "@/lib/uploadToR2"
 
-// GET /api/blog 
 export async function GET() {
   await connect();
   const blogs = await Blog.find().sort({ createdAt: -1 });
   return new Response(JSON.stringify(blogs), { status: 200 });
 }
 
-// POST /api/blog 
+// POST /api/blog
 export async function POST(req) {
   try {
     await connect();
 
     const formData = await req.formData();
+
     const title = formData.get("title");
     const permalink = formData.get("permalink");
     const content = formData.get("content");
@@ -23,27 +23,22 @@ export async function POST(req) {
     const file = formData.get("image");
 
     let imageUrl = "";
-    let imagePublicId = "";
+    let imageFileId = "";
 
-    if (file && file.name) {
+    // 📤 Upload to Cloudflare R2
+    if (file && file.size > 0) {
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
 
-      const uploadResult = await new Promise((resolve, reject) => {
-        cloudinary.uploader.upload_stream(
-          {
-            folder: "blogs",
-            resource_type: "image",
-          },
-          (error, result) => {
-            if (error) reject(error);
-            resolve(result);
-          }
-        ).end(buffer);
+      const uploadedImage = await uploadToR2({
+        file: buffer,
+        folder: "blogs",
+        fileName: `${Date.now()}-${file.name}`,
+        contentType: file.type,
       });
 
-      imageUrl = uploadResult.secure_url;
-      imagePublicId = uploadResult.public_id;
+      imageUrl = uploadedImage.url;
+      imageFileId = uploadedImage.key;
     }
 
     const blog = await Blog.create({
@@ -53,12 +48,16 @@ export async function POST(req) {
       metaTitle,
       metaDescription,
       image: imageUrl,
-      imagePublicId,
+      imageFileId, // ✅ store R2 key instead of public_id
     });
 
     return new Response(JSON.stringify(blog), { status: 201 });
+
   } catch (err) {
     console.error("POST /api/blog error:", err);
-    return new Response(JSON.stringify({ error: err.message }), { status: 500 });
+    return new Response(
+      JSON.stringify({ error: err.message }),
+      { status: 500 }
+    );
   }
 }
